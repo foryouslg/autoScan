@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DirIndex>
+  <description>Scripts for testing network services</description>
+  <file name="VirtualHost_Audit.script">
+    <description>Connect to the website IP address and try to guess various internal virtual hosts.</description>
+  </file>    
+  <file name="phpLiteAdmin_Audit.script">
+    <description>Checks if the default password for phpLiteAdmin was changed or not.</description>
+  </file>    
+  <file name="X_Forwarded_For.script">
+    <description>Try to access the administrative interfaces using various internal X-Forwarded-For headers to bypass authentication.</description>
+  </file>  
+  <file name="MongoDB_Audit.script">
+    <description>Test if the MongoDB web interface is open on the external network interface.</description>
+  </file>  
+  <file name="chargen_ping.script">
+    <description>Test for chargen service</description>
+  </file>
+  <file name="cvs_server.script">
+    <description>Test for CVS server</description>
+  </file>  
+  <file name="daytime_ping.script">
+    <description>Test for daytime service</description>
+  </file>    
+  <file name="dns_cache_snooping.script">
+    <description>Test for DNS cache snooping</description>
+  </file>    
+  <file name="dns_open_recursion.script">
+    <description>Test for DNS open recursion</description>
+  </file>    
+  <file name="dns_zone_transfer.script">
+    <description>Test is DNS zone transfer is possible</description>
+  </file>    
+  <file name="echo_ping.script">
+    <description>Test for echo service</description>
+  </file>    
+  <file name="finger_ping.script">
+    <description>Test for finger service</description>
+  </file>    
+  <file name="finger_solaris_disclosure.script">
+    <description>Test for Solaris finger disclosure vulnerability</description>
+  </file>    
+  <file name="ftp_anonymous.script">
+    <description>Test for FTP anonymous login</description>
+  </file>    
+  <file name="ftp_anonymous_writable.script">
+    <description>Test if anonymous users can create files/directories</description>
+  </file>    
+  <file name="ftp_bruteforce.script">
+    <description>Try to guess FTP weak passwords</description>
+  </file>    
+  <file name="identd_ping.script">
+    <description>Test for identd service</description>
+  </file>    
+  <file name="imap_bruteforce.script">
+    <description>Try to guess IMAP weak passwords</description>
+  </file>    
+  <file name="imap_server.script">
+    <description>Test for IMAP service</description>
+  </file>    
+  <file name="ip_address_info.script">
+    <description>Get information about scanned IP address (WHOIS)</description>
+  </file>    
+  <file name="ircd_info.script">
+    <description>Try to get some information from the IRC server</description>
+  </file>    
+  <file name="ldap_audit.script">
+    <description>Test for IMAP anonymous binds</description>
+  </file>    
+  <file name="lpd_ping.script">
+    <description>Test for LPD service</description>
+  </file>    
+  <file name="memcached_ping.script">
+    <description>Test for memcached service</description>
+  </file>    
+  <file name="mssql_bruteforce.script">
+    <description>Try to guess MSSQL weak passwords</description>
+  </file>    
+  <file name="mssql_ping.script">
+    <description>Test for MSSQL service</description>
+  </file>    
+  <file name="mysql_bruteforce.script">
+    <description>Try to guess MySQL weak passwords</description>
+  </file>    
+  <file name="mysqlInfo.script">
+    <description>Test for MySQL service</description>
+  </file>    
+  <file name="netbios_query.script">
+    <description>Test if the server responds to NETBIOS queries</description>
+  </file>    
+  <file name="ntp_ping.script">
+    <description>Test for NTP service</description>
+  </file>    
+  <file name="oracle_HTTP.script">
+    <description>Test for Oracle HTTP service</description>
+  </file>    
+  <file name="oracle_tnssecurity.script">
+    <description>Test for Oracle TNS service</description>
+  </file>    
+  <file name="oracle_version.script">
+    <description>Try to determine Oracle server version</description>
+  </file>    
+  <file name="pc_anywhere.script">
+    <description>Test for PcAnywhere service</description>
+  </file>    
+  <file name="pop3_bruteforce.script">
+    <description>Try to guess POP3 weak passwords</description>
+  </file>    
+  <file name="pop3_server.script">
+    <description>Test for POP3 service</description>
+  </file>    
+  <file name="Postgresql_bruteforce.script">
+    <description>Try to guess PostgreSql weak passwords</description>
+  </file>    
+  <file name="Postgresql_ping.script">
+    <description>Test for PostgreSql service</description>
+  </file>    
+  <file name="proxy_open.script">
+    <description>Test for open proxy server</description>
+  </file>    
+  <file name="proxy_use_any_port.script">
+    <description>Test if the open proxy allows connections to any port</description>
+  </file>    
+  <file name="proxy_use_connect.script">
+    <description>Test if the open proxy allows users to use CONNECT method</description>
+  </file>    
+  <file name="proxy_use_connect_to_itself.script">
+    <description>Test if the open proxy allows CONNECT to itself</description>
+  </file>    
+  <file name="proxy_use_post.script">
+    <description>Test if the open proxy allows users to use POST method</description>
+  </file>    
+  <file name="rlogin_ping.script">
+    <description>Test for rlogin service</description>
+  </file>    
+  <file name="rpc_info.script">
+    <description>Try to list RPC services</description>
+  </file>    
+  <file name="rsh_ping.script">
+    <description>Test for RSH service</description>
+  </file>    
+  <file name="rsync_ping.script">
+    <description>Test for RSync service</description>
+  </file>    
+  <file name="smb_audit.script">
+    <description>Test for SMB service</description>
+  </file>    
+  <file name="smtp_commands.script">
+    <description>Try to detect what SMTP commands are allowed</description>
+  </file>    
+  <file name="smtp_open_relay.script">
+    <description>Test for SMTP open relay</description>
+  </file>    
+  <file name="smtp_vrfy_expn.script">
+    <description>Test is SMTP VRFY/EXPN commands are available</description>
+  </file>    
+  <file name="snmp_ping.script">
+    <description>Test to guess SNMP community string</description>
+  </file>    
+  <file name="socks_bruteforce.script">
+    <description>Try to guess SOCKS weak passwords</description>
+  </file>    
+  <file name="socks_ping.script">
+    <description>Test for SOCKS service</description>
+  </file>    
+  <file name="ssh_bruteforce.script">
+    <description>Try to guess SSH weak passwords</description>
+  </file>    
+  <file name="ssh_ping.script">
+    <description>Test for SSH service</description>
+  </file>    
+  <file name="ssh_random.script">
+    <description>Test for Debian OpenSSL predictable random number generator</description>
+  </file>    
+  <file name="subversion_server.script">
+    <description>Test for subversion service</description>
+  </file>    
+  <file name="swat_ping.script">
+    <description>Test for SAMBA SWAT service</description>
+  </file>    
+  <file name="sybase_bruteforce.script">
+    <description>Try to guess Sybase weak passwords</description>
+  </file>    
+  <file name="sybase_ping.script">
+    <description>Test for Sybase service</description>
+  </file>    
+  <file name="telnet_bruteforce.script">
+    <description>Try to guess Telnet weak passwords</description>
+  </file>    
+  <file name="tftp_ping.script">
+    <description>Test for TFTP service</description>
+  </file>    
+  <file name="timbuktu_ping.script">
+    <description>Test for Timbuktu service</description>
+  </file>    
+  <file name="trojan_Nuclear.script">
+    <description>Test for Nuclear trojan</description>
+  </file>    
+  <file name="trojan_ProRat.script">
+    <description>Test for ProRat trojan</description>
+  </file>    
+  <file name="trojan_Sub7.script">
+    <description>Test for Sub7 trojan</description>
+  </file>    
+  <file name="trojan_XHacker.script">
+    <description>Test for XHacker trojan</description>
+  </file>    
+  <file name="upnp_ping.script">
+    <description>Test for UPNP service</description>
+  </file>    
+  <file name="vmware_server.script">
+    <description>Test for VMWare Server service</description>
+  </file>    
+  <file name="vnc_audit.script">
+    <description>Test for VNC problems</description>
+  </file>    
+  <file name="vnc_web.script">
+    <description>Test for VNC web interface</description>
+  </file>      
+  <file name="webmin_ping.script">
+    <description>Test for Webmin service</description>
+  </file>      
+  <file name="windows_terminal_services.script">
+    <description>Test for Windows Terminal Services</description>
+  </file>      
+  <file name="X11_server.script">
+    <description>Test for open X11 server</description>
+  </file>      
+  <file name="xdmcp_ping.script">
+    <description>Test for XDMCP service</description>
+  </file>      
+  <file name="Telnet_ping.script">
+    <description>Test for Telnet service</description>
+  </file>     
+  <file name="crossdomain_xml.script">
+    <description>Test for misconfigurations in crossdomain.xml file</description>
+  </file>      
+  <file name="DNS_cache_poisoning.script">
+    <description>Test for DNS cache poisoning</description>
+  </file>      
+  <file name="dotnet.script">
+    <description>Test for .NET presence</description>
+  </file>      
+  <file name="mdns_zeroconf_ping.script">
+    <description>Test for Zeroconf service</description>
+  </file>      
+  <file name="smtp_exim_overflow.script">
+    <description>Test for a known Exim buffer overflow</description>
+  </file>      
+  <file name="ssl_ping.script">
+    <description>Test for SSL protocol</description>
+  </file>      
+  <file name="ssl_v2_hello_overflow.script">
+    <description>Test for SSL v2 Hello overflow</description>
+  </file>      
+  <file name="XSS.script">
+    <description>Test for Cross-Site Scripting vulnerability</description>
+  </file>      
+  <file name="Sql_Injection.script">
+    <description>Test for SQL Injection vulnerability</description>
+  </file>      
+  <file name="XPath_Injection.script">
+    <description>Test for XPath Injection vulnerability</description>
+  </file>      
+  <file name="File_Upload.script">
+    <description>Audit File Upload forms for various vulnerability</description>
+  </file>      
+  <file name="Arbitrary_File_Creation.script">
+    <description>Test for Arbitrary File Creation vulnerability</description>
+  </file>      
+  <file name="Arbitrary_File_Deletion.script">
+    <description>Test for Arbitrary File Deletion vulnerability</description>
+  </file>      
+  <file name="Blind_Sql_Injection.script">
+    <description>Test for Blind SQL Injection vulnerability</description>
+  </file>      
+  <file name="Code_Execution.script">
+    <description>Test for Code Execution vulnerability</description>
+  </file>      
+  <file name="CRLF_Injection.script">
+    <description>Test for CRLF Injection vulnerability</description>
+  </file>      
+  <file name="Directory_Traversal.script">
+    <description>Test for Directory Traversal vulnerability</description>
+  </file>      
+  <file name="Email_Injection.script">
+    <description>Test for Email Injection vulnerability</description>
+  </file>      
+  <file name="Error_Message.script">
+    <description>Try to generate error messages</description>
+  </file>      
+  <file name="File_Inclusion.script">
+    <description>Test for File Inclusion vulnerability</description>
+  </file>      
+  <file name="File_Tampering.script">
+    <description>Test for File Tampering vulnerability</description>
+  </file>      
+  <file name="Html_Authentication_Audit.script">
+    <description>Audit HTML authentication forms</description>
+  </file>      
+  <file name="LDAP_Injection.script">
+    <description>Test for LDAP Injection vulnerability</description>
+  </file>      
+  <file name="PHP_Code_Injection.script">
+    <description>Test for PHP Code Injection vulnerability</description>
+  </file>      
+  <file name="XPath_Injection.script">
+    <description>Test for XPath Injection vulnerability</description>
+  </file>      
+  <file name="PHP_User_Controlled_Vulns.script">
+    <description>Look for PHP User Controlled Vulnerabilities</description>
+  </file>      
+  <file name="Script_Source_Code_Disclosure.script">
+    <description>Test for Script Source Code Disclosure vulnerability</description>
+  </file>      
+  <file name="XFS_and_Redir.script">
+    <description>Test for Cross Frame Scripting and URL Redirection vulnerability</description>
+  </file>      
+  <file name="Backup_File.script">
+    <description>Look for backup files</description>
+  </file>      
+  <file name="XSS_in_URI.script">
+    <description>Test for Cross-Site Scripting vulnerability in URI</description>
+  </file>      
+  <file name="PHPInfo.script">
+    <description>Look for phpinfo() files</description>
+  </file>      
+  <file name="Possible_Sensitive_Files.script">
+    <description>Look for Possible Sensitive Files</description>
+  </file>      
+  <file name="Possible_Sensitive_Directories.script">
+    <description>Look for Possible Sensitive Directories</description>
+  </file>      
+  <file name="Trojan_Scripts.script">
+    <description>Look for Trojan Scripts</description>
+  </file>      
+  <file name="Weak_Password_Basic_Auth.script">
+    <description>Test for weak passwords (Basic authentication)</description>
+  </file>      
+  <file name="Text_Search.script">
+    <description>This script checks if the target website might have specific texts which might lead to sensitive information disclosure.</description>
+  </file>      
+  <file name="chargen_ping.script"><description>This script checks if a chargen service is running on this host. The chargen service was intended for testing and measurement purposes and may listen on both TCP and UDP protocols. The chargen service can be spoofed into sending data from one service on one computer to another service on another computer. This action causes an infinite loop and creates a denial of service attack. </description></file>
+  <file name="crossdomain_xml.script"><description>This script checks for an insecure crossdomain.xml file. The browser security model normally prevents web content from one domain from accessing data from another domain. This is commonly known as the ""same origin policy"". </description></file>
+  <file name="cvs_server.script"><description>This script checks for a CVS server. CVS is a version control system. This is an important component of Source Configuration Management (SCM). It is used for recording the history of sources files, and documents. Server CVS enables developers scattered by geography or slow modems to function as a single team. The version history is stored on a single central server and the client machines have a copy of all the files that the developers are working on. </description></file>
+  <file name="daytime_ping.script"><description>This script checks if a daytime service is running on this host. The daytime service was intended for testing and measurement purposes and may listen on both TCP and UDP protocols. The server then returns the current date and time as an ASCII string with an unspecified format.</description></file>
+  <file name="dns_cache_poisoning.script"><description>This script checks if a DNS server is vulnerable to DNS cache poisoning attacks. DNS cache poisoning is an attack technique that allows an attacker to introduce forged DNS information into the cache of a caching nameserver.</description></file>
+  <file name="dns_cache_snooping.script"><description>This script checks if a remote DNS server is vulnerable to DNS cache snooping attacks. DNS cache snooping is the process of determining whether a given Resource Record (RR) is (or not) present on a given DNS cache. The most effective way to snoop a DNS cache is using iterative queries.Publicly available DNS servers should only response to queries regarding hosts to which they are authoritative.</description></file>
+  <file name="dns_open_recursion.script"><description>This script checks if the remote DNS server allows querys for third-party names. Publicly available DNS servers should only respond to queries regarding hosts to which they are authoritative for. </description></file>
+  <file name="dns_zone_transfer.script"><description>This script checks if a remote DNS server allows zone transfers. DNS zone transfer, also sometimes known by its (most common) opcode mnemonic AXFR, is a type of DNS transaction. It is one of the many mechanisms available for administrators to employ for replicating the databases containing the DNS data across a set of DNS servers.</description></file>
+  <file name="dotnet.script"><description>This script checks if .NET is present on a host and tries to get .NET version number.</description></file>
+  <file name="echo_ping.script"><description>This script checks if an echo service is running on this host. The echo service was intended for testing and measurement purposes and may listen on both TCP and UDP protocols. The server sends back any data it receives, with no modification.</description></file>
+  <file name="finger_ping.script"><description>This script checks if a finger service is running on this host. The finger protocol is used to find out information about users on a remote system. Finger servers can usually provide either a list of logged-in users or detailed information on a single user.</description></file>
+  <file name="finger_solaris_disclosure.script"><description>This script checks if a vulnerability in the in.fingerd daemon in Sun Solaris versions 8 and earlier could allow a remote attacker to obtain sensitive account information. A remote attacker can send a specially-crafted finger request to a vulnerable system to cause a list of accounts to be returned to the attacker. This information can be used by the attacker to launch further attacks against the affected host.</description></file>
+  <file name="ftp_anonymous.script"><description>This script checks if the remote FTP server allows anonymous logins. Anonymous FTP allows users without accounts to have restricted access to certain directories on the system. The configuration of systems allowing anonymous FTP should be checked carefully, as improperly configured FTP servers are frequently attacked.</description></file>
+  <file name="ftp_anonymous_writable.script"><description>This script checks if the remote FTP server permits anonymous users to create arbitrary files and/or folders. There is a risk to operating an anonymous FTP service that permits users to store files. We strongly recommend that sites do not automatically create a ""drop off"" directory unless thought has been given to the possible risks of having such a service.</description></file>
+  <file name="ftp_bruteforce.script"><description>This script checks if an FTP server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="identd_ping.script"><description>This script checks if the ident daemon in running on the remote server.</description></file>
+  <file name="imap_bruteforce.script"><description>This script checks if the IMAP server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="imap_server.script"><description>This script checks if an IMAP service is running on a host.</description></file>
+  <file name="ip_address_info.script"><description>This script tries to retrieve information about the IP address being scanned.</description></file>
+  <file name="ircd_info.script"><description>This script extracts IRC server statistics and version information.</description></file>
+  <file name="ldap_audit.script"><description>This script checks if the remote IMAP server allows anonymous binds.</description></file>
+  <file name="lpd_ping.script"><description>This script checks if LPD service is running on a host.</description></file>
+  <file name="mdns_zeroconf_ping.script"><description>This script checks if Zeroconf service is running on a host.</description></file>
+  <file name="memcached_ping.script"><description>This script checks if Memcached service is running on the external interface.</description></file>
+  <file name="mssql_bruteforce.script"><description>This script checks if the Microsoft SQL Server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="mssql_ping.script"><description>This script checks if an MSSQL service is running on a host.</description></file>
+  <file name="mysqlInfo.script"><description>This script checks if an MySQL service is running on a host.</description></file>
+  <file name="mysql_bruteforce.script"><description>This script checks if the MySQL Server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="netbios_query.script"><description>This script checks if SAMBA/NETBIOS is enabled on the external interface.</description></file>
+  <file name="ntp_ping.script"><description>This script checks if an NTP service is running on a host.</description></file>
+  <file name="oracle_HTTP.script"><description>This script checks if an Oracle HTTP service is running on a host.</description></file>
+  <file name="oracle_tnssecurity.script"><description>This script checks if an Oracle TNS service is running on a host.</description></file>
+  <file name="oracle_version.script"><description>This script checks if Oracle is installed on a host and detects the Oracle's version.</description></file>
+  <file name="pc_anywhere.script"><description>This script checks if a PcAnywhere service is running on a host.</description></file>
+  <file name="pop3_bruteforce.script"><description>This script checks if the POP3 server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="pop3_server.script"><description>This script checks if a POP3 service is running on a host.</description></file>
+  <file name="Postgresql_bruteforce.script"><description>This script checks if the PostgreSQL server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="Postgresql_ping.script"><description>This script checks if a PostgreSQL service is running on a host.</description></file>
+  <file name="proxy_open.script"><description>This script checks for a open proxy server. An open proxy is a proxy server that can be accessed by any Internet user. In general, a proxy server only allows users within a network group (i.e. a closed proxy) to store and forward Internet services such as DNS or web pages to reduce and control the bandwidth used by the group.</description></file>
+  <file name="proxy_use_any_port.script"><description>This script checks if the remote proxy server can be used to connect to arbitrary ports. The proxy allows everyone to perform HTTP requests to arbitrary ports, such as: GET http://www.acunetix.com:25 . This may allow attackers to bypass your firewall and connect to sensitive ports like 23 (telnet), 25 (sendmail) using the proxy.</description></file>
+  <file name="proxy_use_connect.script"><description>This script checks if the remote proxy server can be used to send CONNECT requests. The proxy allows everyone to perform CONNECT HTTP requests to arbitrary ports, such as:CONNECT www.acunetix.com:25 .This may allow attackers to bypass your firewall and connect to sensitive ports like 23 (telnet), 25 (sendmail) using the proxy.</description></file>
+  <file name="proxy_use_connect_to_itself.script"><description>This script checks if the proxy allows the users to perform repeated CONNECT requests to itself. This may allow an attacker to perform a denial of service attack by saturating the proxy CPU, memory or file descriptors.</description></file>
+  <file name="proxy_use_post.script"><description>This script checks if the remote proxy server can be used to send POST requests without any [bold]Content-length[/bold] header. The proxy allows everyone to perform POST HTTP requests such as:POST http://www.acunetix.com:25 . This may allow attackers to bypass your firewall and connect to sensitive ports like 23 (telnet), 25 (sendmail) using the proxy.</description></file>
+  <file name="rlogin_ping.script"><description>This script checks if the rlogin service is running on this host. Rlogin allows users to log in on another host via a network, as if they were physically present at the computer. Rlogin has several serious security problems: All information, including passwords, is transmitted unencrypted (making it vulnerable to interception).</description></file>
+  <file name="rpc_info.script"><description>This script checks if Unix RPC service is running on the target host.</description></file>
+  <file name="rsh_ping.script"><description>This script checks if the rsh service is running on this host. rsh (remote shell) is a command line computer program which can execute shell commands as another user, and on another computer across a computer network. This service is not ciphered. All information, including passwords, is transmitted unencrypted (making it vulnerable to interception).</description></file>
+  <file name="rsync_ping.script"><description>This script checks if a RSync service is running on a host.</description></file>
+  <file name="smb_audit.script"><description>This script checks if a SMB service is running on a host.</description></file>
+  <file name="smtp_commands.script"><description>This script checks what SMTP commands are enabled on a server.</description></file>
+  <file name="smtp_exim_overflow.script"><description>This script checks if the remote host is running Exim, a message transfer agent (SMTP). It is reported that Exim is prone to an IPv6 Address and a SPA authentication buffer Overflow . An attacker, exploiting those flaws, may be able to execute arbitrary code on the remote host.</description></file>
+  <file name="smtp_open_relay.script"><description>This script checks if the remote SMTP server is acting as an open mail relay. An open mail relay is an SMTP server configured in such a way that it allows anyone on the Internet to send e-mail through it, not just mail destined to or originating from known users. By processing mail that is neither for nor from a local user, an open relay makes it possible for an unscrupulous sender to route large volumes of spam. In effect, the owner of the server -- who is typically unaware of the problem -- donates network and computer resources to the sender's purpose.</description></file>
+  <file name="smtp_vrfy_expn.script"><description>This script checks if the remote SMTP server responds to EXPN/VRFY verbs. VRFY and EXPN ask the server for information about an address. Using these verbs it's possible to enumerate the names of valid users on the remote host. Login names are also a way to gather addresses for spam email messages.</description></file>
+  <file name="snmp_ping.script"><description>This script checks if a SNMP service is running on the host.</description></file>
+  <file name="socks_bruteforce.script"><description>This script checks if the SOCKS server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="socks_ping.script"><description>This script checks if a SOCKS service is running on the host. An open SOCKS server is a SOCKS server which is accessible by any Internet user. Generally, a proxy server allows users within a network group to store and forward internet services such as DNS or web pages so that the bandwidth used by the group is reduced and controlled.</description></file>
+  <file name="ssh_bruteforce.script"><description>This script checks if a SSH server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="ssh_ping.script"><description>This script checks if a SSH service is running on a host.</description></file>
+  <file name="ssh_random.script"><description>This script checks for a weakness that has been discovered in the random number generator used by OpenSSL on Debian and Ubuntu systems.  As a result of this weakness, certain encryption keys are much more common than they should be, such that an attacker could guess the key through a brute-force attack given minimal knowledge of the system. </description></file>
+  <file name="ssl_ping.script"><description>This script checks if the SSL protocol is running on a host.</description></file>
+  <file name="ssl_v2_hello_overflow.script"><description>This script checks if the remote host is using a vulnerable version of the Mozilla Network Security Services (NSS) Library. In this, the SSL v.2.0 handling code may allow an attacker to cause a heap overflow and therefore execute arbitrary commands on the remote host.</description></file>
+  <file name="subversion_server.script"><description>This script checks if a Subversion metadata exists on a host.</description></file>
+  <file name="swat_ping.script"><description>This script checks if a SAMBA SWAT service is running on a host.</description></file>
+  <file name="sybase_bruteforce.script"><description>This script checks if a Sybase server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="sybase_ping.script"><description>This script checks if a Sybase service is running on the host.</description></file>
+  <file name="telnet_bruteforce.script"><description>This script checks if a Telnet server is using a weak password. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="Telnet_ping.script"><description>This script checks if the rlogin service is running on this host. Telnet allows users to log in on another host via a network, as if they were physically present at the computer. All information, including passwords, is transmitted unencrypted (making it vulnerable to interception).</description></file>
+  <file name="tftp_ping.script"><description>This script checks if a TFTP service is running on a host.</description></file>
+  <file name="timbuktu_ping.script"><description>This script checks if a Timbuktu service is running on a host.</description></file>
+  <file name="trojan_Nuclear.script"><description>This script checks if a Nuclear Trojan is running on the target host.</description></file>
+  <file name="trojan_ProRat.script"><description>This script checks if the ProRat trojan exists on a host. ProRat is a Microsoft Windows based backdoor trojan horse, more commonly known as a RAT (Remote Administration Tool). As with other trojan horses it uses a client and server.</description></file>
+  <file name="trojan_Sub7.script"><description>This script checks if the Sub7 exists on a host. Sub7, or SubSeven or Sub7Server, is the name of a Remote Administration Tool (RAT) program. Sub7 is distributed with a server and a client.</description></file>
+  <file name="trojan_XHacker.script"><description>This script checks if an Xhacker trojan is running on the target host.</description></file>
+  <file name="upnp_ping.script"><description>This script checks if a UPNP (Universal Plug and Play) service is running on a host. The UPnP protocol does not implement any authentication, so UPnP device implementations must implement their own authentication mechanisms, or implement the Device Security Service.</description></file>
+  <file name="VMWare_Directory_Traversal.script"><description>This script checks if a Vmware server is vulnerable to Directory Traversal attacks.</description></file>
+  <file name="vmware_server.script"><description>This script checks if a Vmware server service is running on a host.</description></file>
+  <file name="vnc_audit.script"><description>This script checks for security problems of a VNC service.</description></file>
+  <file name="vnc_web.script"><description>This script checks for security problems in the VNC web interface.</description></file>
+  <file name="webmin_ping.script"><description>This script checks if a Webmin service is running on the target host.</description></file>
+  <file name="windows_terminal_services.script"><description>This script makes tests for Windows Terminal Services.</description></file>
+  <file name="X11_server.script"><description>This script checks if a X11 server is running on a host. The remote X11 server accepts connections from any host. Any client that can connect to your server is able to monitor your keystrokes and perform other (possibly malicious) actions. This means that, if you do not enforce any type of access control for such clients, anyone on the internet can potentially see what you are typing at xterms or other X clients.</description></file>
+  <file name="xdmcp_ping.script"><description>This script checks if a X Display Manager Control Protocol (XDMCP)  service is running on a host. XDMCP allows the starting of a session on an X server from the same or another computer. An attacker may use this service to mount a dictionary attack against the remote host to try to log in remotely. Furthermore, all information, including passwords, is transmitted unencrypted (making it vulnerable to interception).</description></file>
+  <file name="Backup_File.script"><description>This script checks if backup files which might disclose sensitive information exist on a webserver. These files are usually created by developers to backup their work.</description></file>
+  <file name="HTML_Form_In_Redirect_Page.script"><description>This script checks for HTML Forms in redirect pages of a web application which might lead to a security issue. </description></file>
+  <file name="PHP_SuperGlobals_Overwrite.script"><description>This script checks if the register_globals setting in PHP's configuration file (php.ini) has any security problems. This setting (which can be either On or Off) tells whether or not to register the contents of the EGPCS (Environment, GET, POST, Cookie, Server) variables as global variables. This feature is a great security risk, and you should ensure that register_globals is Off for all scripts (as of PHP 4.2.0 this is the default).</description></file>
+  <file name="Text_Search.script"><description>This script checks if the target website might have specific textx which might lead to sensitive information disclosure.</description></file>
+  <file name="XSS_in_URI.script"><description>This script checks the target website for Cross-site scripting vulnerabilities.</description></file>
+  <file name="Access_Database_Found.script"><description>This script checks for Microsoft Access database files in directories. Such files may disclose sensitive information and help an attacker learn more about the target website.</description></file>
+  <file name="Apache_Tomcat_Directory_Traversal.script"><description>This script checks for Apache version on Windows which is vulnerable to directory traversal attacks. The issue is related to the failure to properly process the backslash '\' character, which may be used as a directory delimiter. Affected Apache versions (up to 2.0.38).</description></file>
+  <file name="APC.script"><description>This script checks for Alternative PHP Cache (APC) pages. The Alternative PHP Cache (APC) is a free and open opcode cache for PHP. Its goal is to provide a free, open, and robust framework for caching and optimizing PHP intermediate code. The installer comes with a small php script (apc.php) which gives you some useful info about APC. This script should not be available on production system as it may expose sensitive information. </description></file>
+  <file name="ASP-NET_Application_Trace.script"><description>This script checks if the ASP.NET application trace is enabled. This file contains sensitive information such as Session ID values and physical path to the requested file.</description></file>
+  <file name="ASP-NET_Debugging_Enabled.script"><description>This script checks if ASP.NET debugging is enabled on a web application. It is recommended to disable debug mode before deploying a production application.</description></file>
+  <file name="Bazaar_Repository.script"><description>This script checks if the Bazaar metadata directory (.bzr) exists in a directory. An attacker can extract sensitive information by requesting the hidden metadata directory that version control tool Bazaar creates. The metadata directories are used for development purposes to keep track of development changes to a set of source code before it is committed back to a central repository (and vice-versa). </description></file>
+  <file name="CVS_Repository.script"><description>This script checks if a CVS Web Repository exists on a webpage. The CVS directory is a special directory. CVS/Entries lists files and subdirectories registered into the server. CVS/Repository contains the path to the corresponding directory in the repository. CVS/Root contains the path to the repository.</description></file>
+  <file name="Directory_Listing.script"><description>This script checks if a web server is configured to display the list of files contained in a directory. This is not recommended because the directory may contain files that are not normally exposed through links on the website which might contain sensitive data.</description></file>
+  <file name="Dreamweaver_Scripts.script"><description>This script checks if Macromedia Dreamweaver has created a directory (_mmServerScripts or _mmDBScripts) that contains scripts for testing database connectivity. One of these scripts (mmhttpdb.php or mmhttpdb.asp) can be accessed without user ID or password and contains numerous operations, such as listing Datasource Names or executing arbitrary SQL queries.</description></file>
+  <file name="GIT_Repository.script"><description>This script checks if Git metadata directory (.git) exists in a directory. An attacker can extract sensitive information by requesting the hidden metadata directory that version control tool Git creates.</description></file>
+  <file name="htaccess_File_Readable.script"><description>This script checks if a directory contains an .htaccess file that is readable. This may indicate a server misconfiguration. htaccess files are designed to be parsed by web server and should not be directly accessible. These files could contain sensitive information that could help an attacker conduct further attacks. It's recommended to restrict access to this file.</description></file>
+  <file name="Http_Verb_Tampering.script"><description>This script checks if a web application is vulnerable to HTTP Verb Tampering which is caused by improper server configuration and can be used to bypass web authentication and authorization.</description></file>
+  <file name="IIS51_Directory_Auth_Bypass.script"><description>This script checks for a Microsoft IIS 5.1 Directory Authentication Bypass vulnerability.</description></file>
+  <file name="Invalid_Page_Text_Search.script"><description>This script checks for various information disclosure vulnerabilities in the text of the web page source code (such as error messages, email addresses, etc).</description></file>
+  <file name="JetBrains_Idea_Project_Directory.script"><description>This script checks for JetBrains .idea project directory. The .idea directory contains a set of configuration files (.xml) for your project. These configuration files contain information core to the project itself, such as names and locations of its component modules, compiler settings, etc.</description></file>
+  <file name="Mercurial_Repository.script"><description>This script checks if Mercurial metadata directory (.hg) exists in a directory. An attacker can extract sensitive information by requesting the hidden metadata directory that version control tool Mercurial creates.</description></file>
+  <file name="PHPInfo.script"><description>This script checks for a PHPInfo page on a web application. The PHPInfo page outputs a large amount of information about the current state of PHP. This includes information about PHP compilation options and extensions, the PHP version, server information and environment (if compiled as a module), the PHP environment, OS version information, paths, master and local values of configuration options, HTTP headers, and the PHP License.</description></file>
+  <file name="Possible_Sensitive_Directories.script"><description>This script checks for common sensitive resources like backup directories, database dumps, administration pages, temporary directories. Each one of these directories and files could help an attacker learn more about the target website.</description></file>
+  <file name="Possible_Sensitive_Files.script"><description>This script checks for common sensitive resources like password files, configuration files, log files, include files, statistics data, database dumps. Each one of these files could help an attacker to learn more about his target.</description></file>
+  <file name="Ruby_on_Rails_Database_Connection_File.script"><description>This script checks if a Ruby on Rails database connection file exists in a web application. The file contains sensitive database connection information such as the name of the database, database credentials (username and password) and the host where the database is located. </description></file>
+  <file name="SQLite_Database_Found.script"><description>This script checks if SQLite database file exists in a directory. This file may disclose sensitive information abd help an attacker learn more about the target website.</description></file>
+  <file name="SQL_Injection_In_Basic_Auth.script"><description>This script checks for SQL Injection vulnerabilities in Basic Authentication of a web applications.</description></file>
+  <file name="SQL_Injection_In_URI.script"><description>This script checks for SQL Injection vulnerabilities in a uniform resource identifier (URI).</description></file>
+  <file name="SVN_Repository.script"><description>This script checks if Subversion metadata directory (.svn) exists in a directory. An attacker can extract sensitive information by requesting the hidden metadata directory that popular version control tool Subversion creates from such directories.</description></file>
+  <file name="Trojan_Scripts.script"><description>This script checks if a Trojan horse exists on a host. A trojan horse comes at least in two parts: a client and a server. The client is used by the hacker to connect to the victim' s machine. Once the server is installed on the victim's machine the hacker has full access to the victim's machine.</description></file>
+  <file name="Weak_Password_Basic_Auth.script"><description>This script checks for weak passwords in Basic Authentication. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="Webadmin_script.script"><description>This script checks if webadmin.php exists in web applications. webadmin.php is a simple Web-based file manager. This file manager should not be installed on production systems because it doesn't employ any user authentication in the default configuration. Therefore an attacker can read and create random files in your system.</description></file>
+  <file name="WS_FTP_log_file.script"><description>This script checks if WS_FTP.LOG file exists in a web application. This file contains sensitive data such as file source/destination and file name, date/time of upload etc.</description></file>
+  <file name="XSS_in_URI.script"><description>This script checks for Cross-site scripting vulnerabilities in URI.</description></file>
+  <file name="dotnetnuke.script"><description>This script checks for vulnerabilities in DotNetNuke. These vulnerabilities can be exploited by malicious users to enumerate files on an affected system and bypass certain security restrictions and by malicious people to conduct cross-site scripting attacks.</description></file>
+  <file name="drupal.script"><description>?his script checks for vulnerabilities in Drupal core. Such vulnerabilities could allow the attacker to execute arbitrary PHP code on the original server.</description></file>
+  <file name="drupal_1.script"><description>This script checks for several known security vulnerabilities in the Drupal web application.</description></file>
+  <file name="ektroncms.script"><description>This script checks for several known security vulnerabilities in the Ektron CMS. This includes Cross-Site Scripting, SQL Injection and Authentication vulnerability checks.</description></file>
+  <file name="ipb.script"><description>This script checks for vulnerabilities in the Invision Power Board version 3.3.4.</description></file>
+  <file name="joomla.script"><description>This script checks for multiple vulnerabilities in Joomla!. This includes SQL Injection and Privilege Escalation.</description></file>
+  <file name="liferay.script"><description>This script checks for Liferay JSON authentication vulnerability. </description></file>
+  <file name="mediawiki.script"><description>This script checks for MediaWiki Multiple Remote Vulnerabilities. This includes Cross-Site Scripting, CSRF and Information Leakage vulnerabilities.</description></file>
+  <file name="openx.script"><description>This script checks for OpenX vulnereabilities which include SQL Injection and File Upload vulnerabilities.</description></file>
+  <file name="phpmyadmin.script"><description>This script checks for phpMyAdmin vulnerabilities such as SQL Injection and backdoors (v3.5.2.2).</description></file>
+  <file name="pmwiki.script"><description>This script checks for known vulnerabilities in the pmwiki web application.</description></file>
+  <file name="vbulletin.script"><description>This script checks for SQL Injection vulnerabilities in vBulletin 4 (up to 4.1.2).</description></file>
+  <file name="wordpress.script"><description>This script checks for WordPress database credentials disclosure.</description></file>
+  <file name="wordpress_1.script"><description>This script checks for some known vulnerabilities in a Wordpress web application.</description></file>
+  <file name="wordpress_2.script"><description>This script checks for some known vulnerabilities in a Wordpress web application.</description></file>
+  <file name="wordpress_3.script"><description>This script checks for some known vulnerabilities in a Wordpress web application.</description></file>
+  <file name="wordpress_4.script"><description>This script checks for some known vulnerabilities in a Wordpress web application.</description></file>
+  <file name="Arbitrary_File_Creation.script"><description>This script checks if a web application has scripts which are possibly vulnerable to arbitrary file creation. Such an issue allows an attacker to influence calls to functions which create files/directories and create arbitrary files. Due to a lack of input validation, an attacker can supply directory traversal sequences followed by an arbitrary file name to create specific files.</description></file>
+  <file name="Arbitrary_File_Deletion.script"><description>This script checks if a web application has scripts which are possibly vulnerable to arbitrary file deletion. Such an issue allows an attacker to influence calls to the 'unlink()' function and delete arbitrary files. Due to a lack of input validation, an attacker can supply directory traversal sequences followed by an arbitrary file name to delete specific files.</description></file>
+  <file name="ASP_Code_Injection.script"><description>This script checks if ASP is vulnerable to code injection. ASP code injection is a vulnerability that allows an attacker to inject custom code into the server side scripting engine. This vulnerability occurs when an attacker can control all or part of an input string that is fed into an eval() statement, which results in code execution.</description></file>
+  <file name="Blind_Sql_Injection.script"><description>This script checks for Blind SQL Injection. When an SQL Injection attack is executed sometimes the server responds with error messages from the target database server complaining that the SQL Query's syntax is incorrect. Blind SQL injection is identical to normal SQL Injection except that when an attacker attempts to exploit an application rather then getting a useful error message they get a generic page specified by the developer instead. This makes exploiting a potential SQL Injection attack more difficult but not impossible. An attacker can still steal data by asking a series of True and False questions through sql statements. </description></file>
+  <file name="Code_Execution.script"><description>This script checks for scripts that are vulnerable to Code Execution vulnerabilities. Code injection vulnerabilities occur where the output or content served from a Web application can be manipulated in such a way that it triggers server-side code execution. In some poorly written Web applications that allow users to modify server-side files (such as by posting to a message board or guestbook) it is sometimes possible to inject code in the scripting language of the application itself.</description></file>
+  <file name="CRLF_Injection.script"><description>This script checks for scripts that are vulnerable to CRLF injection or HTTP response splitting attacks. HTTP headers have the structure ""Key: Value"", where each line is separated by the CRLF combination. If the user input is injected into the value section without properly escaping/removing CRLF characters it is possible to alter the HTTP headers structure. HTTP Response Splitting is a new application attack technique which enables various new attacks such as web cache poisoning, cross user defacement, hijacking pages with sensitive user information and cross-site scripting (XSS). The attacker sends a single HTTP request that forces the web server to form an output stream, which is then interpreted by the target as two HTTP responses instead of one response.</description></file>
+  <file name="Directory_Traversal.script"><description>This script checks for scripts that are vulnerable to directory traversal attacks. Directory Traversal is a vulnerability which allows attackers to access restricted directories and execute commands outside of the web server's root directory.</description></file>
+  <file name="Email_Injection.script"><description>This script checks for scripts that are vulnerable to Email injection attacks. Email injection is a security vulnerability that allows malicious users to send email messages using someone else's server without prior authorization. A malicious spammer could use this tactic to send large numbers of messages anonymously.</description></file>
+  <file name="Error_Message.script"><description>This script checks if a web page contains any error/warning messages that may disclose sensitive information.The message can also contain the location of the file that produced the unhandled exception.</description></file>
+  <file name="Expression_Language_Injection.script"><description>This script checks for scripts that are vulnerable to Expression Language Injection attacks. To provide easy ways of outputting data from an object model that more closely resembles pure scripting languages, Expression Language (EL) was developed as part of JSTL (Java Server Pages Standard Tag Library).</description></file>
+  <file name="File_Inclusion.script"><description>This script checks for scripts that are vulnerable to file inclusion attacks. It seems that this script includes a file which name is determined using user-supplied data. This data is not properly validated before being passed to the include function. </description></file>
+  <file name="File_Tampering.script"><description>This script checks for scripts that are vulnerable to file tampering. It checks if user input gets written to a file from the server. It depends on the file that gets written and how/if user input is santitized before being written to this file.</description></file>
+  <file name="File_Upload.script"><description>This script checks for scripts that are vulnerable to unrestricted file upload. Various web applications allow users to upload files (such as pictures, images, sounds, ...). Uploaded files may pose a significant risk if not handled correctly. A remote attacker could send a multipart/form-data POST request with a specially-crafted filename or mime type and execute arbitrary code.</description></file>
+  <file name="Generic_Oracle_Padding.script"><description>This script checks for scripts that are vulnerable to a Padding Oracle Attack. At Eurocrypt 2002, Vaudenay introduced a powerful side-channel attack, which is called padding oracle attack, against CBC-mode encryption with PKCS#5 padding. If there is an oracle which on receipt of a ciphertext, decrypts it and then replies to the sender whether the padding is correct or not, Vaudenay shows how to use that oracle to efficiently decrypt data without knowing the encryption key.</description></file>
+  <file name="Html_Authentication_Audit.script"><description>This script checks for weak passwords in HTML authentication forms.</description></file>
+  <file name="HTTP_Parameter_Pollution.script"><description>This script checks for scripts that are vulnerable to HTTP Parameter Pollution attacks. HPP attacks consist of injecting encoded query string delimiters into other existing parameters. If the web application does not properly sanitize the user input, a malicious user can compromise the logic of the application to perform either clientside or server-side attacks.</description></file>
+  <file name="LDAP_Injection.script"><description>This script checks for scripts that are vulnerable to LDAP Injection attacks.[break][break]Lightweight Directory Access Protocol (LDAP) is an open-standard protocol for both querying and manipulating X.500 directory services. When a web application fails to properly sanitize user-supplied input, it is possible for an attacker to alter the construction of an LDAP statement.</description></file>
+  <file name="MongoDB_Injection.script"><description>This script checks for scripts that are vulnerable to MongoDB Injection attacks. There are various types of attacks against MongoDB databases. Consult web references for more information about this vulnerability.</description></file>
+  <file name="NodeJs_Injection.script"><description>This script checks for scripts that are vulnerable to Node.js JavaScript Injection attacks.[break]Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. This Node.js based web application is using  the Javascript eval function to parse the incoming JSON data without any type of input validation. An attacker can inject arbitrary JavaScript code that will be executed on the server side.</description></file>
+  <file name="PHP_Code_Injection.script"><description>This script checks for scripts that are vulnerable to PHP code injection.[break][break]PHP code injection is a vulnerability that allows an attacker to inject custom code into the server side scripting engine. This vulnerability occurs when an attacker can control</description></file>
+  <file name="PHP_User_Controlled_Vulns.script"><description>This script checks for PHP user controlled vulnerabilities.</description></file>
+  <file name="Rails_Mass_Assignment.script"><description>This script checks for scripts that are vulnerable to Rails Mass Assignment vulnerability.</description></file>
+  <file name="Rails_Where_SQL_Injection.script"><description>This script checks for SQL Injection vulneabilities in Ruby on Rails in Active Record, in ALL versions.</description></file>
+  <file name="Script_Source_Code_Disclosure.script"><description>This script checks for scripts that is possible to read its source code by using script filename as a parameter. It seems that this script includes a file which name is determined using user-supplied data. This data is not properly validated before being passed to the include function. </description></file>
+  <file name="Server_Side_Request_Forgery.script"><description>This script checks for Server Side Request Forgery vulnerabilities.</description></file>
+  <file name="Sql_Injection.script"><description>This script checks for scripts that are vulnerable to SQL Injection attacks. SQL injection is a vulnerability that allows an attacker to alter backend SQL statements by manipulating the user input. An SQL injection occurs when web applications accept user input that is directly placed into a SQL statement and doesn't properly filter out dangerous characters. This is one of the most common application layer attacks currently being used on the Internet.  Despite the fact that it is relatively easy to protect against, there is a large number of web applications vulnerable.</description></file>
+  <file name="Unsafe_preg_replace.script"><description>This script checks for scripts that are using the PHP function preg_replace() on user input. This is not recommended as it can lead to various vulnerabilities. Consult ""References"" for more information about this problem.</description></file>
+  <file name="XFS_and_Redir.script"><description>This script checks for scripts that are vulnerable to Cross Frame Scripting (XFS) which is an attack technique used to trick a user into thinking that fake web site content is legitimate data and URL redirection attacks which is sometimes used as a part of phishing attacks that confuse visitors about which web site they are visiting.</description></file>
+  <file name="XPath_Injection.script"><description>This script checks for scripts that are vulnerable to XPath Injection attacks.[break][break]XPath Injection is an attack technique used to exploit web sites that construct XPath queries from user-supplied input.</description></file>
+  <file name="XSS.script"><description>This script checks for scripts that are vulnerable to Cross Site Scripting (XSS) attacks. Cross site scripting (also referred to as XSS) is a vulnerability that allows an attacker to send malicious code (usually in the form of Javascript) to another user.</description></file>
+  <file name="Apache_Geronimo_Default_Administrative_Credentials.script"><description>This script checks if the Apache Geronimo Administration Console is using the default credentials.</description></file>
+  <file name="Apache_httpOnly_Cookie_Disclosure.script"><description>This script checks for HttpOnly Cookie Disclosure in Apache HTTP Server 2.2.x through 2.2.21. Due to improper restriction of header information during construction of Bad Request (aka 400) error documents, remote attackers are allowed to obtain the values of HTTPOnly cookies via vectors involving a (1) long or (2) malformed header in conjunction with crafted web script.</description></file>
+  <file name="Apache_mod_negotiation_Filename_Bruteforcing.script"><description>This script checks if Apache mod_negotiation module is vulnerable to filename bruteforcing. mod_negotiation is an Apache module responsible for selecting the document that best matches the clients capabilities, from one of several available documents. If the client provides an invalid Accept header, the server will respond with a 406 Not Acceptable error containing a pseudo directory listing. This behaviour can help an attacker to learn more about his target, for example, generate a list of base names, generate a list of interesting extensions, look for backup files and so on.</description></file>
+  <file name="Apache_Proxy_CONNECT_Enabled.script"><description>This script checks if the HTTP method CONNECT is enabled in the Apache proxy.</description></file>
+  <file name="Apache_Running_As_Proxy.script"><description>This script checks if Apache is configured to run as a proxy server. In order to avoid abuse, it's recommended to restrict access to this proxy server. Open proxy servers are dangerous both to your network and to the Internet at large.</description></file>
+  <file name="Apache_Server_Information.script"><description>This script checks if Apache displays /server-info information about the Apache configuration. If you are not using this feature, disable it.</description></file>
+  <file name="Apache_Solr_Exposed.script"><description>This script checks if the Apache Solr Service Admin page is accessible. This page should not be accessible on a production website as it may give an attacker access to sensitive information about the affected system.</description></file>
+  <file name="Apache_Unfiltered_Expect_Header_Injection.script"><description>This script checks for Unfiltered Header Injection in Apache 1.3.34/2.0.57/2.2.1. This version of Apache is vulnerable to HTML injection (including malicious Javascript code) through ""Expect"" header. Until now it was not classified as a security vulnerability, since an attacker has no way to influence the Expect header to send the victim to a target website. However, according to Amit Klein's paper: ""Forging HTTP request headers with Flash""  there is a working cross site scripting (XSS) attack against Apache 1.3.34, 2.0.57 and 2.2.1 (as long as the client browser is IE or Firefox, and it supports Flash 6/7+).</description></file>
+  <file name="ASP_NET_Error_Message.script"><description>This script checks for ASP.NET error messages. By requesting a specially crafted URL is possible to generate an ASP.NET error message. The message contains the complete stack trace and Microsoft .NET Framework Version.</description></file>
+  <file name="ASP_NET_Forms_Authentication_Bypass.script"><description>This script checks for Microsoft ASP.NET Forms Authentication Bypass. The Forms Authentication feature in the ASP.NET subsystem in Microsoft .NET Framework 1.1 SP1, 2.0 SP2, 3.5 SP1, 3.5.1, and 4.0 allows remote authenticated users to obtain access to arbitrary user accounts via a crafted username.</description></file>
+  <file name="ASP_NET_Oracle_Padding.script"><description>This script checks for ASP.NET Padding Oracle Vulnerability. ASP.Net uses encryption to hide sensitive data and protect it from tampering by the client. However, a vulnerability in the ASP.Net encryption implementation can allow an attacker to decrypt and tamper with this data. This vulnerability exists in all versions of ASP.NET.</description></file>
+  <file name="ClientAccessPolicy_XML.script"><description>This script checks for insecure clientaccesspolicy.xml files. The browser security model normally prevents web content from one domain from accessing data from another domain. This is commonly known as the ""same origin policy"". When a domain is specified in ClientAccessPolicy.xml, the site declares that it is willing to allow the operators of any servers in that domain to obtain any document on the server where the policy file resides. This practice is suitable for public servers, but should not be used for sites located behind a firewall because it could permit access to protected areas. It should not be used for sites that require authentication in the form of passwords or cookies. </description></file>
+  <file name="ColdFusion_Audit.script"><description>This script checks if the Adobe ColdFusion service is running on a host.</description></file>
+  <file name="ColdFusion_User_Agent_XSS.script"><description>This script checks for ColdFusion User-Agent Cross-Site Scripting. Input passed to the ""User-Agent"" header parameter it isn't properly sanitised before being returned to the user on 404 or 500 error. This can be exploited to execute arbitrary HTML and script code in a user's browser session in context of an affected site. Confirmed in version MX 7.  Other versions may also be affected.</description></file>
+  <file name="ColdFusion_v8_File_Upload.script"><description>This script checks for ColdFusion 8 FCKEditor File Upload Vulnerability. ColdFusion version 8.0.1 installs a vulnerable version of FCKEditor which is enabled by default. FCKEditor includes functionality to handle file uploads and file management, allowing an attacker to upload and execute malicious code.</description></file>
+  <file name="ColdFusion_v9_Solr_Exposed.script"><description>This script checks for ColdFusion 9 Solr Service Exposed. An important vulnerability (CVE-2010-0185) has been identified in ColdFusion 9.0, which could allow access to collections created by the Solr Service to be accessed from any external machine using a specific URL. By accessing the ColdFusion Solr collections, a user could search and index the information contained in the collections. Adobe has provided a solution to the reported vulnerability. It is recommended that users update their product installations using the instructions provided bellow.</description></file>
+  <file name="Crossdomain_XML.script"><description>This script checks for an insecure crossdomain.xml file. The browser security model normally prevents web content from one domain from accessing data from another domain. This is commonly known as the ""same origin policy"". </description></file>
+  <file name="elmah_Information_Disclosure.script"><description>This script checks for elmah.axd Information Disclosure. ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. If ELMAH is not properly configured, the elmah.axd handler can be accessed without authorization. This page will list all the error messages generated by the web application and may disclose sensitive information to an attacker.</description></file>
+  <file name="Error_Page_Path_Disclosure.script"><description>This script checks for Error page Path disclosure. By requesting a page that doesn't exist, one or more fully qualified path names were found on the response. From this information the attacker may learn the file system structure from the web server. This information can be used to conduct further attacks.</description></file>
+  <file name="Fantastico_Filelist.script"><description>This script checks for Fantastico fileslist. Fantastico creates a file named fantastico_fileslist.txt that is publicly available. This file contains a list of all the files from the current directory. The contents of this file may expose sensitive information to an attacker.</description></file>
+  <file name="Frontpage_authors_pwd.script"><description>This script checks if the Frontpage authors.pwd file is available. This file contains sensitive information and should not be available.</description></file>
+  <file name="Frontpage_Extensions_Enabled.script"><description>This script checks if the Frontpage Extensions is enabled on the target host.</description></file>
+  <file name="Frontpage_Information.script"><description>This script checks for Microsoft Frontpage configuration information in a webpage. The configuration information might include the Frontpage version and may help an attacker to learn more about his target.</description></file>
+  <file name="GlassFish_Audit.script"><description>This script checks if the GlassFish service is running on the target host.</description></file>
+  <file name="IIS_Global_Asa.script"><description>This script checks for a Global.asa backup file. The Global.asa file is an optional file in which you can specify event scripts and declare objects that have session or application scope. Global.asa file should not be accessible. Global.asa file may contain sensitive information (such as database credentials, sensitive source code snippets) and it's recommended to restrict access to this file.</description></file>
+  <file name="IIS_Internal_IP_Address.script"><description>This script checks if an Internet Information Server returns IP address in HTTP header (Content-Location). When you use static HTML pages (for example, Default.htm), a Content-Location header is added to the response. By default, in Internet Information Server (IIS), the Content-Location references the IP address of the server instead of the Fully Qualified Domain Name (FQDN) or Hostname. The security of the internal network may be compromised by exposing the network addresses that are being used.</description></file>
+  <file name="IIS_Unicode_Directory_Traversal.script"><description>This script checks for IIS extended unicode directory traversal vulnerability. The web server is vulnerable to double dot ""../"" directory traversal exploitation if extended UNICODE character representations are used in substitution for ""/"" and ""\"". </description></file>
+  <file name="IIS_v5_NTML_Basic_Auth_Bypass.script"><description>This script checks for Microsoft IIS5 NTLM and Basic authentication bypass. IISv5 has a ""Hit-highlighting"" functionality that opens some site object and highlights some part of it, that has had a transversal vulnerability in the past. Now it can be used to bypass the IIS authentication.</description></file>
+  <file name="JBoss_Audit.script"><description>This script checks if JBoss is running on the target host.</description></file>
+  <file name="Lotus_Domino_crlf_xss.script"><description>This script checks for IBM Lotus Domino Web Server Cross-Site Scripting Vulnerabilities. These vulnerabilities could allow remote attackers to steal cookie-based authentication credentials. While fixes for all four are planned for inclusion in Domino 8.5.4, workarounds exist for two in Domino servers 7.0 and later by enabling a single INI setting. As of 15 August 2012, IBM has not received any reports of customer issues related to these security vulnerabilities.</description></file>
+  <file name="ms12-050.script"><description>This script checks for vulnerabilities in SharePoint that could allow elevation of privilege. A cross-site scripting and elevation of privilege vulnerability exists in SharePoint allows attacker-controlled JavaScript to run in the context of the user clicking a link. This is an elevation of privilege vulnerability as it allows an anonymous attacker to potentially issue SharePoint commands in the context of an authenticated user on the site.</description></file>
+  <file name="Nginx_PHP_FastCGI_Code_Execution_File_Upload.script"><description>This script checks for Nginx PHP code execution via FastCGI. This issue may allow attackers to execute their own PHP code on the system.</description></file>
+  <file name="Options_Server_Method.script"><description>This script checks if the OPTIONS method is enabled. The OPTIONS method provides a list of the methods that are supported by the web server, it represents a request for information about the communication options available on the request/response chain identified by the Request-URI. </description></file>
+  <file name="PHP_Hash_Collision_Denial_Of_Service.script"><description>This script checks for PHP Hash Collision Denial Of Service Vulnerability. Hash tables are a commonly used data structure in most programming languages. Web application servers or platforms commonly parse attacker-controlled POST form data into hash tables automatically, so that they can be accessed by application developers. If the language does not provide a randomized hash function or the application server does not recognize attacks using multi-collisions, an attacker can degenerate the hash table by sending lots of colliding keys. The algorithmic complexity of inserting n elements into the table then goes to O(n**2), making it possible to exhaust hours of CPU time using a single HTTP request.</description></file>
+  <file name="Plone&amp;Zope_Remote_Command_Execution.script"><description>This script checks for Plone Arbitrary Code Execution. A vulnerability exists in Zope 2.12.x and Zope 2.13.x allows execution of arbitrary code by anonymous users. This is a severe vulnerability that allows an unauthenticated attacker to employ a carefully crafted web request to execute arbitrary commands with the privileges of the Zope/Plone service.</description></file>
+  <file name="Reverse_Proxy_Bypass.script"><description>This script checks for Reverse Proxy Bypass. The mod_proxy module in the Apache HTTP Server 1.3.x through 1.3.42, 2.0.x through 2.0.64, and 2.2.x through 2.2.21 does not properly interact with use of (1) RewriteRule and (2) ProxyPassMatch pattern matches for configuration of a reverse proxy, which allows remote attackers to send requests to intranet servers via a malformed URI containing an initial @ (at sign) character.</description></file>
+  <file name="RubyOnRails_Database_File.script"><description>This script checks for RubyOnRails database file which could expose sensitive information.</description></file>
+  <file name="SSL_Audit.script"><description>This script checks if SSL protocol is running on the target host.</description></file>
+  <file name="Tomcat_Audit.script"><description>This script checks if Tomcat is running on the target host.</description></file>
+  <file name="Tomcat_Default_Credentials.script"><description>This script checks if the Apache Tomcat has insecure default administrative password. The Windows installer for Apache Tomcat defaults to a blank password for the administrative user. If this is not changed during the install process, then by default a user is created with the name admin, roles admin and manager and a blank password.</description></file>
+  <file name="Tomcat_Examples.script"><description>This script checks if the Tomcat example applications are available on a host. It is recommended to delete the example applications.</description></file>
+  <file name="Tomcat_Hello_JSP_XSS.script"><description>This script check for Apache Tomcat Hello.jsp Cross-Site Scripting. The file hello.jsp is vulnerable to multiple XSS (cross-site scripting) vulnerabilities. This file is part of the Apache Tomcat documentation files which were installed during Tomcat installation.</description></file>
+  <file name="Tomcat_Status_Page.script"><description>This script checks for a Tomcat status page. Tomcat status page shows information about the current server state (memory status, thread information and a list of the recent requests). This information could be valuable for an attacker. It's recommended to restrict access to this page.</description></file>
+  <file name="Track_Trace_Server_Methods.script"><description>This script checks if TRACK or TRACE HTTP methods are enabled on the web server.</description></file>
+  <file name="Umbraco_CMS_Remote_Code_Execution.script"><description>This script checks for Umbraco CMS Remote Code Execution. Umbraco CMS version 4.7.0 is vulnerable to a remote code execution vulnerability. An attacker can upload files via an unsecured web service located at /umbraco/webservices/codeEditorSave.asmx (method SaveDLRScript).</description></file>
+  <file name="Unprotected_phpMyAdmin_Interface.script"><description>This script checks for Unprotected phpMyAdmin interface. phpMyAdmin is an application written in the PHP language that provides a web-based interface for the administration of MySQL databases. The initial MySQL root account password is empty, so anyone can connect to the MySQL server as root, without a password and be granted all privileges.</description></file>
+  <file name="Version_Check.script"><description>This script checks for known vulnerabilities on web servers by comparing the reported version number.</description></file>
+  <file name="VMWare_Directory_Traversal.script"><description>This script checks for VMware Directory Traversal and Privilege Escalation Vulnerabilities. By exploiting directory traversal vulnerabilities, attackers step out of the root directory and access files in other directories. As a result, attackers might view restricted files or execute commands, leading to a full compromise of the Web server.</description></file>
+  <file name="WAF_Detection.script"><description>This script checks if a Web Application Firewall is running on a server.</description></file>
+  <file name="WEBrick_Directory_Traversal.script"><description>This script checks for WEBrick v.1.3 Directory Traversal. Directory Traversal is a vulnerability which allows attackers to access restricted directories and execute commands outside of the web server's root directory.</description></file>
+  <file name="Web_Server_Default_Welcome_Page.script"><description>This script checks for web server default welcome page. This web server has a default welcome page. If you are not using this web server, it should be disabled because it may pose a security threat.</description></file>
+  <file name="Web_Statistics.script"><description>This script checks for unprotected web statistics scripts, such as awstats.</description></file>
+  <file name="XML_External_Entity_Injection.script"><description>This script checks for vulnerabilities in multiple Adobe products with different Data Services versions which are vulnerable to XML External Entity (XXE) and XML injection attacks. XML external Entities injection allows a wide range of XML based attacks, including local file disclosure, TCP scans and Denial of Service condition, which can be achieved by recursive entity injection, attribute blow up and other types of injection.</description></file>
+  <file name="Apache_CN_Discover_New_Files.script"><description>This script checks to discover new files on an Apache server by abusing the Apache Content Discovery functionality.</description></file>
+  <file name="ASP_NET_Oracle_Padding.script"><description>This script checks for ASP.NET Padding Oracle Vulnerability. ASP.Net uses encryption to hide sensitive data and protect it from tampering by the client. However, a vulnerability in the ASP.Net encryption implementation can allow an attacker to decrypt and tamper with this data. This vulnerability exists in all versions of ASP.NET.</description></file>
+  <file name="CakePHP_Audit.script"><description>This script checks if the CakePHP rapid development framework for PHP is running on a host. Moreover, it checks for a file inclusion attack because of its use of the ""unserialize()"" function on unchecked user input. This makes it possible to inject arbitary objects into the scope.</description></file>
+  <file name="Config_File_Disclosure.script"><description>This script checks for source code disclosure in configuration files.</description></file>
+  <file name="Debug_Parameters.script"><description>This script checks for possible debug parameters. To ease debugging of web applications some developers add hidden debug parameters to their application. When these parameters are present, the developers send additional output to the browser, often giving a trace of internal application details such as database connections, SQL queries, and variable states.</description></file>
+  <file name="FCKEditor_Audit.script"><description>This script checks if FCKeditor service is running on a host. FCKeditor contains functionality to handle file uploads and file management. A remote attacker could use this functionality to upload malicous executable files on the system.</description></file>
+  <file name="IIS_Tilde_Dir_Enumeration.script"><description>This script checks for Microsoft IIS tilde directory enumeration. It is possible to detect short names of files and directories which have an 8.3 file naming scheme equivalent in Windows by using some vectors in several versions of Microsoft IIS. For instance, it is  possible to detect all short-names of "".aspx"" files as they have 4 letters in their extensions. This can be a major issue especially for the .Net websites which are vulnerable to  direct URL access as an attacker can find important files and folders that they are not normally visible.</description></file>
+  <file name="phpThumb_Audit.script"><description>This script checks if the phpThumb() is used on a web application. phpThumb() versions 1.7.9 and below are vulnerable to a command injection vulnerability that allows an attacker to execute arbitrary shell commands.</description></file>
+  <file name="PHP_CGI_RCE.script"><description>This script checks for PHP-CGI remote code execution. When PHP is used in a CGI-based setup (such as Apache's mod_cgid), the php-cgi receives a processed query string parameter as command line arguments which allows command-line switches, such as -s, -d or -c to be passed to the php-cgi binary, which can be exploited to disclose source code and obtain arbitrary code execution.</description></file>
+  <file name="Server_Directory_Listing.script"><description>This script checks if a web server is configured to display the list of files contained in a directory. This is not recommended because the directory may contain files that are not normally exposed through links on the web site.</description></file>
+  <file name="Server_Directory_Traversal.script"><description>This script checks for scripts that are vulnerable to directory traversal attacks. Directory Traversal is a vulnerability which allows attackers to access restricted directories and execute commands outside of the web server's root directory.</description></file>
+  <file name="Server_Source_Code_Disclosure.script"><description>This script checks for source code disclosure. This check is using pattern matching to determine if server side tags are found in the file. In some cases this alert may generate false positives. </description></file>
+  <file name="SharePoint_Audit.script"><description>This script checks if SharePoint is running on the target host.</description></file>
+  <file name="Struts2_Remote_Code_Execution.script"><description>This script checks for Multiple critical vulnerabilities in Apache Struts2. Apache Struts2 is a web framework and it is using the OpenSymphony XWork and OGNL libraries. By default, XWork's ParametersInterceptor treats parameter names provided to actions as OGNL expressions. A OGNL (Object Graph Navigation Language) expression is a limited language similar to Java that is tokenized and parsed by the OGNL parser which invokes appropiate Java methods.  Under certain circumstances it's possible to send custom OGNL statements and execute malicious Java code.</description></file>
+  <file name="Struts2_XWork_Remote_Code_Execution.script"><description>This script checks for remote command execution in Struts2/Xwork. Struts2, Java web framework, is vulnerable to remote commands execution due to a vulnerability in XWork's ParametersInterceptor, which is enabled by default in Struts2 and WebWork applications.</description></file>
+  <file name="SWFUpload_Audit.script"><description>This script checks for vulnerabilities in the SWFUpload library.</description></file>
+  <file name="Tiny_MCE_Audit.script"><description>This script checks for TineMCE vulnerabilities on a web application.</description></file>
+  <file name="Uploadify_Audit.script"><description>This script checks for vulnerabilities in Uploadify (a jQuery plugin).</description></file>
+  <file name="WebDAV_Audit.script"><description>This script checks if WebDAV is enabled on a host. WebDAV is an extension to the HTTP protocol. It allows authorized users to remotely add and change content on your web server.</description></file>
+  <file name="Zend_Framework_LFI_via_XXE.script"><description>This script checks for local file disclosure via XXE injection in the Zend Framework. External entities can be specified by adding a specific DOCTYPE element to XML-RPC requests. By exploiting this vulnerability an application may be coerced to open arbitrary files and/or TCP connections. Other software that uses the XmlRpc package of Zend Framework is then also vulnerable to XML eXternal Entity Injection attacks.</description></file>
+  <file name="1-Stored_Vulnerabilities.script"><description>This script checks for stored vulnerabilities, such as stored XSS, stored SQL injection, etc.</description></file>
+  <file name="10-Webmail_Audit.script"><description>This script checks if there is a webmail on a web application and checks for webmail weak passwords. A weak password is short, common, a system default, or something that could be rapidly guessed by executing a brute force attack using a subset of all possible passwords, such as words in the dictionary, proper names, words based on the user name or common variations on these themes.</description></file>
+  <file name="2-Stored_XSS.script"><description>This script checks for stored Cross Site Scripting (XSS) vulnerabilities.</description></file>
+  <file name="3-Stored_SQL_Injection.script"><description>This script checks for stored SQL Injection vulnerabilities.</description></file>
+  <file name="4-Stored_File_Inclusion.script"><description>This script checks for stored File Inclusion vulnerabilities.</description></file>
+  <file name="5-Stored_Directory_Traversal.script"><description>This script checks for stored Directory Traversal vulnerabilities.</description></file>
+  <file name="6-Stored_Code_Execution.script"><description>This script checks for stored Code Execution vulnerabilities.</description></file>
+  <file name="7-Stored_File_Tampering.script"><description>This script checks for stored File Tampering vulnerabilities.</description></file>
+  <file name="8-Stored_PHP_Code_Execution.script"><description>This script checks for stored PHP code execution vulnerabilities.</description></file>
+  <file name="9-Multiple_Web_Servers.script"><description>This script checks if multiple web servers are running on the same IP address.</description></file>
+      
+</DirIndex>

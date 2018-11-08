@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExecutiveReport>
+	<AlertReplacements>
+		<Alert Path='GHDB/' ReplaceWith='GHDB'/>	
+		<Alert Path='Version check/Web Servers/Apache/' ReplaceWith='Apache version vulnerable'/>	
+		<Alert Path='Version check/Web Server Technologies/PHP/' ReplaceWith='PHP version vulnerable'/>	
+		<Alert Path='Version check/Web Server Technologies/mod_ssl/' ReplaceWith='mod_ssl version vulnerable'/>	
+		<Alert Path='CGI Tester/Web Servers/Apache/' ReplaceWith='Apache version vulnerable'/>			
+		<Alert Path='File checks/Script errors/' ReplaceWith='Script errors found'/>				
+		<Alert Path='Directory checks/Common files/' ReplaceWith='Common files found'/>
+		<Alert Path='Text search/Common files/' ReplaceWith='Common files found'/>				
+		<Alert Path='Web Applications/' ReplaceWith='Vulnerable web applications found'/>		
+		<Alert Path='MultiRequest parameter manipulation/Blind SQL/XPath injection/' ReplaceWith='Blind SQL/XPath injection'/>
+	</AlertReplacements>
+</ExecutiveReport>

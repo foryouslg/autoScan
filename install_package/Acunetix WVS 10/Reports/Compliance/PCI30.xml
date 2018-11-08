@@ -1,0 +1,244 @@
+<Compliance>
+  <Info>
+    <Title>Payment Card Industry Data Security Standard version 3.0</Title>
+    <Description>
+      [p]The Payment Card Industry Data Security Standard (PCI DSS) was developed to encourage and enhance cardholder data security and facilitate the broad adoption of consistent data security measures globally. PCI DSS provides a baseline of technical and operational requirements designed to protect cardholder data. PCI DSS applies to all entities involved in payment card processing-including merchants, processors, acquirers, issuers, and service providers, as well as all other entities that store, process or transmit cardholder data (CHD) and/or sensitive authentication data (SAD).[/p]
+    </Description>
+    <Disclaimer>
+    [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p][p]This document was generated using information provided in "Payment Card Industry Data Security Standard Version 3.0", that can be found at https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf.[/p]
+    </Disclaimer>
+  </Info>
+  <Categories>
+  	<Category Index="Requirement 1.3.8">
+      <Title>Do not disclose private IP addresses and routing information to unauthorized parties</Title>
+      <Description>
+        [p]Restricting the disclosure of internal or private IP addresses is essential to prevent a hacker "learning" the IP addresses of the internal network, and using that information to access the network.
+Methods used to meet the intent of this requirement may vary depending on the specific networking technology being used. For example, the controls used to meet this requirement may be different for IPv4 networks than for IPv6 networks.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="internal_ip_disclosure"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 2.1">
+      <Title>Always change vendor-supplied defaults and remove or disable unnecessary default accounts before installing a system on the network</Title>
+      <Description>
+        [p]Malicious individuals (external and internal to an organization) often use vendor default settings, account names, and passwords to compromise operating system software, applications, and the systems on which they are installed. Because these default settings are often published and are well known in hacker communities, changing these settings will leave systems less vulnerable to attack.[/p][p]
+Even if a default account is not intended to be used, changing the default password to a strong unique password and then disabling the account will prevent a malicious individual from re-enabling the account and gaining access with the default password.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="default_credentials"/>
+        <Association AlertTag="configuration"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 2.2.2">
+      <Title>Enable only necessary and secure services, protocols, daemons, etc</Title>
+      <Description>
+        [p]Ensures that only the necessary services and protocols are enabled as required for the function of the system.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="needless_service"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 2.2.4">
+      <Title>Configure system security parameters</Title>
+      <Description>
+        [p]Configure system security parameters to prevent misuse.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="weak_credentials"/>
+				<Association AlertTag="abuse_of_functionality"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 2.2.5">
+      <Title>Remove all unnecessary functionality</Title>
+      <Description>
+        [p]Remove all unnecessary functionality, such as scripts, drivers, features, subsystems, file systems, and unnecessary web servers.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="needless_service"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 2.3">
+      <Title>Encrypt all non-console administrative access</Title>
+      <Description>
+        [p]Encrypt all non-console administrative access. Use technologies such as SSH, VPN, or SSL/TLS (transport layer security) for web-based management and other non-console administrative access.[/p]
+      </Description>
+      <Associations>      
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 4">
+      <Title>Encrypt transmission of cardholder data across open, public networks</Title>
+      <Description>
+        [p]Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols continue to be targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 4.1">
+      <Title>Use strong cryptography and security protocols</Title>
+      <Description>
+        [p]Use strong cryptography and security protocols (for example, SSL/TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks. [/p][p]SSL implementation should support the latest patched versions. Proper encryption strength is should be implemented for the encryption methodology in use.[/p]
+      </Description>
+      <Associations>
+         <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6">
+      <Title>Develop and maintain secure systems and applications</Title>
+      <Description>
+        [p]Unscrupulous individuals use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendor provided security patches, which must be installed by the entities that manage the systems. All critical systems must have the most recently released, appropriate software patches to protect against exploitation and compromise of cardholder data by malicious individuals and malicious software.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.2">
+      <Title>Ensure that all system components and software are protected from known vulnerabilities by having the latest vendor-supplied security patches installed</Title>
+      <Description>
+        [p]There is a constant stream of attacks using widely published exploits, often called "zero day" (an attack that exploits a previously unknown vulnerability), against otherwise secured systems. If the most recent patches are not implemented on critical systems as soon as possible, a malicious individual can use these exploits to attack or disable a system, or gain access to sensitive data.[/p][p]Prioritizing patches for critical infrastructure ensures that high-priority systems and devices are protected from vulnerabilities as soon as possible after a patch is released. Consider prioritizing patch installations such that security patches for critical or at-risk systems are installed within 30 days, and other lower-risk patches are installed within 2-3 months.[/p][p]This requirement applies to applicable patches for all installed software.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="missing_update"/>
+        <Association AlertTag="known_vulnerabilities"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.4.1">
+      <Title>Separate development/test environments from production environments, and enforce the separation with access controls</Title>
+      <Description>
+        [p][/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="dev_files"/>
+      </Associations>
+    </Category>
+	<Category Index="Requirement 6.4.4">
+      <Title>Removal of test data and accounts before production systems become active</Title>
+      <Description>
+        [p]Test data and accounts should be removed before a production
+system becomes active.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="test_files"/>
+		<Association AlertTag="weak_credentials"/>
+		<Association AlertTag="default_credentials"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.1">
+      <Title>Injection flaws</Title>
+      <Description>
+        [p]Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+		<Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="code_execution"/>
+		<Association AlertTag="crlf_injection"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.2">
+      <Title>Buffer overflow</Title>
+      <Description>[p]Buffer overflows occur when an application does not have appropriate bounds checking on its buffer space. This can cause the information in the buffer to be pushed out of the buffer's memory space and into executable memory space. When this occurs, the attacker has the ability to insert malicious code at the end of the buffer and then push that malicious code into executable memory space by overflowing the buffer. The malicious code is then executed and often enables the attacker remote access to the application and/or infected system.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="buffer_overflow"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.3">
+      <Title>Insecure cryptographic storage</Title>
+      <Description>
+        [p]Applications that do not utilize strong cryptographic functions properly to store data are at increased risk of being compromised, and exposing authentication credentials and/or cardholder data. If an attacker is able to exploit weak cryptographic processes, they may be able to gain clear-text access to encrypted data.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.4">
+      <Title>Insecure communications</Title>
+      <Description>
+        [p]Applications that fail to adequately encrypt network traffic using strong cryptography are at increased risk of being compromised and exposing cardholder data. If an attacker is able to exploit weak cryptographic processes, they may be able to gain control of an application or even gain clear-text access to encrypted data.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+		<Association AlertTag="sensitive_data_not_over_ssl"/>				
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.5">
+      <Title>Improper error handling</Title>
+      <Description>
+        [p]Applications can unintentionally leak information about their configuration or internal workings, or expose privileged information through improper error handling methods. Attackers use this weakness to steal sensitive data or compromise the system altogether. If a malicious individual can create errors that the application does not handle properly, they can gain detailed system information, create denial-of-service interruptions, cause security to fail, or crash the server. For example, the message "incorrect password provided" tells an attacker the user ID provided was accurate and that they should focus their efforts only on the password. Use more generic error messages, like "data could not be verified."[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="error_handling"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.7">
+      <Title>Cross-site scripting (XSS)</Title>
+      <Description>
+        [p]XSS flaws occur whenever an application takes user-supplied data and sends it to a web browser without first validating or encoding that content. XSS allows attackers to execute script in the victim's browser, which can hijack user sessions, deface web sites, possibly introduce worms, etc.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.8">
+      <Title>Improper Access Control</Title>
+      <Description>
+        [p]Consistently enforce access control in presentation layer and business logic for all URLs. Frequently, the only way an application protects sensitive functionality is by preventing the display of links or URLs to unauthorized users. Attackers can use this weakness to access and perform unauthorized operations by accessing those URLs directly.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="directory_traversal"/>
+		<Association AlertTag="authentication_bypass"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.9">
+      <Title>Cross Site Request Forgery (CSRF)</Title>
+      <Description>
+        [p]A CSRF attack forces a logged-on victim's browser to send a pre-authenticated request to a vulnerable web application, which then enables the attacker to perform any state-changing operations the victim is authorized to perform (such as updating account details, making purchases, or even authenticating to the application).[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="csrf"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 6.5.10">
+      <Title>Broken authentication and session management</Title>
+      <Description>
+        [p]Secure authentication and session management prevents unauthorized individuals from compromising legitimate account credentials, keys, or session tokens that would otherwise enable the intruder to assume the identity of an authorized user.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="authentication_bypass"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 8.1.6">
+      <Title>Limit repeated access attempts by locking out the user ID after not more than six attempts</Title>
+      <Description>
+      [p]Without account-lockout mechanisms in place, an attacker can continually attempt to guess a password through manual or automated tools (for example, password cracking), until they achieve success and gain access to a user's account.[/p]
+      </Description>
+      <Associations>
+		    <Association AlertTag="bruteforce_possible"/>
+      </Associations>
+    </Category>
+    <Category Index="Requirement 8.2.1">
+      <Title>Render all authentication credentials unreadable during transmission and storage</Title>
+      <Description>
+        [p]Many network devices and applications transmit unencrypted, readable passwords across the network and/or store passwords without encryption. A malicious individual can easily intercept unencrypted passwords during transmission using a "sniffer," or directly access unencrypted passwords in files where they are stored, and use this data to gain unauthorized access.[/p]
+      </Description>
+      <Associations>
+		    <Association AlertTag="sensitive_data_not_over_ssl"/>
+      </Associations>
+    </Category>
+	<Category Index="Requirement 8.5.13">
+      <Title>Limit repeated access attempts</Title>
+      <Description>
+        [p]Limit repeated access attempts by locking out the user ID after not more than six attempts.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="bruteforce_possible"/>
+      </Associations>
+    </Category>
+  </Categories>
+</Compliance>

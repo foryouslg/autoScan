@@ -1,0 +1,174 @@
+<Compliance>
+  <Info>
+    <Title>The Health Insurance Portability and Accountability Act (HIPAA)</Title>
+    <Description>
+      [p]The Department of Health and Human Services (HHS) Medicare Program, other Federal agencies operating health plans or providing health care, State Medicaid agencies, private health plans, health care providers, and health care clearinghouses must assure their customers (for example, patients, insured individuals, providers, and health plans) that the integrity, confidentiality, and availability of electronic protected health information they collect, maintain, use, or transmit is protected. The confidentiality of health information is threatened not only by the risk of improper access to stored information, but also by the risk of interception during electronic transmission of the information. The purpose of this final rule is to adopt national standards for safeguards to protect the confidentiality, integrity, and availability of electronic protected health information.[/p]
+      [p]This final rule adopts standards as required under title II, subtitle F, sections 261 through 264 of the Health Insurance Portability and Accountability Act of 1996 (HIPAA), Pub. L. 104-191. These standards require measures to be taken to secure this information while in the custody of entities covered by HIPAA (covered entities) as well as in transit between covered entities and from covered entities to others.[/p]      		
+    </Description>
+    <Disclaimer>[p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]</Disclaimer>
+  </Info>
+  <Categories>
+    <Category Index="164.306 (a)(1)">
+      <Title>General requirements</Title>
+      <Description>(a) General requirements. Covered entities must do the following:
+(1) Ensure the confidentiality, integrity, and availability of all electronic protected health information the covered entity creates, receives, maintains, or transmits.
+      </Description>
+      <Associations>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="directory_traversal"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="error_handling"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.306 (a)(2)">
+      <Title>General requirements</Title>
+      <Description>(a) General requirements. Covered entities must do the following:
+(2) Protect against any reasonably anticipated threats or hazards to the security or integrity of all electronic protected health information.
+      </Description>
+      <Associations>
+        <Association AlertTag="missing_update"/>
+        <Association AlertTag="known_vulnerabilities"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="error_handling"/>
+		<Association AlertTag="CWE-352"/>
+		<Association AlertTag="csrf"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.306 (a)(3)">
+      <Title>General requirements</Title>
+      <Description>(a) General requirements. Covered entities must do the following:
+(3) Protect against any reasonably anticipated uses or disclosures of all electronic protected health information that are not permitted or required under subpart E of this part.
+      </Description>
+      <Associations>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="bruteforce_possible"/>
+		<Association AlertTag="CWE-307"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.308 (a)(1)(i)">
+      <Title>Standard: Security management process</Title>
+      <Description>(a) A covered entity must, in accordance with  164.306:
+(1)(i) Implement policies and procedures to prevent, detect, contain, and correct security violations.</Description>
+      <Associations>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="crlf_injection"/>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.308 (a)(1)(ii)(B)">
+      <Title>Risk management</Title>
+      <Description>Implement security measures sufficient to reduce risks and vulnerabilities to a reasonable and appropriate level to comply with  164.306(a).</Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="CWE-16"/>
+		<Association AlertTag="configuration"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.308 (a)(5)(ii)(B)">
+      <Title>Protection from malicious software</Title>
+      <Description>Procedures for guarding against, detecting, and reporting malicious software.</Description>
+      <Associations>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="malware"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.308 (a)(5)(ii)(D)">
+      <Title>Password management</Title>
+      <Description>Procedures for creating, changing, and safeguarding passwords.</Description>
+      <Associations>
+				<Association AlertTag="ldap_injection"/>
+		    <Association AlertTag="weak_crypto"/>
+				<Association AlertTag="weak_credentials"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.312 (c)(1)">
+      <Title>Integrity</Title>
+      <Description>Implement policies and procedures to protect electronic protected health information from improper alteration or destruction.</Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="ldap_injection"/>
+      </Associations>
+    </Category>
+    
+    <Category Index="164.312 (d)">
+      <Title>Person or entity authentication</Title>
+      <Description>Implement procedures to verify that a person or entity seeking access to electronic protected health information is the one claimed.</Description>
+      <Associations>
+        <Association AlertTag="session_fixation"/>
+        <Association AlertTag="authentication_bypass"/>
+				<Association AlertTag="weak_credentials"/>
+      </Associations>
+    </Category>
+
+    <Category Index="164.312 (e)(1)">
+      <Title>Transmission security</Title>
+      <Description>Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.</Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+        <Association AlertTag="insecure_admin_access"/>   
+      </Associations>
+    </Category>
+    
+    <Category Index="164.530 (c)(2)(i)">
+      <Title>Safeguards</Title>
+      <Description>A covered entity must reasonably safeguard protected health information from any intentional or unintentional use or disclosure that is in violation of the standards, implementation specifications or other requirements of this subpart.</Description>
+      <Associations>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="crlf_injection"/>
+      </Associations>
+    </Category>
+
+  </Categories>
+</Compliance>

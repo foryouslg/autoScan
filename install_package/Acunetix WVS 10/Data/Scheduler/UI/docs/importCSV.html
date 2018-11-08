@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+    <title>WVS Scheduler - Importing scans ... </title>
+    <link href="/css/redmond/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="mainContainer">
+    <div class="acuHeader"><a href="/"><img src="/img/logo.gif" width="363" height="36" alt="Acunetix Logo"></a></div>
+    <div class="importScansDoc">
+        <h2>CSV file format</h2>
+        The CSV file can contain multiple scheduled scans. Each line should only contain one scheduled scan. A line should contain the following list of parameters separated by comma; <br><br>
+
+        <b>URL,Date,Time,Scanning Profile,Login Sequence,Scan Settings,Scan Mode,Generate Report,Report Format,Email address for notification</b>
+
+        <ul>
+            <li><b>URL</b> - Specify the URL with or without protocol (http and https). If no protocol is specified, the default protocol is used; http. This entry is mandatory.</li>
+            <li><b>Date</b> - Specify the date when the scan should be launched. The date format is MMDDYYYY and should be single string. E.g. If a scan is to be scheduled for the 5th of November 2012, the date should be 11052012. This entry is mandatory.</li>
+            <li><b>Time</b> - Specify the time when the scan should be launched. The time format is 24 hours and should be a single string of 4 digits. E.g. 10am should be 1000 and 10pm should be 2200. This entry is mandatory.</li>
+            <li><b>Scanning Profile</b> - Specify the name of an existing scanning profile to be used during the scan. If not specified, the default scanning profile will be used during the scan. </li>
+            <li><b>Login Sequence</b> - Specify the name of an existing login sequence if you want to use a login sequence during the scan. If nothing is specified, no login sequence will be used during the scan.</li>
+            <li><b>Scan Settings</b> - Specify the name of an existing scan settings template. If no scan settings template is specified, the default scan settings template will be used.</li>
+            <li><b>Scan Mode</b> - Specify the scan mode to be used during the scan. The options are quick, heuristic and extensive. If no scan mode is specified, the default scan mode will be used. </li>
+            <li><b>Generate Report</b> - Specify if a report should be generated after the scan. The options are yes or no. If nothing is specified, no report will be generated.</li>
+            <li><b>Report Format</b> - If you specified the generate report option, then you have to specify the report format as well. The options available are PDF, RTF, REP or HTML. If you do not specify any format, a PDF report will be generated.</li>
+            <li><b>Email address for notification</b> - Specify the email address where the email should be sent upon completion of the scan. If an email is not specified, the default email address configured in the Acunetix WVS GUI will be used.</li>
+        </ul>
+
+        If you would like to omit an entry so the default value is used, simply leave a space between the commas. Some examples follow:<br><br>
+
+        <b>Example 1: </b> To scan testphp.vulnweb.com on the 5th of November 2012 at 10pm using the default values, use the below line in the CSV file:<br><br>
+        <i>http://testphp.vulnweb.com,11052012,2200, , , , , , ,</i><br><br>
+
+        <b>Example 2: </b>
+        To scan testasp.vulnweb.com on the 5th of November 2012 at 3:15pm using the XSS (Cross-site scripting) scanning profile, without login sequence, default scan settings, using the extensive scanning mode, generate a PDF report and send the results to results@myemail.com , use the below example:<br><br>
+        <i>http://testasp.vulnweb.com,11052012,1515,XSS, , ,extensive,yes,PDF,results@myemail.com</i><br><br>
+
+        Note: Scans imported from a CSV file will only be executed once. It is not possible to configure recurring scans using the CSV file import feature.
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="ScanningProfile_item.xsl"?>
+<Item>
+ <Name><![CDATA[Insecure transition from HTTP to HTTPS in form post]]></Name>
+ <Descr><![CDATA[This script checks if the transition from HTTP to HTTPS in form post is secured.]]></Descr>
+</Item>
+

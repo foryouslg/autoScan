@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<Settings>
+  <Common>
+        <ConcurentRequests>int</ConcurentRequests>
+	<ScriptThreads>int</ScriptThreads>
+        <Logging NodeOperation="copy">
+            <EnableLogging>int</EnableLogging>
+            <EnableInfoLogging>int</EnableInfoLogging>
+            <EnableWarnLogging>int</EnableWarnLogging>
+            <EnableErrLogging>int</EnableErrLogging>
+            <EnableHTTPLogging>int</EnableHTTPLogging>
+            <EnableVulnXMLLogging>int</EnableVulnXMLLogging>
+            <EnableDeveloperLogging>int</EnableDeveloperLogging>
+            <IncludeTimeStamps>int</IncludeTimeStamps>
+            <OnErrorSwitchToErrLogTab>int</OnErrorSwitchToErrLogTab>
+            <LogOnlyHTTPErrors>int</LogOnlyHTTPErrors>
+            <LogsToKeep>int</LogsToKeep>
+        </Logging>
+    	<HTTPAuthentication>
+    		<DontAskForCredentials NodeOperation="copy">int</DontAskForCredentials>
+    		<SaveNewCredentialsToSettings NodeOperation="copy">int</SaveNewCredentialsToSettings>
+    		<Credentials NodeOperation="appendchilds">
+    				<Credential URL="str" Username="str" Password="str"/>
+    		</Credentials>
+    	</HTTPAuthentication>
+    	<ClientCertificates  NodeOperation="appendchilds">
+    		<ClientCertificate CertFileName="str" Password="str" URL="str"/>
+    	</ClientCertificates>
+        <Database NodeOperation="copy">
+          <DatabaseSupportEnabled>int</DatabaseSupportEnabled>
+          <ConnectionString>str</ConnectionString>
+        </Database>
+        <UpdatesSettings NodeOperation="copy">
+          <UpdateURL NodeOperation="skip" AttributeStrict="1" n="0">str</UpdateURL>
+          <UseProxy>int</UseProxy>
+          <CheckWhen>int</CheckWhen>
+            <UpdateProxy NodeOperation="copy">
+            	<HTTP Enabled="int" Host="str" Port="int" Username="str" Password="str"/>
+            </UpdateProxy>
+        </UpdatesSettings>    
+        <Memory NodeOperation="copy">
+          <UseTempFiles>int</UseTempFiles>
+          <TempDir>str</TempDir>
+        </Memory>    
+    	<ScanGlobal NodeOperation="copy">
+    		<ReportItemStylesheet>str</ReportItemStylesheet>
+    		<ReportItemGroupStylesheet>str</ReportItemGroupStylesheet>
+    		<ReportItemEncoding>str</ReportItemEncoding>
+    	</ScanGlobal>
+		<BlindXSS NodeOperation="copy">
+			<Enabled>int</Enabled>
+            <Status>str</Status>
+            <SaveFolder>str</SaveFolder>
+            <UserId>str</UserId>
+            <UserEmail>str</UserEmail>
+            <DeleteScansOlder>int</DeleteScansOlder>
+		</BlindXSS>
+        <ProxyTool>
+            <BindIp NodeOperation="copy">str</BindIp>
+            <BindPort NodeOperation="copy">int</BindPort>
+            <ClientTimeOut NodeOperation="copy">int</ClientTimeOut>
+            <Rules NodeOperation="appendchilds">
+              <Rule RuleType="int" ApplyTo="int" Description="str" Regex="str" Action="str" Enabled="int"/>
+            </Rules>
+            <RuleTemplates NodeOperation="appendchilds">
+              <RuleTemplate RuleType="int" ApplyTo="int" Description="str" Regex="str" Action="str"/>
+            </RuleTemplates>
+        </ProxyTool>   
+        <Scheduler>
+			<Port NodeOperation="copy">int</Port>
+			<AllowRemoteConnections NodeOperation="copy">int</AllowRemoteConnections>
+            <UseHTTPS NodeOperation="copy">int</UseHTTPS>
+            <Timeout NodeOperation="copy">int</Timeout>
+            <AuthHash NodeOperation="copy">str</AuthHash>
+            <RequireAuthentication NodeOperation="copy">int</RequireAuthentication>
+            <ParallelScans NodeOperation="copy">int</ParallelScans>
+            <SaveFolder NodeOperation="copy">str</SaveFolder>
+        	<EmailNotifications>
+        		<SendEmailNotifications NodeOperation="copy">int</SendEmailNotifications>
+        		<SMTPServerIP NodeOperation="copy">str</SMTPServerIP>
+        		<SMTPServerPort NodeOperation="copy">int</SMTPServerPort>
+        		<SMTPServerAuth NodeOperation="copy">int</SMTPServerAuth>
+        		<SMTPServerAuthUsername NodeOperation="copy">str</SMTPServerAuthUsername>
+        		<SMTPServerAuthPassword NodeOperation="copy">str</SMTPServerAuthPassword>
+        		<EmailTo NodeOperation="copy">str</EmailTo>
+        		<EmailCc NodeOperation="copy">str</EmailCc>
+        		<EmailFrom NodeOperation="copy">str</EmailFrom>
+        	</EmailNotifications>         
+            <ExcludedHoursTemplates NodeOperation="appendchilds">
+                <Template Name="str" Value="str"/>
+            </ExcludedHoursTemplates>
+        </Scheduler>
+        <ContentTypeSettings NodeOperation="skip">
+        </ContentTypeSettings>
+        <Fuzzer>
+            <Rules NodeOperation="appendchilds">
+                  <Rule RuleType="int" ApplyTo="int" Description="str" Regex="str" Action="str" Enabled="int"/>
+            </Rules>
+            <RuleTemplates NodeOperation="appendchilds">
+                  <RuleTemplate RuleType="int" ApplyTo="int" Description="str" Regex="str" Action="str"/>
+            </RuleTemplates>
+        </Fuzzer>
+        <AuthTester NodeOperation="copy">
+            <StopOnFalsePositives>int</StopOnFalsePositives>
+        </AuthTester>    
+    </Common>
+        
+    <ScanSettings>
+		<DefaultIndexes NodeOperation="appendchilds" Enabled="int">
+			<IndexFile>str</IndexFile>
+		</DefaultIndexes>    
+		<Extensions>
+			<Include NodeOperation="appendchilds">
+				<Mask>str</Mask>
+			</Include>
+			<Exclude NodeOperation="appendchilds">
+				<Mask>str</Mask>
+			</Exclude>
+			<IgnoreInputsForExtensions NodeOperation="appendchilds" Enabled="int">
+				<Extension>str</Extension>
+			</IgnoreInputsForExtensions>
+		</Extensions>
+        <Custom404Pages NodeOperation="appendchilds">
+          <Site matchUrl="str" type="int" pattern="str" regex="int"/>
+        </Custom404Pages>
+        <URLExcludedParts NodeOperation="appendchilds">
+          <ExcludeExpression>str</ExcludeExpression>
+        </URLExcludedParts>
+        <PathExclude NodeOperation="appendchilds">
+          <Site matchUrl="str" enabled="int">
+            <Mask enabled="int">str</Mask>
+          </Site>
+        </PathExclude>        
+        <HTTPGeneral NodeOperation="copy">
+          <DefaultAgent>str</DefaultAgent>
+          <SizeLimit>int</SizeLimit>
+          <RequestTimeout>int</RequestTimeout>
+          <DisplayCustomHTTPStatus>int</DisplayCustomHTTPStatus>
+          <DisplayHTTPSStatusIcon>int</DisplayHTTPSStatusIcon>
+        </HTTPGeneral>           
+		<CustomHeaders NodeOperation="skip">
+			<Header enabled="int" name="str" value="str"/>
+		</CustomHeaders>        
+        <Proxy NodeOperation="copy">
+          <HTTP Enabled="int" Host="str" Port="int" Username="str" Password="str"/>
+          <SOCKS Authentication="str" Enabled="int" Host="str" SocksLevel="int" Port="int" Username="str" Password="str"/>
+        </Proxy>
+		<Scanning NodeOperation="copy">
+            <DontIssueMoreThanXAlertsOfType>int</DontIssueMoreThanXAlertsOfType>
+			<DisableCrawlerAlerts>int</DisableCrawlerAlerts>
+			<ScanIterations>int</ScanIterations>
+			<AbortScanOnNetworkErrors>int</AbortScanOnNetworkErrors>
+			<AbortScanOnNetworkErrorsCount>int</AbortScanOnNetworkErrorsCount>
+            <AbortScanOnRepeatedIdenticalResponses NodeOperation="copy">
+                <Enabled>int</Enabled>
+                <ResponsesCount>int</ResponsesCount>
+                <FilesCount>int</FilesCount>            
+            </AbortScanOnRepeatedIdenticalResponses>
+			<CollectHTTPAnomalies>int</CollectHTTPAnomalies>
+		</Scanning>     
+        <AllowedHosts NodeOperation="appendchilds">
+          <Host>str</Host>
+        </AllowedHosts>           
+        <CSRF NodeOperation="copy">
+            <TestOnGetParams>int</TestOnGetParams>
+        </CSRF>        
+        <Parameters>
+			<ParameterManipulation>
+				<HTTPHeaders>
+					<Enabled NodeOperation="copy">int</Enabled>
+					<Headers NodeOperation="appendchilds">
+						<Header name="str" enabled="int"/>
+					</Headers>
+				</HTTPHeaders>
+				<TestCookiesOnAllFiles  NodeOperation="copy">int</TestCookiesOnAllFiles>
+			</ParameterManipulation>
+			<ScanningMode>
+				<Mode NodeOperation="copy">str</Mode>
+				<ForceQuickModeForMultiRequest NodeOperation="copy">int</ForceQuickModeForMultiRequest>
+				<MinimumValuesCount NodeOperation="copy">int</MinimumValuesCount>
+				<MediumValuesCount NodeOperation="copy">int</MediumValuesCount>
+				<MaximumValuesCount NodeOperation="copy">int</MaximumValuesCount>
+				<ScanningModeSettings>
+					<IncludeName NodeOperation="appendchilds">
+						<Include>str</Include>
+					</IncludeName>
+					<ExcludeName NodeOperation="appendchilds">
+						<Exclude>str</Exclude>
+					</ExcludeName>
+					<IncludeValue NodeOperation="appendchilds">
+						<Include>str</Include>
+					</IncludeValue>
+					<ExcludeValue NodeOperation="appendchilds">
+						<Exclude>str</Exclude>
+					</ExcludeValue>
+					<Thresholds NodeOperation="copy">
+						<IgnoreIfValCountGreaterThan>int</IgnoreIfValCountGreaterThan>
+						<MaximumSchemeCount>int</MaximumSchemeCount>
+						<MaximumInputCount>int</MaximumInputCount>
+						<MaximumVariationCount>int</MaximumVariationCount>
+					</Thresholds>
+				</ScanningModeSettings>
+			</ScanningMode>            
+			<DefaultTestValue>str</DefaultTestValue>
+			<ParameterExclusions NodeOperation="appendchilds">
+				<Param url="str" kind="str" name="str" action="str"/>
+			</ParameterExclusions>
+		</Parameters>        
+		<PortScanner>
+			<Enabled NodeOperation="copy">int</Enabled>
+			<NumberOfSockets NodeOperation="copy">int</NumberOfSockets>
+			<Timeout NodeOperation="copy">int</Timeout>
+			<Ports NodeOperation="skip">
+				<Port enabled="int" proto="str" name="str" number="int"/>
+			</Ports>
+		</PortScanner>        
+		<Aspect NodeOperation="copy">
+			<Enabled>int</Enabled>
+			<SendFilelistQuery>int</SendFilelistQuery>
+			<SendAspectAlertsQuery>int</SendAspectAlertsQuery>
+			<PasswordHash>str</PasswordHash>
+		</Aspect>            
+		<URLRewrite NodeOperation="appendchilds">
+			<RuleSet filename="str"/>
+		</URLRewrite>       
+        <WebKitOptions>
+            <EnableWebKit NodeOperation="copy">int</EnableWebKit>
+            <FetchExternalScripts NodeOperation="copy">int</FetchExternalScripts>
+            <SessionTimeout NodeOperation="copy">int</SessionTimeout>
+            <IgnoredScripts NodeOperation="appendchilds">
+                <URL>str</URL>
+            </IgnoredScripts>
+        </WebKitOptions>     
+        <Crawler>
+			<FetchSubdirs NodeOperation="copy">int</FetchSubdirs>
+			<GetFirstOnly NodeOperation="copy">int</GetFirstOnly>
+			<ForceFetchDirindex NodeOperation="copy">int</ForceFetchDirindex>
+			<StartProxyAtEnd NodeOperation="copy">int</StartProxyAtEnd>
+			<RestrictToBaseFolder NodeOperation="copy">int</RestrictToBaseFolder>
+			<FetchRobotsTxtAndSiteMap NodeOperation="copy">int</FetchRobotsTxtAndSiteMap>
+			<LinkDepth NodeOperation="copy">int</LinkDepth>
+			<DirDepth NodeOperation="copy">int</DirDepth>
+			<Parse404 NodeOperation="copy">int</Parse404>
+			<MaxVariations NodeOperation="copy">int</MaxVariations>
+			<CaseInsensitiveURLs NodeOperation="copy">int</CaseInsensitiveURLs>
+			<UseAdvancedFileSignatures NodeOperation="copy">int</UseAdvancedFileSignatures>
+			<ModRewriteWarning NodeOperation="copy">int</ModRewriteWarning>
+			<DirectoryLimit NodeOperation="copy">int</DirectoryLimit>
+			<FileLimit NodeOperation="copy">int</FileLimit>
+			<DepthMultiplier NodeOperation="copy">int</DepthMultiplier>
+            <DisableAutoCustom404 NodeOperation="copy">int</DisableAutoCustom404>
+            <SameHost NodeOperation="appendchilds" Enabled="int">
+                <Host>str</Host>
+            </SameHost>
+		</Crawler>
+        <CustomCookies NodeOperation="appendchilds">
+          <Cookie Url="str" CookieString="str" Enabled="int"/>
+        </CustomCookies>        
+        <GHDB>
+          <DisabledRefNumbers NodeOperation="appendchilds">
+            <RefNr>int</RefNr>
+          </DisabledRefNumbers>
+        </GHDB>
+        <HTMLForms NodeOperation="appendchilds">
+          <FormURL enabled="int" url="str">
+            <FormInput enabled="int" name="str" value="str" length="int"/>
+          </FormURL>
+        </HTMLForms>
+</ScanSettings>
+</Settings>

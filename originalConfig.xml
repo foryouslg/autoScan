@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+    很多时候需要向wvs配置文件中添加内容，但是每次添加都是累加的，
+    这样的话，执行多次扫描后，就会累加添加多个过滤选项（过滤文件或文件夹），
+    如果不进行配置文件初始化的话，有可能某次任务的非过滤选项已经被添加进过滤选项中，
+    这样就会导致，本想扫描的文件或目录因配置文件中的过滤选项而不能被扫描。
+    所以，需要将重要选项的默认值进行保存，此文件就是默认值保存文件
+-->
+
+<filter>
+    <PathExclude>
+        <Site enabled="1" matchUrl="*">
+            <Mask enabled="1" isRegex="1">{[^}]*}</Mask>
+            <Mask enabled="1" isRegex="1">&lt;b&gt;(Warning|Parse\serror|Fatal\serror|Notice)&lt;/b&gt;:.*&lt;b&gt;([^&lt;]*)&lt;/b&gt;\son\sline\s&lt;b&gt;[0-9]*&lt;/b&gt;&lt;br</Mask>
+            <Mask enabled="1" isRegex="1">(?i)/(tiny[_]?mce|editor)/(plugins|themes)/.*?.htm</Mask>
+        </Site>
+    </PathExclude>
+
+    <Extensions>
+        <Include><Mask>*</Mask></Include>
+        <Exclude>
+            <Mask>*.a3c</Mask><Mask>*.ace</Mask><Mask>*.aif</Mask><Mask>*.aifc</Mask><Mask>*.aiff</Mask>
+            <Mask>*.arj</Mask><Mask>*.asf</Mask><Mask>*.asx</Mask><Mask>*.attach</Mask><Mask>*.au</Mask>
+            <Mask>*.avi</Mask><Mask>*.avi</Mask><Mask>*.bin</Mask><Mask>*.bmp</Mask><Mask>*.cab</Mask>
+            <Mask>*.cache</Mask><Mask>*.class</Mask><Mask>*.djv</Mask><Mask>*.djvu</Mask><Mask>*.dwg</Mask>
+            <Mask>*.eot</Mask><Mask>*.es</Mask><Mask>*.esl</Mask><Mask>*.exe</Mask><Mask>*.fif</Mask>
+            <Mask>*.fvi</Mask><Mask>*.gif</Mask><Mask>*.gz</Mask><Mask>*.hqx</Mask><Mask>*.ice</Mask>
+            <Mask>*.ico</Mask><Mask>*.ief</Mask><Mask>*.ifs</Mask><Mask>*.iso</Mask><Mask>*.jar</Mask>
+            <Mask>*.jpe</Mask><Mask>*.jpeg</Mask><Mask>*.jpg</Mask><Mask>*.kar</Mask><Mask>*.mdb</Mask>
+            <Mask>*.mid</Mask><Mask>*.midi</Mask><Mask>*.mov</Mask><Mask>*.movie</Mask><Mask>*.mp</Mask>
+            <Mask>*.mp2</Mask><Mask>*.mp3</Mask><Mask>*.mp4</Mask><Mask>*.mpeg</Mask><Mask>*.mpeg2</Mask>
+            <Mask>*.mpg</Mask><Mask>*.mpg2</Mask><Mask>*.mpga</Mask><Mask>*.msi</Mask><Mask>*.pac</Mask>
+            <Mask>*.pdf</Mask><Mask>*.png</Mask><Mask>*.ppt</Mask><Mask>*.psd</Mask><Mask>*.qt</Mask>
+            <Mask>*.ra</Mask><Mask>*.ram</Mask><Mask>*.rar</Mask><Mask>*.rm</Mask><Mask>*.rpm</Mask>
+            <Mask>*.snd</Mask><Mask>*.svf</Mask><Mask>*.svg</Mask><Mask>*.tar</Mask><Mask>*.tgz</Mask>
+            <Mask>*.tif</Mask><Mask>*.tiff</Mask><Mask>*.tpl</Mask><Mask>*.ttf</Mask><Mask>*.uff</Mask>
+            <Mask>*.wav</Mask><Mask>*.wma</Mask><Mask>*.wmv</Mask><Mask>*.woff</Mask><Mask>*.zip</Mask>
+        </Exclude>
+        <IgnoreInputsForExtensions Enabled="1">
+            <Extension>.js</Extension>
+            <Extension>.swf</Extension>
+            <Extension>.css</Extension>
+        </IgnoreInputsForExtensions>
+    </Extensions>
+</filter>

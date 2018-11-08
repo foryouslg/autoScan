@@ -1,0 +1,13 @@
+venv/
+*.py[cod]
+.idea/
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+temp/
+test/
+settings.py
+
+
+#__pychache__/

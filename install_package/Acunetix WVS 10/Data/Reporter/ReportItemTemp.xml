@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="C:\ProgramData\Acunetix WVS 10\Data\Reporter\CSSReportItemStyle.xsl"?>
+<ReportItems display="1" count="1"> 
+
+<ReportItem id="8" color="orange">
+ <Name><![CDATA[HTML form without CSRF protection]]></Name>
+ <ModuleName><![CDATA[Crawler]]></ModuleName>
+ <Details><![CDATA[Form name: <font color="navy">myinfo</font><br/>Form action: <font color="navy">http://mall.a.youpinsanyue.com/account/personal_info.html</font><br/>Form method: <font color="navy">GET</font><br/><br/>Form inputs:<br/><ul><li>img [File]</li><li>img [File]</li><li>sex [Radio]</li></ul>]]></Details>
+ <Affects><![CDATA[/account/personal_info.html]]></Affects>
+ <Parameter><![CDATA[]]></Parameter>
+ <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+ <AOP_SourceLine>0</AOP_SourceLine>
+ <AOP_Additional><![CDATA[]]></AOP_Additional>
+ <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+ <Severity><![CDATA[medium]]></Severity>
+ <Type><![CDATA[Informational]]></Type>
+ <Impact><![CDATA[An attacker may force the users of a web application to execute actions of the attacker''s choosing. A successful CSRF exploit can compromise end user data and operation in case of normal user. If the targeted end user is the administrator account, this can compromise the entire web application. ]]></Impact>
+ <Description><![CDATA[ <div class="coolbox"><font color="dark">This alert may be a false positive, manual confirmation is required.</font></div><br/>
+Cross-site request forgery, also known as a one-click attack or session riding and abbreviated as CSRF or XSRF, is a type of malicious exploit of a website whereby unauthorized commands are transmitted from a user that the website trusts.
+
+<br/><br/>Acunetix WVS found a HTML form with no apparent CSRF protection implemented. Consult details for more information about the affected HTML form.]]></Description>
+ <DetailedInformation><![CDATA[]]></DetailedInformation>
+ <Recommendation><![CDATA[Check if this form requires CSRF protection and implement CSRF countermeasures if necessary.]]></Recommendation>
+ <TechnicalDetails>
+  <Request><![CDATA[GET /account/personal_info.html HTTP/1.1
+Pragma: no-cache
+Cache-Control: no-cache
+Referer: http://mall.a.youpinsanyue.com/account/set.html
+Acunetix-Aspect: enabled
+Acunetix-Aspect-Password: 082119f75623eb7abd7bf357698ff66c
+Acunetix-Aspect-Queries: filelist;aspectalerts
+Cookie: JSESSIONID.dc3df73f=yy9ynhj5ixym1ivno972nu549; userinfo=%7B%22uid%22%3A%228%22%2C%22security_code%22%3A%22d400d6fdb46c594be282a23ce3716e1e%22%2C%22account%22%3A%2218511745601%22%2C%22sex%22%3A%220%22%2C%22nickname%22%3A%2211111%22%2C%22head%22%3A%22http%3A//mall.a.youpinsanyue.com/upload/head/2018/06/1528795869.jpg%22%7D
+Host: mall.a.youpinsanyue.com
+Connection: Keep-alive
+Accept-Encoding: gzip,deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.21
+Accept: */*
+
+]]></Request>
+  <Response><![CDATA[HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 14 Jun 2018 06:30:24 GMT
+Content-Type: text/html
+Last-Modified: Mon, 11 Jun 2018 11:01:40 GMT
+Connection: keep-alive
+Vary: Accept-Encoding
+ETag: W/&quot;5b1e5694-bea&quot;
+Original-Content-Encoding: gzip
+Content-Length: 3050
+]]></Response>
+ </TechnicalDetails>
+ <CWE id="352"><![CDATA[CWE-352]]></CWE>
+<CVEList></CVEList>
+ <CVSS>
+    <Descriptor><![CDATA[AV:N/AC:H/Au:N/C:N/I:P/A:N]]></Descriptor>
+    <Score><![CDATA[2.6]]></Score>
+    <AV><![CDATA[Network]]></AV>
+    <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+    <AC><![CDATA[High]]></AC>
+    <ACdesc><![CDATA[Specialized access conditions exist.]]></ACdesc>
+    <Au><![CDATA[None]]></Au>
+    <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+    <C><![CDATA[None]]></C>
+    <Cdesc><![CDATA[There is no impact to the confidentiality of the system.]]></Cdesc>
+    <I><![CDATA[Partial]]></I>
+    <Idesc><![CDATA[Modification of some system files or information is possible, but the attacker does not have control over what can be modified, or the scope of what the attacker can affect is limited.]]></Idesc>
+    <A><![CDATA[None]]></A>
+    <Adesc><![CDATA[There is no impact to the availability of the system.]]></Adesc>
+    <E><![CDATA[]]></E>
+    <Edesc><![CDATA[]]></Edesc>
+    <RL><![CDATA[]]></RL>
+    <RLdesc><![CDATA[]]></RLdesc>
+    <RC><![CDATA[]]></RC>
+    <RCdesc><![CDATA[]]></RCdesc>
+ </CVSS>
+<References></References>
+</ReportItem>
+</ReportItems>
+

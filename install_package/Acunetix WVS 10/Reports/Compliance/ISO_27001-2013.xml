@@ -1,0 +1,286 @@
+<Compliance>
+	<Info>
+		<Title>International Standard - ISO 27001:2013</Title>
+		<Description>[p]ISO/IEC 27001 is an information security management system (ISMS) standard published in September 2013 by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Its full name is ISO/IEC 27001:2013 – Information technology – Security techniques – Information security management systems – Requirements.[/p][p]The objective of this standard is to provide a model for establishing, implementing, operating, monitoring, reviewing, maintaining, and improving an Information Security Management System.[/p]</Description>
+		<Disclaimer>[p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]</Disclaimer>
+	</Info>
+	<Categories>
+  
+    <Category Index="8.1.1">
+  	  <Title>Inventory of assets</Title>
+  		<Description>Assets associated with information and information processing facilities shall be identified and an inventory of these assets shall be drawn up and maintained.</Description>
+  		<Associations>
+        <Association AlertTag="needless_service"/>
+      </Associations>
+  	</Category>
+    
+    <Category Index="8.2.3">
+  	  <Title>Handling of assets</Title>
+  		<Description>Procedures for handling assets shall be developed and implemented in accordance with the information classification scheme adopted by the organization.</Description>
+  		<Associations>                                              
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="directory_traversal"/>
+      </Associations>
+  	</Category>
+    
+    <Category Index="9.1.2">
+  	  <Title>Access to networks and network services</Title>
+  		<Description>Users shall only be provided with access to the network and network services that they have been specifically authorized to use.</Description>
+  		<Associations>
+        <Association AlertTag="privilege_escalation"/>
+        <Association AlertTag="authentication_bypass"/>        
+      </Associations>
+  	</Category>
+
+    <Category Index="9.2.3">
+  	  <Title>Management of privileged access rights</Title>
+  		<Description>The allocation and use of privileged access rights shall be restricted and controlled.</Description>
+  		<Associations>
+        <Association AlertTag="session_fixation"/>            
+        <Association AlertTag="csrf"/>
+        <Association AlertTag="bruteforce_possible"/>
+        <Association AlertTag="CWE-307"/>
+        <Association AlertTag="default_credentials"/>
+      </Associations>
+  	</Category>
+      
+    
+     <Category Index="9.2.4">
+  	  <Title>Management of secret authentication information of users</Title>
+  		<Description>The allocation of secret authentication information shall be controlled through a formal management process.</Description>
+  		<Associations>
+        <Association AlertTag="default_credentials"/>
+      </Associations>
+  	</Category>
+      
+     <Category Index="9.3.1">
+       <Title>Use of secret authentication information</Title>
+  		 <Description>Users shall be required to follow the organization's practices in the use of secret authentication information.</Description>
+  		 <Associations>
+         <Association AlertTag="bruteforce_possible"/>
+         <Association AlertTag="default_credentials"/>         
+         <Association AlertTag="weak_credentials"/>
+         <Association AlertGroup="Weak Password"/>            
+       </Associations>
+  	 </Category>
+
+     <Category Index="9.4.1">
+  	  <Title>Information access restriction</Title>
+  		<Description>Access to information and application system functions shall be restricted in accordance with the access control policy.</Description>
+  		<Associations>                                             
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="privilege_escalation"/>        
+      </Associations>
+  	</Category>      
+
+     <Category Index="9.4.2">
+  	  <Title>Secure log-on procedures</Title>
+  		<Description>Where required by the access control policy, access to systems and applications shall be controlled by a secure log-on procedure.</Description>
+  		<Associations>
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="insecure_admin_access"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="9.4.3">
+  	  <Title>Password management system</Title>
+  		<Description>Password management systems shall be interactive and shall ensure quality passwords.</Description>
+  		<Associations>                                         
+        <Association AlertTag="bruteforce_possible"/>
+        <Association AlertTag="default_credentials"/>
+        <Association AlertTag="weak_credentials"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="9.4.4">
+  	  <Title>Use of privileged utility programs</Title>
+  		<Description>The use of utility programs that might be capable of overriding system and application controls shall be restricted and tightly controlled.</Description>
+  		<Associations>
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="insecure_admin_access"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="9.4.5">
+  	  <Title>Access control to program source code</Title>
+  		<Description>Access to program source code shall be restricted.</Description>
+  		<Associations>
+        <Association AlertTag="dev_files"/>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="file_inclusion"/>
+				<Association AlertTag="directory_traversal"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="12.1.4">
+  	  <Title>Separation of development, testing and operational environments</Title>
+  		<Description>Development, testing, and operational environments shall be separated to reduce the risks of unauthorized access or changes to the operational environment.</Description>
+  		<Associations>
+        <Association AlertTag="test_files"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="12.2.1">
+  	  <Title>Controls against malware</Title>
+  		<Description>Detection, prevention and recovery controls to protect against malware shall be implemented, combined with appropriate user awareness.</Description>
+  		<Associations>
+        <Association AlertTag="malware"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="12.4.2">
+  	  <Title>Protection of log information</Title>
+  		<Description>Logging facilities and log information shall be protected against tampering and unauthorized access.</Description>
+  		<Associations>
+        <Association AlertGroup="WS_FTP log file found"/>
+        <Association AlertGroup="AWStats script"/>
+        <Association AlertGroup="Webalizer script"/>
+        <Association AlertGroup="Application-level tracing enabled"/>
+        <Association AlertTag="information_disclosure"/>
+      </Associations>
+  	</Category> 
+    
+    <Category Index="12.4.3">
+  	  <Title>Administrator and operator logs</Title>
+  		<Description>System administrator and system operator activities shall be logged and the logs protected and regularly reviewed.</Description>
+  		<Associations>
+        <Association AlertGroup="WS_FTP log file found"/>
+        <Association AlertGroup="AWStats script"/>
+        <Association AlertGroup="Webalizer script"/>
+        <Association AlertGroup="Application-level tracing enabled"/>
+        <Association AlertTag="information_disclosure"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="12.5.1">
+  	  <Title>Installation of software on operational systems</Title>
+  		<Description>Procedures shall be implemented to control the installation of software on operational systems.</Description>
+  		<Associations>
+        <Association AlertTag="needless_service"/>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="CWE-16"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="known_vulnerabilities"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="13.1.1">
+  	  <Title>Security of network services</Title>
+  		<Description>Security mechanisms, service levels and management requirements of all network services shall be identified and included in network services agreements, whether these services are provided in-house or outsourced.</Description>
+  		<Associations>
+        <Association AlertTag="network_alert"/>
+        <Association AlertTag="needless_service"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="13.2.1">
+  	  <Title>Information transfer policies and procedures</Title>
+  		<Description>Formal transfer policies, procedures and controls shall be in place to protect the transfer of information through the use of all types of communication facilities.</Description>
+  		<Associations> 
+        <Association AlertTag="weak_crypto"/>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="13.2.3">
+  	  <Title>Electronic messaging</Title>
+  		<Description>Information involved in electronic messaging shall be appropriately protected.</Description>
+  		<Associations>
+        <Association AlertTag="weak_crypto"/>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="14.1.2">
+  	  <Title>Securing application services on public networks</Title>
+  		<Description>Information involved in application services passing over public networks shall be protected from fraudulent activity, contract dispute and unauthorized disclosure and modification.</Description>
+  		<Associations> 
+        <Association AlertTag="arbitrary_file_creation"/>
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="insecure_admin_access"/>
+        <Association AlertTag="ldap_injection"/>
+        <Association AlertTag="session_fixation"/>
+        <Association AlertTag="ssrf"/>
+        <Association AlertTag="sql_injection"/>         
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="xss"/>
+        <Association AlertTag="xxe"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="14.1.3">
+  	  <Title>Protecting application services transactions</Title>
+  		<Description>Information involved in application service transactions shall be protected to prevent incomplete transmission, mis-routing, unauthorized message alteration, unauthorized disclosure, unauthorized message duplication or replay.</Description>
+  		<Associations>
+        <Association AlertTag="weak_crypto"/> 
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="14.2.1">
+  	  <Title>Secure development policy</Title>
+  		<Description>Rules for the development of software and systems shall be established and applied to developments within the organization.</Description>
+  		<Associations>
+        <Association AlertTag="xss"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="buffer_overflow"/>
+        <Association AlertTag="file_inclusion"/>
+        <Association AlertTag="http_parameter_pollution"/>
+        <Association AlertTag="crlf_injection"/>
+        <Association AlertTag="http_response_splitting"/>
+        <Association AlertTag="ldap_injection"/>
+        <Association AlertTag="unauthenticated_file_upload"/>
+        <Association AlertTag="url_redirection"/>
+        <Association AlertTag="xfs"/>
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="xxe"/>        
+      </Associations>
+  	</Category>   
+
+    <Category Index="14.3.1">
+  	  <Title>Protection of test data</Title>
+  		<Description>Test data shall be selected carefully, protected and controlled.</Description>
+  		<Associations>
+        <Association AlertTag="test_files"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="17.2.1">
+  	  <Title>Availability of information processing facilities</Title>
+  		<Description>Information processing facilities shall be implemented with redundancy sufficient to meet availability requirements.</Description>
+  		<Associations>
+        <Association AlertTag="denial_of_service"/>
+      </Associations>
+  	</Category>   
+
+    <Category Index="18.1.3">
+  	  <Title>Protection of records</Title>
+  		<Description>Records shall be protected from loss, destruction, falsification, unauthorized access and unauthorized release, in accordance with legislatory, regulatory, contractual and business requirements.</Description>
+  		<Associations>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+      </Associations>
+  	</Category> 
+    
+    <Category Index="18.1.4">
+  	  <Title>Privacy and protection of personally identifiable information</Title>
+  		<Description>Privacy and protection of personally identifiable information shall be ensured as required in relevant legislation and regulation where applicable.</Description>
+  		<Associations>
+        <Association AlertTag="information_disclosure"/>
+        <Association AlertTag="sql_injection"/>
+      </Associations>
+  	</Category>    
+
+    <Category Index="18.1.5">
+  	  <Title>Regulation of cryptographic controls</Title>
+  		<Description>Cryptographic controls shall be used in compliance with all relevant agreements, legislation and regulations.</Description>
+  		<Associations>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+  	</Category>     
+
+	</Categories>
+</Compliance>

@@ -1,0 +1,363 @@
+body {
+    font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #42413C;
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+    font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+.ui-progressbar-value {
+    background-image: url(/img/pbar-ani-blue.gif);
+}
+
+#toolbar {
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+#selectScans {
+    display: none;
+}
+
+#selectScansCombo {
+    width: 100px;
+}
+
+#scansMenu {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dropdownMenu {
+    position: absolute;
+    width: 156px;
+    border: 1px solid #a6c9e2;
+    background-color: white;
+    text-align: left;
+    z-index: 1001;
+}
+
+#scansMenu div{
+    display: inline
+}
+
+.dropdownMenu a {
+    color: #2e6e9e;
+    text-decoration: none;
+    display: block;
+    padding: 2px;
+}
+
+.dropdownMenu a:hover {
+    color: #2e6e9e;
+    text-decoration: none;
+    background-color: #2e6e9e;
+    color: #F1F5F5;
+}
+
+.accordionSection {
+    height: 230px;
+}
+
+.ui-widget {
+    font-size: 12px;
+}
+
+.ui-progressbar-value {
+    height: 3px;
+}
+
+.ui-button-collapse-schedule {
+    background: url(redmond/images/ui-icons_469bdd_256x240.png) -128px 0;
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+}
+
+.ui-button-collapse-schedule-hover {
+    background: #EBEFF2 url(redmond/images/ui-icons_2e83ff_256x240.png) -128px 0;
+}
+
+.ui-button-delete-schedule {
+    background: url(redmond/images/ui-icons_469bdd_256x240.png) 160px 112px;
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+}
+
+.ui-button-delete-schedule-hover {
+    background: #EBEFF2 url(redmond/images/ui-icons_2e83ff_256x240.png) 160px 112px;
+}
+
+form.loginForm input[type="text"],
+form.loginForm input[type="password"] {
+    width: 200px;
+}
+
+form.inputTable textarea,
+form.inputTable input[type="text"],
+form.inputTable input[type="password"],
+form.inputTable select {
+    width: 290px;
+}
+
+.mainContainer {
+    width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #FFF;
+}
+
+.addNewScanButton {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    background: url(../img/diag_stripe.gif);
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.ImportScansFromCSVButton {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    background: url(../img/diag_stripe.gif);
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.scanItem {
+    margin-bottom: 12px;
+}
+
+.scanItemRow {
+    height: 22px;
+}
+
+.scanInfo {
+    padding: 8px;
+    color: #333;
+}
+
+.scanURL {
+    font-weight: bold;
+    padding: 8px;
+    overflow: hidden;
+
+    background-image: url('/img/unchecked.png');
+    background-repeat: no-repeat;
+    background-color: #D0E4F2;
+    padding-left: 26px;
+}
+
+.siSelection {
+    background-image: url('/img/checked.png');
+    background-repeat: no-repeat;
+    padding-left: 26px;
+}
+
+.siMark {
+    background-color: #9da8d4;
+}
+
+.siTerminated {
+    background-color: #a6c9e2;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background: #a6c9e2;
+}
+
+.acuHeader {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.acuNotification {
+    border: 1px solid;
+    margin: 1px 0px;
+    padding: 2px 2px 2px 2px;
+    color: #D8000C;
+    background-color: #FFBABA;
+    height: 16px;
+    text-align: center;
+    display: none;
+}
+
+#loginErrorMessage {
+    color: red;
+}
+
+.inputErrorMsg {
+    display: inline;
+    padding-left: 4px;
+    margin-left: 4px;
+    color: red;
+}
+
+.scanHistoryTableDate {
+    color: gray;
+}
+
+.scanHistoryTableMessage {
+    padding: 3px;
+}
+
+#scanHistoryTable {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    background: #fff;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#scanHistoryTable th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #039;
+    padding: 10px 8px;
+    border-bottom: 2px solid #6678b1;
+}
+
+#scanHistoryTable td {
+    border-bottom: 1px solid #ccc;
+    color: #669;
+    padding: 6px 8px;
+}
+
+#scanHistoryTable tbody tr:hover td {
+    color: #009;
+}
+
+.scanHistoryTableMessage {
+    padding: 3px;
+}
+
+#scanResultsTable {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    background: #fff;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#scanResultsTable th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #039;
+    padding: 10px 8px;
+    border-bottom: 2px solid #6678b1;
+}
+
+#scanResultsTable td {
+    border-bottom: 1px solid #ccc;
+    color: #669;
+    padding: 6px 8px;
+}
+
+#scanResultsTable tbody tr:hover td {
+    color: #009;
+}
+
+#deleteSchedulesDialog {
+    display: none;
+}
+
+#deleteScheduleDialog {
+    display: none;
+}
+
+#edFilterWrapper {
+    display: inline-block;
+}
+
+.filterWrapper {
+    float: right;
+}
+
+#edFilter {
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    cursor: auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    height: 14px;
+    padding: 4px;
+    width: 150px;
+}
+
+.edFilterDefault {
+    color: #b9b9b9;
+}
+
+#edFilterImg {
+    position: relative;
+    left: -20px;
+    top: 2px;
+}
+
+.paginationScans {
+    padding: 8px;
+    text-align: center;
+    display: none;
+}
+
+.paginationScans button.ui-button-icon-only {
+    height: 16px;
+}
+
+.pageInfo {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pageNav {
+    vertical-align: top;
+}
+
+.pageNumberInput {
+    margin-top: -3px;
+    width: 20px;
+}
+
+.beforePaginationBottom {
+    padding-bottom: 5px;
+}
+
+.numberOfScans {
+    padding-left: 10px;
+    font-size: smaller;
+    color: gray;
+}
+
+#toolbar {
+    border: none;
+    background: white;
+}
+
+.redText {
+    color: red;
+}

@@ -1,0 +1,42 @@
+<brandingstrings version="1">
+	<CompanyName>
+		<Long>Acunetix</Long>
+		<Short>Acunetix</Short>
+		<CompanyID>#CO ID#</CompanyID>
+		<Copyright>Acunetix Ltd &#169; 2005-2014 All rights reserved.</Copyright>
+	</CompanyName>
+	<ProductName>
+		<Long>Acunetix Web Vulnerability Scanner</Long>
+		<Short>Web Vulnerability Scanner</Short>
+		<ExtraShort>WVS</ExtraShort>
+		<Link />
+		<MajorVer>10</MajorVer>
+		<MinorVer>0</MinorVer>
+		<Build>20150623</Build>
+	</ProductName>
+	<WebSites>
+		<Company>
+			<Name>Acunetix</Name>
+			<URL>http://www.Acunetix.com/</URL>
+			<Email>info@Acunetix.com</Email>
+		</Company>
+		<Sales>
+			<Name>Acunetix</Name>
+			<URL>http://www.Acunetix.com</URL>
+			<Email>sales@Acunetix.com</Email>
+		</Sales>
+		<Support>
+			<Name>Acunetix</Name>
+			<URL>http://www.Acunetix.com</URL>
+			<Email>support@Acunetix.com</Email>
+		</Support>
+	</WebSites>
+	<NodeWebSites>
+		<SiteName>http://www.Acunetix.com</SiteName>
+	</NodeWebSites>
+	<ServiceNames>
+	</ServiceNames>
+	<Miscellaneous>
+		<ProductSuite>N/A</ProductSuite>
+	</Miscellaneous>
+</brandingstrings>

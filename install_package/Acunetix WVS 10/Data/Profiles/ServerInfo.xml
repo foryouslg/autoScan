@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<!-- WVS -->
+<!-- Basic server fingerprinting (operating system, webserver, technology) -->
+<!-- To be extended later -->
+<ServerInfo>
+  <!-- Here are the requests used for fingerprinting -->
+  <Fingerprint>
+    <!-- First step -->
+    <Step Descr="A simle get request">
+      <Request Method="GET" URI="${SI_StartURL}" Version="HTTP/1.1"/>
+      <Response>
+        <SetVariable name="SI_ResponseCode_1" type="string">
+          <Description>HTTP Response code</Description>
+          <Source source="status">^.*\s(\d\d\d)\s?</Source>
+        </SetVariable>
+        <SetVariable name="SI_FullServer_1" type="string">
+          <Description>Full server</Description>
+          <Source source="server">^(.*)$</Source>
+        </SetVariable>
+        <SetVariable name="SI_FullHeader_1" type="string" persistent="1">
+          <Description>Full header</Description>
+          <Source source="header">^(.*)$</Source>
+        </SetVariable>
+        <SetVariable name="SI_FullData_1" type="string" persistent="1">
+          <Description>Full data</Description>
+          <Source source="body">^(.*)$</Source>
+        </SetVariable>
+      </Response>
+    </Step>
+    <!-- custom 404 1 -->
+    <!-- A request to a non-existent file -->
+    <Step Descr="GET for some inexistent file">
+      <Request Method="GET" URI="${SI_StartURL}acunetix-wvs-test-for-some-inexistent-file" Version="HTTP/1.1"/>
+      <Response>
+        <SetVariable name="SI_URL_404_1" type="string" persistent="1">
+          <Description>Requested URL</Description>
+          <Source source="url">^(.*)$</Source>
+        </SetVariable>
+        <SetVariable name="SI_ResponseCode_404_1" type="string" persistent="1">
+          <Description>HTTP Response code</Description>
+          <Source source="status">^.*\s(\d\d\d)\s?</Source>
+        </SetVariable>
+        <SetVariable name="SI_FullBody_404_1" type="string" persistent="1">
+          <Description>Full body</Description>
+          <Source source="body">^(.*)$</Source>
+        </SetVariable>
+        <SetVariable name="SI_FullHeader_404_1" type="string" persistent="1">
+          <Description>Full header</Description>
+          <Source source="header">^(.*)$</Source>
+        </SetVariable>
+        <SetVariable name="SI_Location_404_1" type="string" persistent="1">
+          <Description>Location header</Description>
+          <Source source="header">Location:\s*([^\r^\n]*)</Source>
+        </SetVariable>
+        <SetVariable name="SI_Tomcat_Version_404_1" type="string" persistent="1">
+          <Description>Try to get Tomcat version</Description>
+          <Source source="body">title&gt;Apache\sTomcat/(\d\.\d\.\d+)\s-</Source>
+        </SetVariable>
+      </Response>
+    </Step>
+  </Fingerprint>
+  <!-- Here are the tests used to determine what's running on the remote computer -->
+  <Tests>
+    <!-- Operating systems -->
+    <Test Name="Test_Windows">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>(Win32)</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Microsoft-IIS/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetOperatingSystem" Value="Windows"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Unix">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>(Unix)</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Linux</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>linux</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Fedora</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Red Hat</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Debian</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Ubuntu</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Darwin</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>CentOS</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>FreeBSD</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetOperatingSystem" Value="Unix"/>
+      </Actions>
+    </Test>
+    <!-- Web servers -->
+    <!-- Microsoft servers -->
+    <Test Name="Test_IIS">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Microsoft-IIS/</Value>
+      </Compare>
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-Powered-By: ASP.NET</Value>
+      </Compare>
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-AspNet-Version:</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="IIS"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_IIS40">
+      <Compare variable="${Test_IIS}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Microsoft-IIS/4.0</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="IIS 4.0"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_IIS50">
+      <Compare variable="${Test_IIS}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Microsoft-IIS/5.0</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="IIS 5.0"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_IIS51">
+      <Compare variable="${Test_IIS}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Microsoft-IIS/5.1</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="IIS 5.1"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_IIS60">
+      <Compare variable="${Test_IIS}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Microsoft-IIS/6.0</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="IIS 6.0"/>
+      </Actions>
+    </Test>
+    <!-- Apache servers -->
+    <Test Name="Test_Apache">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Apache</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Apache"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Apache1x">
+      <Compare variable="${Test_Apache}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Apache/1.</Value>
+        </Compare>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Apache-AdvancedExtranetServer/1.</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Apache 1.x"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Apache2x">
+      <Compare variable="${Test_Apache}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Apache/2.</Value>
+        </Compare>
+        <Compare variable="${SI_FullServer_1}" test="cont">
+          <Value>Apache-AdvancedExtranetServer/2.</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Apache 2.x"/>
+      </Actions>
+    </Test>
+    <!-- Apache Tomcat -->
+    <Test Name="Test_ApacheTomcat">
+      <Compare variable="${SI_FullBody_404_1}" test="cont">
+        <Value>&lt;html&gt;&lt;head&gt;&lt;title&gt;Apache Tomcat/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Apache Tomcat"/>
+        <Action When="True" Type="SetServerBanner" Value="Apache Tomcat/${SI_Tomcat_Version_404_1} "/>
+      </Actions>
+    </Test>
+    <!-- Other webservers -->
+    <Test Name="Test_nginx">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>nginx/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="nginx"/>
+      </Actions>
+    </Test>    
+    <Test Name="Test_SunONE">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>SunONE</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="SunONE"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Jetty">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Jetty(</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Jetty"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Zeus">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Zeus/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Zeus"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Netscape-Enterprise">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Netscape-Enterprise/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Netscape-Enterprise"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Zope">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Zope/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Zope"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Lotus">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Lotus-Domino</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Lotus-Domino"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_WebSTAR">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>WebSTAR</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="WebSTAR"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_WebLogic">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>WebLogic</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="WebLogic"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Sun-ONE">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Sun-ONE-Web-Server/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Sun-ONE-Web-Server"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Oracle-Application-Server">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Oracle-Application-Server-</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="Oracle-Application-Server"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_WEBrick">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>WEBrick/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="SetWebserver" Value="WEBrick"/>
+        <Action When="True" Type="AddTechnology" Value="Rails"/>
+      </Actions>
+    </Test>
+    <!-- Technologies -->
+    <!-- Microsoft Technologies -->
+    <Test Name="Test_ASP">
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-Powered-By: ASP</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="ASP"/>
+        <Action When="True" Type="SetOperatingSystem" Value="Windows"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_ASP.NET">
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-Powered-By: ASP.NET</Value>
+      </Compare>
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-AspNet-Version:</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="ASP.NET"/>
+        <Action When="True" Type="RemoveTechnology" Value="ASP"/>
+        <Action When="True" Type="SetOperatingSystem" Value="Windows"/>
+      </Actions>
+    </Test>
+    <!-- Do we have a masked Windows+IIS box here ? -->
+    <Test Name="Test_Fake_Banner_1">
+      <Compare variable="${Test_ASP.NET}" test="eq">
+        <Value>true</Value>
+        <Compare variable="${SI_FullServer_1}" test="ncont">
+          <Value>IIS</Value>
+        </Compare>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="ServerBannerIsFaked" Value="1"/>
+        <Action When="True" Type="SetWebserver" Value="IIS"/>
+        <Action When="True" Type="SetOperatingSystem" Value="Windows"/>
+      </Actions>
+    </Test>
+    <!-- Other Technologies -->
+    <Test Name="Test_PHP">
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-Powered-By: PHP</Value>
+      </Compare>
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> PHP/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="PHP"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_mod_perl">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> mod_perl/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Perl"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_mod_python">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> mod_python/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Python"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_FrontPage">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> FrontPage/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="FrontPage"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Perl">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> Perl/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Perl"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_JRun">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>JRun Web Server</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="ColdFusion/Jrun"/>
+        <Action When="True" Type="SetWebserver" Value="JRun"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_JRun2">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value> JRun/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="ColdFusion/Jrun"/>
+        <Action When="True" Type="SetWebserver" Value="JRun"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Ruby">
+      <Compare variable="${SI_FullServer_1}" test="cont">
+        <Value>Ruby/</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Rails"/>
+      </Actions>
+    </Test>
+    <Test Name="Test_Ruby2">
+      <Compare variable="${SI_FullHeader_1}" test="cont">
+        <Value>X-Powered-By: Phusion Passenger (mod_rails/mod_rack)</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Rails"/>
+      </Actions>
+    </Test>  
+    <Test Name="Test_Ruby3">
+      <Compare variable="${SI_FullBody_404_1}" test="cont">
+        <Value>&lt;title&gt;Action Controller: Exception caught&lt;/title&gt;</Value>
+      </Compare>
+      <Actions>
+        <Action When="True" Type="AddTechnology" Value="Rails"/>
+      </Actions>
+    </Test>    
+  </Tests>
+</ServerInfo>

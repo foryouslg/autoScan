@@ -1,0 +1,93 @@
+<html>
+<head>
+<link href="infostyle.css" rel="stylesheet" type="text/css">
+<link href="webstyle.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+<!--
+.style5 {color: #666666; font-weight: bold; }
+.style6 {
+	color: #000066;
+	font-weight: bold;
+}
+.style7 {color: #000066}
+-->
+</style>
+</head>
+<body>
+<div class="categorytitle">Search tips for Web Scanner tool (<span class="style7">custom search mode</span>)</div>
+<div class="category">
+<div class="subtitlediv">Notes:</div>
+<ul>
+<li>The search is case insensitive.</li> 
+<li>You can use the boolean operator OR(|) to perform searches like <strong>acunetix|wvs</strong><br>
+  (it will match pages containing either acunetix or wvs).</li>
+<li>To exclude a word from the search you can use the minus sign (-). E.g <strong>acunetix -wvs</strong> <br>
+  (it will match pages containing acunetix but not wvs). </li>
+<li>You can search for a certain expression by including it within quotes. Like <strong>&quot;index of /secure&quot; </strong></li>
+<li>Global modifiers should be placed at the start of the search query. They will be applied for all the search terms.</li>
+<li>You can replace one or more words using the <strong>*</strong> operator. E.g. <strong>&quot;web * scanner&quot;</strong> <br>
+  (it 
+  will match web vulnerability scanner).
+</li>
+</ul>
+<br>
+<div class="subtitlediv">Search modifiers :</div>
+<table  border="0" cellpadding="2" cellspacing="1" bgcolor="#999999">
+  <tr bgcolor="#ededed">
+    <td width="20%"><span class="style5">Search modifier</span></td>
+    <td width="80%"><span class="style5">Description</span></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>inurl:</strong></td>
+    <td>Use this modifier if you want to restrict your search to the URL part of the page. <br>    
+      <strong>allinurl:</strong> is the related global modifier.</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>intext:</strong></td>
+    <td>Use this modifier to restrict your search within the text of the page. <br>    
+      <strong>allintext:</strong> is the related global modifier.</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>intitle:</strong></td>
+    <td>Use this modifier to restrict your search to the title of the page. <br>    
+      <strong>allintitle:</strong> is the related global modifier.</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>inheaders:</strong></td>
+    <td>Restict your search to the HTTP headers of the page. <br>    
+      <strong>allinheaders:</strong> is the related global modifier.</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>filetype:, ext: </strong></td>
+    <td>Search for files of a specific type. </td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>link:</strong></td>
+    <td>Search for links to a certain page. </td>
+  </tr>
+</table>
+
+<br>
+<div class="subtitlediv">Special searches :</div>
+<table border="0" cellpadding="2" cellspacing="1" bgcolor="#999999">
+  <tr bgcolor="#ededed">
+    <td width="20%"><span class="style5">Special search</span></td>
+    <td width="80%"><span class="style5">Description</span></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>?haveinputs</strong></td>
+    <td>Returns all the files that have inputs (GET or POST). </td>
+  </tr>  
+</table>  
+<br>  
+<div class="subtitlediv">Examples:</strong></div>
+<ul>
+<li><span class="style6">inurl:CVS</span> will match files with CVS within their URL (such as /CVS/)</li>
+<li><span class="style6">allinurl:CVS Repository</span> will match files containg CVS and repository within their URL (such as /CVS/Repository) </li>
+<li><span class="style6">ext:php</span> will return all the PHP scripts from the website.</li>
+<li><span class="style6">intitle:&quot;index of&quot;</span> will return directory listings </li>
+</ul>
+</div>
+</body>
+</html>

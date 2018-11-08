@@ -1,0 +1,78 @@
+<html>
+<link href="infostyle.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+<!--
+.style5 {color: #666666; font-weight: bold; }
+.style7 {font-size: 12px}
+-->
+</style>
+<body>
+<table border='0' width='100%' cellpadding='2' cellspacing='0' bordercolor='#e0e0e0'> 
+	<tr> 
+		<td class="title">Scanning Mode </td> 
+	</tr>
+	<tr>
+		<td style="border-top:1px solid black; font-size:0px;" height="12"><span class="style7">On some web applications some parameters are used as an &quot;action&quot; parameter. The value of these &quot;action&quot; parameters will determine how the other parameters will be interpreted. The scanning mode determines how parameter values are tested during scanning.  </span></td>	
+		<!-- line -->
+	</tr>
+</table>
+</li>
+</ul>
+<table width="100%"  border="0" cellpadding="2" cellspacing="1" bgcolor="#999999">
+  <tr bgcolor="#ededed">
+    <td width="11%"><span class="style5">Mode</span></td>
+    <td width="69%"><span class="style5">Description</span></td>
+    <td width="20%">Speed/Depth</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>Quick</strong></td>
+    <td>Only the first value from every parameter will be tested. <br></td>
+    <td><table width="200" border="0">
+      <tr>
+        <td width="83">Scan Speed </td>
+        <td width="107"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"></td>
+      </tr>
+      <tr>
+        <td>Scan Depth </td>
+        <td><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>Heuristic (default) </strong></td>
+    <td>WVS  will try to automatically determine which parameters require complex testing.</td>
+    <td><table width="200" border="0">
+      <tr>
+        <td width="83">Scan Speed </td>
+        <td width="107"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"><img src="../Graphics/bullet_1.png" border="0"></td>
+      </tr>
+      <tr>
+        <td>Scan Depth </td>
+        <td><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td><strong>Extensive</strong></td>
+    <td><p>All possible combinations for every parameter will be  tested. <br>
+    When there are a lot of parameters/combinations, this mode will  generate a lot of HTTP requests.</p></td>
+    <td><table width="200" border="0">
+      <tr>
+        <td width="83">Scan Speed </td>
+        <td width="107"><img src="../Graphics/bullet_1.png" border="0"></td>
+      </tr>
+      <tr>
+        <td>Scan Depth </td>
+        <td><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"><img src="../Graphics/bullet_2.png" border="0"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<br>
+<p>These modes should be selected according to the target  application. For example, shopping cart <strong>product_id</strong> values 1,2,3,4 would not  need to be all tested since they are not used as action parameters. In this  case, &lsquo;<strong>Quick</strong>&rsquo; scanning mode would be the correct setting.  
+  When using the &lsquo;<strong>Extensive</strong>&rsquo; scanning mode a large number of  requests will be generated. 
+  Therefore when scanning large applications, it is  recommended to segment the scan, and target different areas of the site  separately. </p>
+</body>
+</html>

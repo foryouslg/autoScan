@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Scan info page</title>
+<link href="SIStyle.css" rel="stylesheet" type="text/css" />
+<link href="SITextStyle.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  var imgExpand = new Image(8, 8);
+  imgExpand.src = "..\\..\\Graphics\\expand.gif";
+  var imgCollapse = new Image(8, 8);
+  imgCollapse.src = "..\\..\\Graphics\\collapse.gif";
+
+  function toggleNextNodeDisplay(img){
+    NN = img.parentNode.nextSibling;
+    if(NN){
+      if(NN.style.display=="none"){
+        NN.style.display="block";
+        img.src=imgCollapse.src;
+      } 
+      else {
+        NN.style.display="none";
+        img.src=imgExpand.src;
+      }
+    }
+  }
+</script>
+</head>
+<body>
+<div class="scannamebrd">
+	<div class="scanname">
+		<div style="height: 28px; overflow: hidden; white-space: nowrap; width: 100%; position: relative; top: 5px;">
+			<img src="../../Graphics/transparent-dot.gif" width="28" height="1"/><span id="spanscanname"></span>
+		</div>
+		<div style="height:28px; position:relative; top:-28px;">
+			<img src="../../Graphics/scan.gif" width="16" height="16" vspace="5" hspace="6" style="float:left"/>
+			<img src="../../Graphics/ScanInfo/Indicator.gif" name="imgindicator" width="28" height="28" id="imgindicator" style="float:right"/>
+		</div>
+	</div>
+</div>
+<!-------------------------------- VULNERABILITY --------------------------------------------->
+<div class="bodydiv">
+  <div id="divvulnerabilitysection">
+		<div style="height:36px; overflow: hidden">
+			<div class="sectionheadblue" style="height:36px;">
+				<img src="../../Graphics/ScanInfo/blue-u-l.gif" width="12" height="36" style="float:left"/>		
+			</div>
+			<div class="sectionheadtext" style="height:36px; width:100%; position:relative; top:-36px; white-space:nowrap; overflow:hidden">
+				<img src="../../Graphics/transparent-dot.gif" width="16" height="1"/><img src="../../Graphics/ScanInfo/vuln-chart.gif" width="16" height="16" vspace="4" align="absmiddle"/> Vulnerability Information
+			</div>
+			<div style="height:36px; position:relative; top:-72px;">
+				<img src="../../Graphics/ScanInfo/blue-u-r.gif" width="12" height="36" style="float:right"/>
+			</div>
+		</div>
+    <div class="infotext bblue">
+      <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Threat Level</div>
+      <table width="100%" border="0" cellspacing="0" cellpadding="6">
+        <tr>
+          <td valign="top"><img src="../../Graphics/ScanInfo/Meter/level0.png" name="imgmeter" width="172" height="74" id="imgmeter"/></td>
+          <td valign="top" id="threatleveltext">
+            </td>
+        </tr>
+      </table>
+      <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Alerts Found</div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="150" class="boldnavy">Total alerts found </td>
+          <td width="50" align="right" class="boldnavy monospacefont" id="tdtotalalerts">0</td>
+          <td width="212">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="150" class="boldred"><img src="../../Graphics/vuln-red.png" width="16" height="16" hspace="6" vspace="2" align="absmiddle" />High</td>
+          <td width="50" align="right" class="monospacefont" id="tdhighalerts">0</td>
+          <td width="212"><img src="../../Graphics/ScanInfo/red-dot.gif" name="imghighmeter" width="0" height="15" hspace="6" id="imghighmeter" /></td>
+        </tr>
+        <tr>
+          <td width="150" class="boldorange"><img src="../../Graphics/vuln-orange.png" width="16" height="16" hspace="6" vspace="2" align="absmiddle" />Medium</td>
+          <td width="50" align="right" class="monospacefont" id="tdmediumalerts">0</td>
+          <td width="212"><img src="../../Graphics/ScanInfo/orange-dot.gif" name="imgmediummeter" width="0" height="15" hspace="6" id="imgmediummeter" /></td>
+        </tr>
+        <tr>
+          <td width="150" class="boldblue"><img src="../../Graphics/vuln-blue.png" width="16" height="16" hspace="6" vspace="2" align="absmiddle" />Low</td>
+          <td width="50" align="right" class="monospacefont" id="tdlowlerts">0</td>
+          <td width="212"><img src="../../Graphics/ScanInfo/blue-dot.gif" name="imglowmeter" width="0" height="15" hspace="6" id="imglowmeter" /></td>
+        </tr>
+        <tr>
+          <td width="150" class="boldgreen"><img src="../../Graphics/vuln-green.png" width="16" height="16" hspace="6" vspace="2" align="absmiddle" />Informational</td>
+          <td width="50" align="right" class="monospacefont" id="tdinfoalerts">0</td>
+          <td width="212"><img src="../../Graphics/ScanInfo/green-dot.gif" name="imginfometer" width="0" height="15" hspace="6" id="imginfometer" /></td>
+        </tr>
+      </table>
+    </div>
+    <div class="sectionfootblue"> <img src="../../Graphics/ScanInfo/blue-l-l.gif" width="12" height="18" style="float:left"/> <img src="../../Graphics/ScanInfo/blue-l-r.gif" width="12" height="18" style="float:right"/> </div>
+  </div>
+  <!-------------------------------- SCAN --------------------------------------------->
+  <div id="divscansection">
+		<div style="height:36px; overflow: hidden">
+			<div class="sectionheadblue" style="height:36px;">
+				<img src="../../Graphics/ScanInfo/blue-u-l.gif" width="12" height="36" style="float:left"/>		
+			</div>
+			<div class="sectionheadtext" style="height:36px; width:100%; position:relative; top:-36px; white-space:nowrap; overflow:hidden">
+				<img src="../../Graphics/transparent-dot.gif" width="16" height="1"/><img src="../../Graphics/ScanInfo/server-info.gif" width="16" height="16" vspace="4" align="absmiddle"/> Scan Information
+			</div>
+			<div style="height:36px; position:relative; top:-72px;">
+				<img src="../../Graphics/ScanInfo/blue-u-r.gif" width="12" height="36" style="float:right"/>
+			</div>
+		</div>
+    <div class="infotext bblue">
+      <div class="nonresponsive" id="divnonresponsive" style="display:none">Server not found!</div>
+      <span class="divscansectioninfo" id="divnonresponsive2" style="display:none">Make sure the address is spelled correctly and check your internet connection.</span>
+	  
+      <div id="divscansectioninfo">
+        <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Target Information</div>
+        <div>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Target</td>
+              <td valign="top" class="monospacefont" id="tdtargetname">N/A</td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Server banner</td>
+              <td valign="top" class="monospacefont" id="tdserverbanner">N/A</td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Operating system</td>
+              <td valign="top" class="monospacefont" id="tdoperatingsystem">N/A</td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Web server</td>
+              <td valign="top" class="monospacefont" id="tdwebserver">N/A</td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Technologies</td>
+              <td valign="top" class="monospacefont" id="tdtechnologies">N/A</td>
+            </tr>
+          </table>
+          <img src="../../Graphics/acusensor.png" id="imgAppSensorEnabled" s1tyle="display:none" width="100" height="20"/>
+        </div>
+        <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Web Scan Progress</div>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="175" valign="top" class="lefttexts">Start time</td>
+            <td valign="top" class="monospacefont" id="tdstarttime">N/A</td>
+          </tr>
+          <tr>
+            <td width="175" valign="top" class="lefttexts">Finish time</td>
+            <td valign="top" class="monospacefont" id="tdfinishtime">N/A</td>
+          </tr>
+          <tr>
+            <td width="175" valign="top" class="lefttexts">Scan time</td>
+            <td valign="top" class="monospacefont" id="tdscantime">N/A</td>
+          </tr>
+          <tr>
+            <td width="175" valign="top" class="lefttexts">Scan iteration</td>
+            <td valign="top" class="monospacefont" id="tdscaniteration">1</td>
+          </tr>
+          <tr id="trScanningMode">
+            <td width="175" valign="top" class="lefttexts">Scanning mode</td>
+            <td valign="top" class="monospacefont" id="tdscanmode">N/A</td>
+          </tr>                    
+          
+          <tr id="trscanningstage">
+            <td width="175" valign="top" class="lefttexts">Scanning stage</td>
+            <td valign="top" class="monospacefont" id="tdscanstage">N/A</td>
+          </tr>
+          <tr id="trcurrentmodule">
+            <td width="175" valign="top" class="lefttexts">Current module</td>
+            <td valign="top" class="monospacefont"><span id="tdcurmodule">N/A</span>&nbsp;<span style="display:none" id="spanSkipModule"><a href="#Skip_Current_Module">skip</a></span></td>
+          </tr>		 
+    		  <tr id="trmoduleprogress">
+            <td width="175" valign="top" class="lefttexts">Module progress</td>
+            <td valign="middle">
+              <div class="divProgressBorder"><img src="../../Graphics/ScanInfo/progress-img.gif" width="0" height="10" id="imgmoduleprogress"/></div>&nbsp;
+              <div class="monospacefont" id="divProgressText" style="display:inline"></div>
+            </td>            
+          </tr>          		  
+    		  <tr id="trtestingon">
+            <td width="175" valign="top" class="lefttexts">Testing on</td>
+            <td valign="top" class="monospacefont"><span id="tdtestingon">N/A</span>&nbsp;<span style="display:none" id="spanSkipItem"><a href="#Skip_Current_Item">skip</a></span></td>
+          </tr>          
+          <tr id="trcurrenttest">
+            <td width="175" valign="top" class="lefttexts">Current test(s)</td>
+            <td valign="top" class="monospacefont" id="tdvulnxml">N/A</td>
+          </tr>          
+          <tr id="trRunningTasks">
+            <td width="175" valign="top" class="lefttexts">Running tasks</td>
+            <td valign="top" class="monospacefont" id="tdtaskcount">N/A</td>
+          </tr>          
+          <tr id="trTotalNumberRequests">
+            <td width="175" valign="top" class="lefttexts">Total number of requests</td>
+            <td valign="top" class="monospacefont" id="tdtotalrequests">N/A</td>
+          </tr>
+          <tr id="trAverageResponseTime">
+            <td width="175" valign="top" class="lefttexts">Average response time (ms)</td>
+            <td valign="top" class="monospacefont" id="tdrtt">N/A</td>
+          </tr>
+        </table>
+        <div id="divPortScanProgress">
+          <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Port Scan Progress</div>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr id="trPortScanProgress">
+              <td width="175" valign="top" class="lefttexts">Progress</td>
+              <td valign="middle">
+                <div class="divProgressBorder"><img src="../../Graphics/ScanInfo/progress-img.gif" width="0" height="10" id="imgPortScanProgress"/></div>&nbsp;
+                <div class="monospacefont" id="divProgressTextPortScan" style="display:inline"></div>
+              </td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Open ports</td>
+              <td valign="top" class="monospacefont" id="tdOpenPorts">N/A</td>
+            </tr>
+          </table>
+        </div>
+        <div id="divScriptsProgress">
+          <div class="infotexttitle bblue"><img style="cursor:pointer" src="..\..\Graphics\collapse.gif" onclick="toggleNextNodeDisplay(this);"/> Scripts Progress</div>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr id="trScriptsProgress">
+              <td width="175" valign="top" class="lefttexts">Progress</td>
+              <td valign="middle">
+                <div class="divProgressBorder"><img src="../../Graphics/ScanInfo/progress-img.gif" width="0" height="10" id="imgScriptsProgress"/></div>&nbsp;
+                <div class="monospacefont" id="divProgressTextScripts" style="display:inline"></div>
+              </td>
+            </tr>
+            <tr>
+              <td width="175" valign="top" class="lefttexts">Running scripts</td>
+              <td valign="top" class="monospacefont" id="tdRunningScripts">N/A</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="sectionfootblue"> <img src="../../Graphics/ScanInfo/blue-l-l.gif" width="12" height="18" style="float:left"/> <img src="../../Graphics/ScanInfo/blue-l-r.gif" width="12" height="18" style="float:right"/> </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body {
+			margin:10px;
+			font-family:arial,sans,helvetica;
+			font-size: 12px;
+			line-height: 18px;
+			background-color:#FFFFFF;
+}
+
+td {
+	font-family:arial,sans,helvetica;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+p {
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 8px;
+}
+
+img {
+	vertical-align:middle;
+}
+
+.categorytitle {
+	font-weight:bold;
+	font-size: 14px;
+	border:1px #CCCCCC solid;
+	border-bottom:0px;
+	background-color: #d9ecff;
+	padding: 4px;
+	color:#333333;
+}
+
+.category {
+	padding: 8px;
+	margin-bottom: 8px;
+	border:1px #CCCCCC solid;
+}
+
+.linkdiv {
+	margin-bottom: 8px;
+	display: block;
+	vertical-align: middle;
+}
+
+a.buttondiv {
+	float: left;
+	width: 160px;
+	height: 24px;
+	border: #EEEEFF 1px outset;
+	padding: 2px;
+	vertical-align: middle;
+	color: #000000;
+	display: block;
+	text-decoration: none;
+}
+
+a.buttondiv:hover {
+	border: #3169c6 1px groove;
+	background-color: #c6d3ef;
+}
+
+.buttontextdiv {
+	margin-left: 140px;
+	padding-left: 8px;
+	color: #666666;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.note {
+	font-weight:bold;
+	font-size: 11px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+ul {
+	margin: 0px;
+	padding: 4px;
+	padding-left: 24px;
+}
+
+.subtitlediv {
+	margin-bottom: 8px; 
+	border-bottom:1px solid #CCCCCC;
+	font-weight:bold;
+}
+
+.BlogPostAnnouncement {
+  font-weight:bold;
+}
+
+.BlogPostAnnouncementSummary {
+  padding-left: 8px;
+  font-size: 12px;
+  color: #666666;
+  padding-bottom: 8px;
+}
+
+.BlogPost {
+  font-size: 12px;
+  padding-left: 4px;
+}
+
+
+#replace_CompanyName{}
+#replace_Copyright{}
+#replace_ProductNameLong{}
+#replace_ProductNameShort{}
+#replace_VersionInfo{}
+#replace_Build{}
+#replace_ProductType{}
+#replace_ExpirationText{}
+#replace_LicenseStatus{}
+

@@ -1,0 +1,127 @@
+<Compliance>
+    <Categories>
+        <Category Index="access-to-sensitive-data-frontpage">
+            <Associations>
+                <Association AlertGroup="Frontpage authors.pwd available"/>
+                <Association AlertGroup="Frontpage Extensions Enabled"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="application-code-leakage">
+            <Associations>
+                <Association AlertTag="source_code_disclosure"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="application-configuration-leakage-global-asa">
+            <Associations>
+                <Association AlertTag="information_disclosure" Affects=".*?global\.asa$"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="application-log-file-leakage-wsftp-log">
+            <Associations>
+                <Association AlertGroup="WS_FTP log file found"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="ccn-leakage">
+            <Associations>
+                <Association AlertGroup="Sensitive data not encrypted"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="cross-site-scripting">
+            <Associations>
+                <Association AlertTag="xss"/>
+                <Association AlertTag="xfs"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="directory-browsing">
+            <Associations>
+                <Association AlertTag="directory_listing"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="directory-traversal">
+            <Associations>
+                <Association AlertTag="directory_traversal"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="http-response-splitting">
+            <Associations>
+                <Association AlertTag="http_response_splitting"/>
+                <Association AlertTag="crlf_injection"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="redundant-weak-application-components">
+            <Associations>
+                <Association AlertTag="needless_service"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="remote-command-execution-env">
+            <Associations>
+                <Association AlertTag="code_execution"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="sensitive-error-messages-leakage">
+            <Associations>
+                <Association AlertGroup="Application error message"/>
+                <Association AlertGroup="Error message on page"/>
+                <Association AlertGroup="ASP.NET error message"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="sql-injection">
+            <Associations>
+                <Association AlertTag="sql_injection"/>
+                <Association AlertTag="xpath_injection"/>
+                <Association AlertTag="ldap_injection"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="ssn-leakage">
+            <Associations>
+                <Association AlertGroup="Sensitive data not encrypted"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="unauthorized-http-method-connect">
+            <Associations>
+                <Association AlertGroup="Apache Proxy HTTP CONNECT method enabled"/>
+                <Association AlertGroup="Proxy can be used to connect to arbitrary ports"/>
+                <Association AlertGroup="Proxy accepts CONNECT requests"/>
+                <Association AlertGroup="Proxy accepts CONNECT requests to itself"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="unauthorized-http-method-options">
+            <Associations>
+                <Association AlertGroup="OPTIONS method is enabled"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="unauthorized-http-method-put">
+            <Associations>
+                <Association AlertGroup="WebDAV Directory with Write Permissions"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="unauthorized-http-method-trace">
+            <Associations>
+                <Association AlertGroup="TRACE method is enabled"/>
+            </Associations>
+        </Category>
+        
+        <Category Index="unauthorized-http-method-webdav">
+            <Associations>
+                <Association AlertGroup="WebDAV Enabled"/>
+            </Associations>
+        </Category>
+    </Categories>
+</Compliance>

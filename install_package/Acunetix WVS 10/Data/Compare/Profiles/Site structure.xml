@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template>
+	<Alerts>0</Alerts>
+	<SiteStructure>1</SiteStructure>
+	<FileProperties>1</FileProperties>
+	<Referrers>1</Referrers>
+	<HTTPHeaders>1</HTTPHeaders>
+	<FileInputs>1</FileInputs>
+	<FileStructure>1</FileStructure>
+	<SimpleURLs>1</SimpleURLs>
+	<Comments>1</Comments>
+	<HTMLForms>1</HTMLForms>
+	<MetaTags>1</MetaTags>	
+</Template>

@@ -1,0 +1,447 @@
+<Compliance>
+  <Info>
+    <Title>Web Application Security Consortium: Threat Classification</Title>
+    <Description>
+      [p]The Web Security Threat Classification is a cooperative effort to
+      clarify and organize the threats to the security of a web site. The
+      members of the Web Application Security Consortium have created
+      this project to develop and promote industry standard terminology for
+      describing these issues. Application developers, security
+      professionals, software vendors, and compliance auditors will have
+      the ability to access a consistent language for web security related
+      issues.[/p]
+      [p]The Web Security Threat Classification will compile and distill the
+      known unique classes of attack, which have presented a threat to
+      web sites in the past.[/p]
+    </Description>
+    <Disclaimer>
+     [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]
+      [p]A portion of the information in this report is taken from Web Application Security Consortium "Threat Classification" document, that can be found at http://www.webappsec.org/.[/p]
+    </Disclaimer>
+  </Info>
+  
+  <Categories>
+    <Category Index="1.1">
+      <Title>Authentication: Brute Force</Title>
+      <Description>
+        [p]A Brute Force attack is an automated process of trial and error used
+        to guess a person's username, password, credit-card number or
+        cryptographic key.[/p]
+        [p]Acunetix authentication tester can be used to bruteforce authentication
+        schemes based either on HTTP protocol NTLM or Basic authentication or
+        HTML form based authentication.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_credentials"/>
+      </Associations>
+    </Category>
+    <Category Index="1.2">
+      <Title>Insufficient Authentication</Title>
+      <Description>
+        [p]Insufficient Authentication occurs when a web site permits an attacker
+        to access sensitive content or functionality without having to properly
+        authenticate. Web-based administration tools are a good example of
+        web sites providing access to sensitive functionality. Depending on
+        the specific online resource, these web applications should not be
+        directly accessible without the user required to properly verify their
+        identity.[/p]
+        [p]To get around setting up authentication, some resources are
+        protected by "hiding" the specific location and not linking the location
+        into the main web site or other public places. However, this approach
+        is nothing more than "Security Through Obscurity". Its important to
+        understand that simply because a resource is unknown to an
+        attacker, it still remains accessible directly through a specific URL.
+        The specific URL could be discovered through a Brute Force probing
+        for common file and directory locations (/admin for example), error
+        messages, referrer logs, or perhaps documented in help files. These
+        resources, whether they are content or functionality driven, should be
+        adequately protected.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="weak_credentials"/>
+        <Association AlertTag="insecure_admin_access"/>
+        <Association AlertTag="default_credentials"/>
+      </Associations>
+    </Category>
+    <Category Index="1.3">
+      <Title>Weak Password Recovery Validation</Title>
+      <Description>
+        [p]Weak Password Recovery Validation is when a web site permits an
+        attacker to illegally obtain, change or recover another user's
+        password. Conventional web site authentication methods require
+        users to select and remember a password or passphrase. The user
+        should be the only person that knows the password and it must be
+        remembered precisely. As time passes, a user's ability to remember
+        a password fades. The matter is further complicated when the
+        average user visits 20 sites requiring them to supply a password.
+        (RSA Survey: http://news.bbc.co.uk/1/hi/technology/3639679.stm)
+        Thus, Password Recovery is an important part in servicing online
+        users.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="2.1">
+      <Title>Credential/Session Prediction</Title>
+      <Description>
+        [p]Credential/Session Prediction is a method of hijacking or
+        impersonating a web site user. Deducing or guessing the unique
+        value that identifies a particular session or user accomplishes the
+        attack. Also known as Session Hijacking, the consequences could
+        allow attackers the ability to issue web site requests with the
+        compromised user's privileges.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="2.2">
+      <Title>Insufficient Authorization</Title>
+      <Description>
+        [p]Insufficient Authorization is when a web site permits access to
+        sensitive content or functionality that should require increased access
+        control restrictions. When a user is authenticated to a web site, it
+        does not necessarily mean that he should have full access to all
+        content and that functionality should be granted arbitrarily.[/p]
+        [p]Authorization procedures are performed after authentication,
+        enforcing what a user, service or application is permitted to do.
+        Thoughtful restrictions should govern particular web site activity
+        according to policy. Sensitive portions of a web site may need to be
+        restricted to everyone expect to perhaps an administrator.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="2.3">
+      <Title>Insufficient Session Expiration</Title>
+      <Description>
+        Insufficient Session Expiration is when a web site permits an attacker
+        to reuse old session credentials or session IDs for authorization.
+        Insufficient Session Expiration increases a web site's exposure to
+        attacks that steal or impersonate other users.
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="2.4">
+      <Title>Session Fixation</Title>
+      <Description>
+        [p]Session Fixation is an attack technique that forces a user's session
+        ID to an explicit value. Depending on the functionality of the target
+        web site, a number of techniques can be utilized to "fix" the session
+        ID value. These techniques range from Cross-site Scripting exploits
+        to peppering the web site with previously made HTTP requests. After
+        a user's session ID has been fixed, the attacker will wait for them to
+        login. Once the user does so, the attacker uses the predefined
+        session ID value to assume their online identity.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="session_fixation"/>
+      </Associations>
+    </Category>
+    <Category Index="3.1">
+      <Title>Content Spoofing</Title>
+      <Description>
+        [p]Content Spoofing is an attack technique used to trick a user into
+        believing that certain content appearing on a web site is legitimate
+        and not from an external source.[/p]
+        [p]Some web pages are served using dynamically built HTML content
+        sources. For example, the source location of a frame 
+        [code]&lt;frame src="http://foo.example/file.html"&gt;[/code]
+        could be specified by a URL parameter value:[/p]
+        [code]http://foo.example/page?frame_src=http://foo.example/file.html[/code]
+        [p]An attacker may be able to replace the "frame_src" parameter value with
+        "[code]frame_src=http://attacker.example/spoof.html[/code]". When
+        the resulting web page is served, the browser location bar visibly
+        remains under the user expected domain (foo.example), but the
+        foreign data (attacker.example) is shrouded by legitimate
+        content.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xfs"/>
+      </Associations>
+    </Category>
+    <Category Index="3.2">
+      <Title>Cross-site Scripting</Title>
+      <Description>
+        [p]Cross-site Scripting (XSS) is an attack technique that forces a web
+        site to echo attacker-supplied executable code, which loads in a
+        user's browser. The code itself is usually written in HTML/JavaScript,
+        but may also extend to VBScript, ActiveX, Java, Flash, or any other
+        browser-supported technology.[/p]
+        [p]When an attacker gets a user's browser to execute his code, the
+        code will run within the security context (or zone) of the hosting web
+        site. With this level of privilege, the code has the ability to read,
+        modify and transmit any sensitive data accessible by the browser. A
+        Cross-site Scripted user could have his account hijacked (cookie
+        theft), their browser redirected to another location, or possibly shown
+        fraudulent content delivered by the web site they are visiting. Crosssite
+        Scripting attacks essentially compromise the trust relationship
+        between a user and the web site.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+    <Category Index="4.1">
+      <Title>Buffer Overflow</Title>
+      <Description>
+        [p]Buffer Overflow exploits are attacks that alter the flow of an
+        application by overwriting parts of memory. Buffer Overflow is a
+        common software flaw that results in an error condition. This error
+        condition occurs when data written to memory exceed the allocated
+        size of the buffer. As the buffer is overflowed, adjacent memory
+        addresses are overwritten causing the software to fault or crash.
+        When unrestricted, properly-crafted input can be used to overflow the
+        buffer resulting in a number of security issues.[/p]
+        [p]A Buffer Overflow can be used as a Denial of Service attack when
+        memory is corrupted, resulting in software failure. Even more critical
+        is the ability of a Buffer Overflow attack to alter application flow and
+        force unintended actions. This scenario can occur in several ways.
+        Buffer Overflow vulnerabilities have been used to overwrite stack
+        pointers and redirect the program to execute malicious instructions.
+        Buffer Overflows have also been used to change program variables.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="buffer_overflow"/>
+      </Associations>
+    </Category>
+    <Category Index="4.2">
+      <Title>Format String Attack</Title>
+      <Description>
+        [p]Format String Attacks alter the flow of an application by using string
+        formatting library features to access other memory space.
+        Vulnerabilities occur when user-supplied data are used directly as
+        formatting string input for certain C/C++ functions (e.g. fprintf,
+        printf, sprintf, setproctitle, syslog, ...).[/p]
+        [p]If an attacker passes a format string consisting of printf conversion
+        characters (e.g. "%f", "%p", "%n", etc.) as parameter value to the web
+        application, they may:[/p]
+        [ul][li]Execute arbitrary code on the server[/li]
+        [li]Read values off the stack[/li]
+        [li]Cause segmentation faults / software crashes[/li][/ul]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="4.3">
+      <Title>LDAP Injection</Title>
+      <Description>
+        [p]LDAP Injection is an attack technique used to exploit web sites that
+        construct LDAP statements from user-supplied input.[/p]
+        [p]Lightweight Directory Access Protocol (LDAP) is an open-standard
+        protocol for both querying and manipulating X.500 directory services.
+        The LDAP protocol runs over Internet transport protocols, such as
+        TCP. Web applications may use user-supplied input to create custom
+        LDAP statements for dynamic web page requests.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="ldap_injection"/>
+      </Associations>
+    </Category>
+    <Category Index="4.4">
+      <Title>OS Commanding</Title>
+      <Description>
+        [p]OS Commanding is an attack technique used to exploit web sites by
+        executing Operating System commands through manipulation of
+        application input.[/p]
+        [p]When a web application does not properly sanitize user-supplied
+        input before using it within application code, it may be possible to trick
+        the application into executing Operating System commands. The
+        executed commands will run with the same permissions of the
+        component that executed the command (e.g. Database server, Web
+        application server, Web server, etc.).[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="code_execution"/>
+      </Associations>
+    </Category>
+    <Category Index="4.5">
+      <Title>SQL Injection</Title>
+      <Description>
+        [p]SQL Injection is an attack technique used to exploit web sites that
+        construct SQL statements from user-supplied input.[/p]
+        [p]When a web application fails to properly sanitize user-supplied input,
+        it is possible for an attacker to alter the construction of backend SQL
+        statements. When an attacker is able to modify a SQL statement, the
+        process will run with the same permissions as the component that
+        executed the command. (e.g. Database server, Web application
+        server, Web server, etc.). The impact of this attack can allow
+        attackers to gain total control of the database or even execute
+        commands on the system.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+      </Associations>
+    </Category>
+    <Category Index="4.6">
+      <Title>SSI Injection</Title>
+      <Description>
+        [p]SSI Injection (Server-side Include) is a server-side exploit technique
+        that allows an attacker to send code into a web application, which will
+        later be executed locally by the web server. SSI Injection exploits a
+        web application's failure to sanitize user-supplied data before they
+        are inserted into a server-side interpreted HTML file.[/p]
+        [p]If an attacker submits a Server-side Include statement, he may have
+        the ability to execute arbitrary operating system commands, or
+        include a restricted file's contents the next time the page is served.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="4.7">
+      <Title>XPath Injection</Title>
+      <Description>
+        [p]XPath Injection is an attack technique used to exploit web sites that
+        construct XPath queries from user-supplied input.[/p]
+        [p]XPath 1.0 is a language used to refer to parts of an XML document. It
+        can be used directly by an application to query an XML document, or
+        as part of a larger operation such as applying an XSLT transformation
+        to an XML document, or applying an XQuery to an XML document.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>  
+      </Associations>
+    </Category>
+    <Category Index="5.1">
+      <Title>Directory Indexing</Title>
+      <Description>
+        [p]Automatic directory listing/indexing is a web server function that lists
+        all of the files within a requested directory if the normal base file
+        (index.html/home.html/default.htm) is not present. When a
+        user requests the main page of a web site, they normally type in a
+        URL such as: http://www.example.com - using the domain name and
+        excluding a specific file. The web server processes this request and
+        searches the document root directory for the default file name and
+        sends this page to the client. If this page is not present, the web
+        server will issue a directory listing and send the output to the client.
+        Essentially, this is equivalent to issuing an "ls" (Unix) or "dir"
+        (Windows) command within this directory and showing the results in
+        HTML form. From an attack and countermeasure perspective, it is
+        important to realize that unintended directory listings may be possible
+        due to software vulnerabilities.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="directory_listing"/>
+      </Associations>
+    </Category>
+    <Category Index="5.2">
+      <Title>Information Leakage</Title>
+      <Description>
+        [p]Information Leakage is when a web site reveals sensitive data, such
+        as developer comments or error messages, which may aid an
+        attacker in exploiting the system. Sensitive information may be
+        present within HTML comments, error messages, source code, or
+        simply left in plain sight. There are many ways a web site can be
+        coaxed into revealing this type of information. While leakage does not
+        necessarily represent a breach in security, it does give an attacker
+        useful guidance for future exploitation. Leakage of sensitive
+        information may carry various levels of risk and should be limited
+        whenever possible.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="information_disclosure"/>
+      </Associations>
+    </Category>
+    <Category Index="5.3">
+      <Title>Path Traversal</Title>
+      <Description>
+        [p]The Path Traversal attack technique forces access to files,
+        directories, and commands that potentially reside outside the web
+        document root directory. An attacker may manipulate a URL in such a
+        way that the web site will execute or reveal the contents of arbitrary
+        files anywhere on the web server. Any device that exposes an HTTPbased
+        interface is potentially vulnerable to Path Traversal.[/p]
+        [p]Most web sites restrict user access to a specific portion of the filesystem,
+        typically called the "web document root" or "CGI root"
+        directory. These directories contain the files intended for user access
+        and the executables necessary to drive web application functionality.
+        To access files or execute commands anywhere on the file-system,
+        Path Traversal attacks will utilize the ability of special-characters
+        sequences.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="directory_traversal"/>         
+      </Associations>
+    </Category>
+    <Category Index="5.4">
+      <Title>Predictable Resource Location</Title>
+      <Description>
+        [p]Predictable Resource Location is an attack technique used to
+        uncover hidden web site content and functionality. By making
+        educated guesses, the attack is a brute force search looking for
+        content that is not intended for public viewing. Temporary files,
+        backup files, configuration files, and sample files are all examples of
+        potentially leftover files. These brute force searches are easy
+        because hidden files will often have common naming convention and
+        reside in standard locations. These files may disclose sensitive
+        information about web application internals, database information,
+        passwords, machine names, file paths to other sensitive areas, or
+        possibly contain vulnerabilities. Disclosure of this information is
+        valuable to an attacker.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="test_files"/>
+      </Associations>
+    </Category>
+    <Category Index="6.1">
+      <Title>Abuse of Functionality</Title>
+      <Description>
+        [p]Abuse of Functionality is an attack technique that uses a web site's
+        own features and functionality to consume, defraud, or circumvents
+        access controls mechanisms. Some functionality of a web site,
+        possibly even security features, may be abused to cause unexpected
+        behavior. When a piece of functionality is open to abuse, an attacker
+        could potentially annoy other users or perhaps defraud the system
+        entirely. The potential and level of abuse will vary from web site to
+        web site and application to application.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="abuse_of_functionality"/>
+        <Association AlertTag="CWE-352"/>
+        <Association AlertTag="csrf"/>
+      </Associations>
+    </Category>
+    <Category Index="6.2">
+      <Title>Denial of Service</Title>
+      <Description>
+        [p]Denial of Service (DoS) is an attack technique with the intent of
+        preventing a web site from serving normal user activity. DoS attacks,
+        which are easily normally applied to the network layer, are also
+        possible at the application layer. These malicious attacks can
+        succeed by starving a system of critical resources, vulnerability
+        exploit, or abuse of functionality.[/p]
+      </Description>
+      <Associations>
+      	<Association AlertTag="denial_of_service"/> 
+      </Associations>
+    </Category>
+    <Category Index="6.3">
+      <Title>Insufficient Anti-automation</Title>
+      <Description>
+        [p]Insufficient Anti-automation is when a web site permits an attacker to
+        automate a process that should only be performed manually. Certain
+        web site functionalities should be protected against automated
+        attacks.[/p]
+        [p]Left unchecked, automated robots (programs) or attackers could
+        repeatedly exercise web site functionality attempting to exploit or
+        defraud the system. An automated robot could potentially execute
+        thousands of requests a minute, causing potential loss of
+        performance or service.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+    <Category Index="6.4">
+      <Title>Insufficient Process Validation</Title>
+      <Description>
+        [p]Insufficient Process Validation is when a web site permits an attacker
+        to bypass or circumvent the intended flow control of an application. If
+        the user state through a process is not verified and enforced, the web
+        site could be vulnerable to exploitation or fraud.[/p]
+      </Description>
+      <Associations>
+      </Associations>
+    </Category>
+  </Categories>
+</Compliance>

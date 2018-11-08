@@ -1,0 +1,220 @@
+<Compliance>
+  <Info>
+    <Title>NIST Special Publication 800-53 - Recommended Security Controls for Federal Information Systems</Title>
+    <Description>
+      [p]The Information Technology Laboratory (ITL) at the National Institute of Standards and Technology (NIST) promotes the U.S. economy and public welfare by providing technical leadership for the Nation&apos;s measurement and standards infrastructure.[/p] 
+      [p]ITL develops tests, test methods, reference data, proof of concept implementations, and technical analyses to advance the development and productive use of information technology[/p]
+      [p]ITL&apos;s responsibilities include the development of management, administrative, technical, and physical standards and guidelines for the cost-effective security and privacy of other than national security-related information in federal information systems.[/p] 
+      [p]The Special Publication 800-series reports on ITL&apos;s research, guidelines, and outreach efforts in information system security, and its collaborative activities with industry, government, and academic organizations.[/p]
+    </Description>
+    <Disclaimer>
+    [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]
+    [p]This document was generated using information provided in "NIST Special Publication 800-53", that can be found at http://csrc.nist.gov/publications/nistpubs/800-53/SP800-53.pdf.[/p]
+    </Disclaimer>
+  </Info>
+  <Categories>
+    <Category Index="AC-6">
+      <Title>LEAST PRIVILEGE</Title>
+      <Description>
+        [p]The information system enforces the most restrictive set of rights/privileges or accesses needed by users (or processes acting on behalf of users) for the performance of specified tasks.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="information_disclosure"/>
+				<Association AlertTag="insecure_admin_access"/>
+        <Association AlertTag="source_code_disclosure"/>
+        <Association AlertTag="CWE-540"/>
+        <Association AlertTag="test_files"/>
+        <Association AlertTag="weak_credentials"/>
+        <Association AlertTag="authentication_bypass"/>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="malware"/>
+        <Association AlertTag="directory_traversal"/>
+      </Associations>
+    </Category>
+
+    <Category Index="AC-10">
+      <Title>CONCURRENT SESSION CONTROL</Title>
+      <Description>
+        [p]The information system limits the number of concurrent sessions for any user to [Assignment: organization-defined number of sessions].[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="session_fixation"/>
+      </Associations>
+    </Category>
+
+    <Category Index="AC-12">
+      <Title>SESSION TERMINATION</Title>
+      <Description>
+        [p]The information system automatically terminates a session after [Assignment: organization-defined time period] of inactivity.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="session_fixation"/>
+      </Associations>
+    </Category>
+
+    <Category Index="AC-17">
+      <Title>REMOTE ACCESS</Title>
+      <Description>
+        [p]The organization documents, monitors, and controls all methods of remote access (e.g., dial-up, Internet) to the information system including remote access for privileged functions. Appropriate organization officials authorize each remote access method for the information system and authorize only the necessary users for each access method.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="buffer_overflow"/>
+        <Association AlertTag="weak_credentials"/>
+ 				<Association AlertTag="sql_injection"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="crlf_injection"/>
+        <Association AlertTag="http_response_splitting"/>
+        <Association AlertTag="directory_traversal"/>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="denial_of_service"/>
+        <Association AlertTag="abuse_of_functionality"/>       
+        <Association AlertTag="malware"/>
+      </Associations>
+    </Category>
+
+    <Category Index="CM-6">
+      <Title>CONFIGURATION SETTINGS</Title>
+      <Description>
+        [p]The organization configures the security settings of information technology products to the most restrictive mode consistent with information system operational requirements.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_credentials"/>
+        <Association AlertTag="missing_update"/>
+        <Association AlertTag="configuration"/>
+      </Associations>
+    </Category>
+
+    <Category Index="CM-7">
+      <Title>LEAST FUNCTIONALITY</Title>
+      <Description>
+        [p]The organization configures the information system to provide only essential capabilities and specifically prohibits and/or restricts the use of the following functions, ports, protocols, and/or services: [Assignment: organization-defined list of prohibited and/or restricted functions, ports, protocols, and/or services].[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="information_disclosure"/>
+				<Association AlertTag="test_files"/>
+        <Association AlertTag="weak_credentials"/>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="malware"/>
+        <Association AlertTag="directory_traversal"/>
+      </Associations>
+    </Category>
+
+    <Category Index="IA-2">
+      <Title>USER IDENTIFICATION AND AUTHENTICATION</Title>
+      <Description>
+        [p]The information system uniquely identifies and authenticates users (or processes acting on behalf of users).[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="authentication_bypass"/>
+				<Association AlertTag="privilege_escalation"/>
+      </Associations>
+    </Category>
+
+    <Category Index="SC-5">
+      <Title>DENIAL OF SERVICE PROTECTION</Title>
+      <Description>
+        [p]The information system protects against or limits the effects of the following types of denial of service attacks: [Assignment: organization-defined list of types of denial of service attacks or reference to source for current list].[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="denial_of_service"/>        
+      </Associations>
+    </Category>
+	
+    <Category Index="SC-8">
+      <Title>TRANSMISSION INTEGRITY</Title>
+      <Description>
+        [p]The information system protects the integrity of transmitted information.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>        
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+
+    <Category Index="SC-9">
+      <Title>TRANSMISSION CONFIDENTIALITY</Title>
+      <Description>
+        [p]The information system protects the confidentiality of transmitted information.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+
+    <Category Index="SC-14">
+      <Title>PUBLIC ACCESS PROTECTIONS</Title>
+      <Description>
+        [p]For publicly available systems, the information system protects the integrity of the information and applications.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="http_response_splitting"/>
+				<Association AlertTag="directory_traversal"/>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="denial_of_service"/>
+        <Association AlertTag="abuse_of_functionality"/>
+        <Association AlertTag="malware"/>
+      </Associations>
+    </Category>
+    
+    <Category Index="SI-3">
+      <Title>MALICIOUS CODE PROTECTION</Title>
+      <Description>
+        [p]The information system implements malicious code protection that includes a capability for automatic updates.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xss"/>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="ldap_injection"/>
+      </Associations>
+    </Category>    
+    
+    <Category Index="SI-7">
+      <Title>SOFTWARE AND INFORMATION INTEGRITY</Title>
+      <Description>
+        [p]The information system detects and protects against unauthorized changes to software and information.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="http_response_splitting"/>
+				<Association AlertTag="directory_traversal"/>
+        <Association AlertTag="weak_credentials"/>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="denial_of_service"/>
+        <Association AlertTag="abuse_of_functionality"/>
+        <Association AlertTag="malware"/>
+      </Associations>
+    </Category>    
+    
+  </Categories>
+</Compliance>

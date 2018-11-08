@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+    <title>Acunetix WVS Scheduler Web Interface</title>
+    <link href="css/redmond/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/jqueryui.js"></script>
+    <script type="text/javascript" src="js/checkVersion.js"></script>
+    <script type="text/javascript" src="js/addscan.js"></script>
+    <script type="text/javascript" src="js/csvimport.js"></script>
+    <script type="text/javascript" src="js/scanlist.js"></script>
+    <script type="text/javascript" src="js/scanitem.js"></script>
+    <script type="text/javascript" src="js/scanhistory.js"></script>
+    <script type="text/javascript" src="js/scanresults.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ($.browser.msie && $.browser.version == "6.0") alert("Internet Explorer version 6 is not supported. Please install Internet Explorer version 7 or greater.");
+            if ($.browser.msie) $.fx.off = true;
+
+            initLogin();
+            initializeScanList();
+            initializeScanListFilters();
+            initializeScanListPagination();
+            initializeAddScanDlg();
+            initializeCSVImportDlg();
+            initializeScanHistoryDlg();
+            initializeScanResultsDlg();
+
+            // group buttons
+            $("#selectionActions").buttonset();
+            $("#addScans").buttonset();
+        });
+    </script>
+</head>
+
+<body>
+<div class="acuNotification">You have lost connection to the server! Will retry every 5 seconds ...</div>
+<div class="mainContainer">
+    <div class="acuHeader"><img src="img/logo.gif" width="363" height="36" alt="Acunetix Logo"><!--<span><button onClick='document.cookie = "wvs_auth=; path=/";'>Logout</button></span> -->
+    </div>
+    <div id="toolbar" class="ui-widget-header ui-corner-all">
+        <span id="addScans">
+            <span id="btnAddNewScan">New scan</span><span id="btnImportScansFromCSV">Import CSV</span>
+        </span>
+        <span id="selectScans">
+            <span id="scansMenu"></span>
+            <span id="selectionActions">
+                <span id="btnCollapse">Collapse</span><span id="btnExpand">Expand</span>
+                <span id="btnStop">Stop</span><span id="btnDelete">Delete</span>
+            </span>
+            <span class="filterWrapper"><input id="edFilter" type="text"/><img src="img/filter.png" border="0"
+                                                                               id="edFilterImg"/></span>
+        </span>
+    </div>
+
+  <div class="paginationScans">
+    <button id="btnFirstPage1" title="First page"></button>
+    <button id="btnPrevPage1" title="Previous page"></button>
+    <span class="pageInfo pageNav">Page <input id="pageNumberInput1" class="pageNumberInput pageNav" type="text"> of <span class="pageNav" id="numberOfPages1"></span><span class="numberOfScans pageNav" id="numberOfScans1"></span></span>
+    <button id="btnNextPage1" title="Next page"></button>
+    <button id="btnLastPage1" title="Last page"></button>
+  </div>
+
+    <div id="scanList"></div>
+
+    <div class="beforePaginationBottom"></div>
+    <div class="paginationScans">
+        <button id="btnFirstPage2" title="First page"></button>
+        <button id="btnPrevPage2" title="Previous page"></button>
+        <span class="pageInfo pageNav">Page <input id="pageNumberInput2" class="pageNumberInput pageNav" type="text"> of <span class="pageNav" id="numberOfPages2"></span><span class="numberOfScans pageNav" id="numberOfScans2"></span></span>
+        <button id="btnNextPage2" title="Next page"></button>
+        <button id="btnLastPage2" title="Last page"></button>
+    </div>
+
+</div>
+
+<div class="scanItem" id="scanItemTemplate" style="display:none">
+    <div class="ui-corner-top scanURL" role="siSelection">
+        <span role="scanItemTitle"></span>
+        <a href="javascript:void(0)" role="btnDeleteSchedule" class="ui-button-delete-schedule"
+           title="Delete schedule"></a>
+        <a href="javascript:void(0)" role="btnCollapseSchedule" class="ui-button-collapse-schedule"
+           title="Expand/collapse schedule"></a>
+    </div>
+    <div class="ui-widget-content ui-corner-bottom ui-helper-clearfix scanInfo" role="scanInfo">
+        <table border="0" cellspacing="4" width="100%">
+            <tr class="scanItemRow">
+                <td align="left"><strong>schedule</strong></td>
+                <td role="scheduleInfo"></td>
+            </tr>
+            <tr class="scanItemRow">
+                <td align="left"><strong>status</strong></td>
+                <td role="scanStatus"></td>
+            </tr>
+            <tr class="scanItemRow">
+                <td align="left"><strong>progress</strong></td>
+                <td>
+                    <div role="scanProgress"></div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <table border="0" cellspacing="1" width="100%">
+            <tr>
+                <td><a class="scanControl" href="javascript:void(0)" role="btnDownload">scan results</a></td>
+                <td align="right"><a href="javascript:void(0)"
+                                     role="btnConfirmScan">confirm</a>
+                    <a class="scanControl" href="javascript:void(0)" role="btnScanHistory">scan
+                    history</a> <a class="scanControl" href="javascript:void(0)" role="btnPauseResume">pause</a> <a
+                        href="javascript:void(0)" class="scanControl" role="btnStopScan">stop</a> <a class="scanControl"
+                                                                                                     href="javascript:void(0)"
+                                                                                                     role="btnEdit">edit</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="loginDialog">
+    <form id="loginForm" class="loginForm">
+        <table border="0" cellspacing="4">
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" id="loginUser"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" id="loginPass"/></td>
+            </tr>
+        </table>
+        <div id="loginErrorMessage"></div>
+    </form>
+</div>
+
+<div id="csvImportDialog">
+    <form id="csvImportForm" class="csvImport" action="/importCSV" method="POST" enctype="multipart/form-data">
+        <table border="0" cellspacing="4">
+            <tr>
+                <td>CSV file:</td>
+                <td><input type="file" name="csvfile" id="csvFile"/></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top"></td>
+                <td><input type="checkbox" name="deleteScans" id="deleteScans" CHECKED/>
+                    <label for="deleteScans">Delete scan schedules when scans are completed</label></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top"></td>
+                <td><div style="float:right"><a href="/docs/importCSV.html" target="_blank">CSV file format</a></div></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="addEditScanDialog">
+    <form id="addEditScanForm" class="inputTable">
+        <div id="accordionOptions">
+            <h3><a href="#">Basic options</a></h3>
+
+            <div class="accordionSection">
+                <table border="0" cellspacing="4">
+                    <tr>
+                        <td align="right" valign="top"><label for="scanType">Scan type:</label></td>
+                        <td><select id="scanType">
+                            <option value="scan" selected="selected">Scan a single website</option>
+                            <option value="scanList">Scan multiple websites</option>
+                            <option value="scanWSDL">Scan a web service</option>
+                        </select></td>
+                    </tr>
+                    <tr id="trTargetListContainer">
+                        <td align="right" valign="top"><label for="targetList">List of URLs:</label></td>
+                        <td><textarea rows="4" id="targetList"></textarea>
+
+                            <div id="targetListError" class="inputErrorMsg"></div>
+                        </td>
+                    </tr>
+                    <tr id="trTargetContainer">
+                        <td align="right" valign="top"><label for="target">Website URL:</label></td>
+                        <td><input type="text" id="target"/>
+
+                            <div id="targetError" class="inputErrorMsg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="recurse">Recursion:</label></td>
+                        <td><select id="recurse">
+                            <option value="-1" selected="selected">Once</option>
+                            <option value="0">Every day</option>
+                            <option value="9">Every week</option>
+                            <option value="10">Every month</option>
+                            <option value="12">Continuous</option>
+                        </select></td>
+                    </tr>
+                    <tr id="trDateContainer">
+                        <td align="right" valign="top"><label for="date">Date:</label></td>
+                        <td><input type="text" id="date"/>
+
+                            <div id="dateError" class="inputErrorMsg"></div>
+                        </td>
+                    </tr>
+                    <tr id="trWeekDayContainer">
+                        <td align="right" valign="top"><label for="dayOfWeek">Day of week:</label></td>
+                        <td><select id="dayOfWeek">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select></td>
+                    </tr>
+                    <tr id="trMonthDayContainer">
+                        <td align="right" valign="top"><label for="dayOfMonth">Day of month:</label></td>
+                        <td><select id="dayOfMonth">
+                        </select></td>
+                    </tr>
+                    <tr id="trTimeContainer">
+                        <td align="right" valign="top"><label for="time">Time:</label></td>
+                        <td><input type="text" id="time"/>
+
+                            <div id="timeError" class="inputErrorMsg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"></td>
+                        <td><input type="checkbox" id="deleteAfterCompletion"/>
+                            <label for="deleteAfterCompletion">Delete scan schedule when scan is completed</label></td>
+                    </tr>
+                </table>
+            </div>
+            <h3><a href="#">Advanced options</a></h3>
+
+            <div class="accordionSection">
+                <table border="0" cellspacing="4" class="inputTable">
+                    <tr>
+                        <td align="right" valign="top"><label for="param_profile">Scanning profile:</label></td>
+                        <td><select id="param_profile">
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_loginSeq">Login sequence:</label></td>
+                        <td><select id="param_loginSeq">
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_settings">Scan settings:</label></td>
+                        <td><select id="param_settings">
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_scanningmode">Scan mode:</label></td>
+                        <td><select id="param_scanningmode">
+                            <option value="quick">Quick</option>
+                            <option value="heuristic" SELECTED>Heuristic</option>
+                            <option value="extensive">Extensive</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_excludedhours">Excluded hours:</label></td>
+                        <td><select id="param_excludedhours">
+                        </select></td>
+                    </tr>
+                </table>
+            </div>
+            <h3><a href="#">Scan results and reports</a></h3>
+
+            <div class="accordionSection">
+                <table border="0" cellspacing="4" class="inputTable">
+                    <tr>
+                        <td align="right" valign="top"></td>
+                        <td><input type="checkbox" id="param_savetodatabase" CHECKED/>
+                            <label for="param_savetodatabase">Save scan results to database</label></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"></td>
+                        <td><input type="checkbox" id="param_savelogs"/>
+                            <label for="param_savelogs">Save scan logs</label></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"></td>
+                        <td><input type="checkbox" id="param_generatereport"/>
+                            <label for="param_generatereport">Generate report</label></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_reportformat">Report format:</label></td>
+                        <td><select id="param_reportformat">
+                            <option value="PDF" SELECTED>PDF</option>
+                            <option value="RTF">RTF</option>
+                            <option value="REP">REP</option>
+                            <option value="HTML">HTML</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_reporttemplate">Report template:</label></td>
+                        <td><select id="param_reporttemplate">
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right" valign="top"><label for="param_emailaddress">Email address for
+                            notifications:</label></td>
+                        <td><input id="param_emailaddress" type="text" value="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="scanHistoryDialog">
+    <table border="0" cellspacing="0" id="scanHistoryTable">
+        <thead>
+        <tr>
+            <th SCOPE="col" width="30%">Date</th>
+            <th SCOPE="col" width="1%"></th>
+            <th SCOPE="col" width="69%">Event</th>
+        </tr>
+        </thead>
+        <tbody id="scanHistoryTableBody"/>
+    </table>
+</div>
+
+<div id="scanResultsDialog">
+    <table border="0" cellspacing="0" id="scanResultsTable">
+        <thead>
+        <tr>
+            <th SCOPE="col" width="1%"></th>
+            <th SCOPE="col" width="35%">Scan date</th>
+            <th SCOPE="col" width="24%">Download size</th>
+            <th SCOPE="col" width="39%">Actions</th>
+        </tr>
+        </thead>
+        <tbody id="scanResultsTableBody"/>
+    </table>
+</div>
+
+<div id="deleteScheduleDialog" title="Delete schedule?">
+    <p>Are you sure you want to delete this schedule?<br/>
+        <input type="checkbox" id="dsdDeleteResults"/>Delete scan results
+    </p>
+</div>
+
+<div id="deleteSchedulesDialog" title="Delete selected schedules?">
+    <p>Are you sure you want to delete selected schedules?<br/>
+        <input type="checkbox" id="dsdsDeleteResults"/>Delete scan results
+    </p>
+</div>
+
+</body>
+</html>

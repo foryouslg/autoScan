@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="C:\ProgramData\Acunetix WVS 10\Data\Reporter\CSSAlertGroupStyle.xsl"?>
+<ReportItems>
+
+<ReportItem id="29" color="green">
+ <Name><![CDATA[Possible username or password disclosure]]></Name>
+ <ModuleName><![CDATA[Scripting (Text_Search_File.script)]]></ModuleName>
+ <Details><![CDATA[<br/>Pattern found: <pre wrap="virtual"><font color="blue">password:user_params</font></pre>]]></Details>
+ <Affects><![CDATA[/users/register]]></Affects>
+ <Parameter><![CDATA[]]></Parameter>
+ <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+ <AOP_SourceLine>0</AOP_SourceLine>
+ <AOP_Additional><![CDATA[]]></AOP_Additional>
+ <IsFalsePositive><![CDATA[False]]></IsFalsePositive>
+ <Severity><![CDATA[info]]></Severity>
+ <Type><![CDATA[Informational]]></Type>
+ <Impact><![CDATA[Possible sensitive information disclosure.]]></Impact>
+ <Description><![CDATA[A username and/or password was found in this file. This information could be sensitive.<br/><br/> <div class="coolbox"><font color="dark">This alert may be a false positive, manual confirmation is required.</font></div>]]></Description>
+ <DetailedInformation><![CDATA[]]></DetailedInformation>
+ <Recommendation><![CDATA[Remove this file from your website or change its permissions to remove access.]]></Recommendation>
+ <TechnicalDetails>
+  <Request><![CDATA[GET /users/register HTTP/1.1
+Pragma: no-cache
+Cache-Control: no-cache
+Referer: http://cbdc.youedata.com/
+Acunetix-Aspect: enabled
+Acunetix-Aspect-Password: 082119f75623eb7abd7bf357698ff66c
+Acunetix-Aspect-Queries: filelist;aspectalerts
+Cookie: _data_competition_session=dUJvOVNLNlczY1pSK0kyTEZQUStHT1JVdVhURElmSnRRWk1UUDVoaE4ybHcrMUtLOWlXT1pjc2ZWRjFJUCtqeFpKYnRyMUNQQWhoK1BTRmE3eXBIM2NRMzFabE9xYzVQK3R1TEJ0RFhjbzVaVExuYXlGWnF5YXNQSERBd2wvR2oxWVNRclBXT1hRbGNwQnNlVU02bnJacXlpSFRjZlJhM2hNaEZaZCtQMkZuMDMxZVRnVkhXTVNRWFpFUWR2Z0RTbEp0cm5UZ2hERHdQZkRsMmkvUzlHOFhiUkxzNkdieHhhWit5WEN4ZC94TT0tLVQ2MTBYZklYblRLTVNYWlNNeDI3Snc9PQ%3D%3D--cc2cf2b3aae05de6e29b0574d0e507612b90d714
+Host: cbdc.youedata.com
+Connection: Keep-alive
+Accept-Encoding: gzip,deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.21
+Accept: */*
+]]></Request>
+  <Response><![CDATA[HTTP/1.1 400 Bad Request
+Server: nginx/1.12.1
+Date: Tue, 29 May 2018 06:20:03 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 86631
+Connection: keep-alive
+X-Request-Id: 373bee03-d738-47b6-be80-b1988df08476
+X-Runtime: 0.167912
+]]></Response>
+ </TechnicalDetails>
+ <CWE id="200"><![CDATA[CWE-200]]></CWE>
+<CVEList></CVEList>
+ <CVSS>
+    <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:P/I:N/A:N]]></Descriptor>
+    <Score><![CDATA[5.0]]></Score>
+    <AV><![CDATA[Network]]></AV>
+    <AVdesc><![CDATA[A vulnerability exploitable with network access means the vulnerable software is bound to the network stack and the attacker does not require local network access or local access.]]></AVdesc>
+    <AC><![CDATA[Low]]></AC>
+    <ACdesc><![CDATA[Specialized access conditions or extenuating circumstances do not exist.]]></ACdesc>
+    <Au><![CDATA[None]]></Au>
+    <Audesc><![CDATA[Authentication is not required to exploit the vulnerability.]]></Audesc>
+    <C><![CDATA[Partial]]></C>
+    <Cdesc><![CDATA[There is considerable informational disclosure. Access to some system files is possible, but the attacker does not have control over what is obtained, or the scope of the loss is constrained.]]></Cdesc>
+    <I><![CDATA[None]]></I>
+    <Idesc><![CDATA[There is no impact to the integrity of the system.]]></Idesc>
+    <A><![CDATA[None]]></A>
+    <Adesc><![CDATA[There is no impact to the availability of the system.]]></Adesc>
+    <E><![CDATA[]]></E>
+    <Edesc><![CDATA[]]></Edesc>
+    <RL><![CDATA[]]></RL>
+    <RLdesc><![CDATA[]]></RLdesc>
+    <RC><![CDATA[]]></RC>
+    <RCdesc><![CDATA[]]></RCdesc>
+ </CVSS>
+<References></References>
+</ReportItem>
+  <Affected>
+    <Name><![CDATA[/]]></Name>
+    <Name><![CDATA[/home/show_bonus]]></Name>
+    <Name><![CDATA[/join_match]]></Name>
+    <Name><![CDATA[/match]]></Name>
+    <Name><![CDATA[/match_rule]]></Name>
+    <Name><![CDATA[/match_subjects]]></Name>
+    <Name><![CDATA[/match_subjects/1/show_match]]></Name>
+    <Name><![CDATA[/match_subjects/2/show_match]]></Name>
+    <Name><![CDATA[/match_subjects/28/show_match]]></Name>
+    <Name><![CDATA[/match_subjects/30/show_match]]></Name>
+    <Name><![CDATA[/users/register]]></Name>
+  </Affected>
+</ReportItems>
+

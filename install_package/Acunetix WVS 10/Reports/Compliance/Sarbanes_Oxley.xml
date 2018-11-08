@@ -1,0 +1,114 @@
+<Compliance>
+  <Info>
+    <Title>Sarbanes-Oxley Act of 2002</Title>
+    <Description>
+      [p]The Sarbanes-Oxley Act of 2002 (HR 3763), signed into law on 30 July 2002, is considered the most significant change to federal securities laws in the United States since the New Deal.[/p]
+      [p]The act was designed to review dated legislative audit requirements and protect investors by improving the accuracy and reliability of corporate disclosures.[/p]
+    </Description>
+    <Disclaimer>
+    [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]
+    </Disclaimer>
+  </Info>
+  <Categories>
+  
+    <Category Index="Section 302">
+      <Title>Corporate responsibility for financial reports</Title>
+      <Description>
+        [p]The Commission shall, by rule, require, for each company filing periodic reports under section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m,
+78o(d)), that the principal executive officer or officers and the principal financial officer or officers, or persons performing similar functions, certify in each annual or quarterly report filed or submitted under either such section of such Act that-[break]
+(2) based on the officer's knowledge, the report does not contain any untrue statement of a material fact or omit to state a material fact necessary in order to make the statements made, in light of the circumstances under which such statements were made, not misleading;[break]
+(4) the signing officers-[break]
+(A) are responsible for establishing and maintaining internal controls;[/p]
+      </Description>
+      <Associations>
+                <Association AlertTag="abuse_of_functionality"/>
+				<Association AlertTag="arbitrary_file_creation"/>
+				<Association AlertTag="authentication_bypass"/>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="csrf"/>
+				<Association AlertTag="denial_of_service"/>
+				<Association AlertTag="directory_traversal"/>
+				<Association AlertTag="error_handling"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="http_response_splitting"/>
+				<Association AlertTag="information_disclosure"/>
+				<Association AlertTag="insecure_admin_access"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="malware"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="known_vulnerabilities"/>
+				<Association AlertTag="needless_service"/>
+				<Association AlertTag="network_alert"/>
+				<Association AlertTag="privilege_escalation"/>
+				<Association AlertTag="sensitive_data_not_over_ssl"/>
+				<Association AlertTag="session_fixation"/>
+				<Association AlertTag="source_code_disclosure"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="test_files"/>
+				<Association AlertTag="url_redirection"/>
+				<Association AlertTag="weak_credentials"/>
+				<Association AlertTag="weak_crypto"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+
+    <Category Index="Section 404">
+      <Title>Management assessment of internal controls</Title>
+      <Description>
+        [p]The Commission shall prescribe rules requiring each annual report required by section 13(a) or 15(d) of the Securities Exchange Act of 1934 (15 U.S.C. 78m or 78o(d)) to contain an internal control report, which shall-
+(1) state the responsibility of management for establishing and maintaining an adequate internal control structure and procedures for financial reporting; and[break]
+(2) contain an assessment, as of the end of the most recent fiscal year of the issuer, of the effectiveness of the internal control structure and procedures of the issuer for financial reporting.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="xss"/>
+		<Association AlertTag="file_inclusion"/>
+		<Association AlertTag="xfs"/>
+		<Association AlertTag="buffer_overflow"/>
+		<Association AlertTag="sql_injection"/>
+		<Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="code_execution"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="http_response_splitting"/>
+		<Association AlertTag="directory_traversal"/>
+        <Association AlertTag="missing_update"/>
+        <Association AlertTag="denial_of_service"/>
+        <Association AlertTag="malware"/>
+        <Association AlertTag="abuse_of_functionality"/>
+        <Association AlertTag="sensitive_data_not_over_ssl"/>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+
+    <Category Index="Section 409">
+      <Title>Real time issuer disclosures</Title>
+      <Description>
+        [p](l) REAL TIME ISSUER DISCLOSURES. - Each issuer reporting under section 13(a) or 15(d) shall disclose to the public on a rapid and current basis such additional information concerning material changes in the financial condition or operations of the issuer, in plain English, which may include trend and qualitative information and graphic presentations, as the Commission determines, by rule, is necessary or useful for the protection of investors and in the public interest.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xpath_injection"/>
+		<Association AlertTag="xss"/>
+		<Association AlertTag="file_inclusion"/>
+		<Association AlertTag="xfs"/>
+		<Association AlertTag="buffer_overflow"/>
+		<Association AlertTag="sql_injection"/>
+		<Association AlertTag="xpath_injection"/>
+		<Association AlertTag="ldap_injection"/>
+		<Association AlertTag="code_execution"/>
+		<Association AlertTag="crlf_injection"/>
+		<Association AlertTag="http_response_splitting"/>
+		<Association AlertTag="directory_traversal"/>
+        <Association AlertTag="denial_of_service"/>
+        <Association AlertTag="malware"/>
+        <Association AlertTag="abuse_of_functionality"/>
+      </Associations>
+    </Category>
+    
+  </Categories>
+</Compliance>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<Profile Name="GTD" Description="General test database">
+  <!-- What technologies are supported -->
+  <Supported>
+    <!-- Operating systems -->
+    <OS Name="Windows"/>
+    <OS Name="Unix"/>
+    <OS Name="All"/>
+    <!-- Web servers -->
+    <WebServer Name="IIS"/>
+    <WebServer Name="IIS 4.0"/>
+    <WebServer Name="IIS 5.0"/>
+    <WebServer Name="IIS 5.1"/>
+    <WebServer Name="IIS 6.0"/>
+    <WebServer Name="Apache"/>
+    <WebServer Name="Apache 1.x"/>
+    <WebServer Name="Apache 2.x"/>
+    <WebServer Name="Apache Tomcat"/>
+    <WebServer Name="SunONE"/>
+    <WebServer Name="Netscape-Enterprise"/>
+    <WebServer Name="Zeus"/>
+    <WebServer Name="Oracle-Application-Server"/>
+    <WebServer Name="Sun-ONE-Web-Server"/>
+    <WebServer Name="WebLogic"/>
+    <WebServer Name="WebSTAR"/>
+    <WebServer Name="Lotus-Domino"/>
+    <WebServer Name="Zope"/>
+    <WebServer Name="WEBrick"/>
+    <WebServer Name="All"/>
+    <!-- Technologies -->
+    <Technology Name="ASP"/>
+    <Technology Name="ASP.NET"/>
+    <Technology Name="PHP"/>
+    <Technology Name="Perl"/>
+    <Technology Name="Java/J2EE"/>
+    <Technology Name="ColdFusion/Jrun"/>
+    <Technology Name="Python"/>
+    <Technology Name="Rails"/>
+    <Technology Name="FrontPage"/>
+    <Technology Name="All"/>
+  </Supported>
+  <!-- List of alert tags that can be applied -->
+  <AlertTags>
+    <AlertTag>xss</AlertTag>
+    <AlertTag>sql_injection</AlertTag>
+    <AlertTag>file_inclusion</AlertTag>
+    <AlertTag>code_execution</AlertTag>
+    <AlertTag>xpath_injection</AlertTag>
+    <AlertTag>ldap_injection</AlertTag>
+    <AlertTag>crlf_injection</AlertTag>
+    <AlertTag>http_response_splitting</AlertTag>
+    <AlertTag>directory_traversal</AlertTag>
+    <AlertTag>source_code_disclosure</AlertTag>
+    <AlertTag>information_disclosure</AlertTag>
+    <AlertTag>url_redirection</AlertTag>
+    <AlertTag>configuration</AlertTag>
+    <AlertTag>xfs</AlertTag>
+    <AlertTag>session_fixation</AlertTag>
+    <AlertTag>error_handling</AlertTag>
+    <AlertTag>malware</AlertTag>
+    <AlertTag>sensitive_data_not_over_ssl</AlertTag>
+    <AlertTag>buffer_overflow</AlertTag>
+    <AlertTag>denial_of_service</AlertTag>
+    <AlertTag>abuse_of_functionality</AlertTag>
+    <AlertTag>arbitrary_file_creation</AlertTag>
+    <AlertTag>csrf</AlertTag>
+    <AlertTag>weak_crypto</AlertTag>
+    <AlertTag>insecure_admin_access</AlertTag>
+    <AlertTag>needless_service</AlertTag>
+    <AlertTag>missing_update</AlertTag>
+    <AlertTag>weak_credentials</AlertTag>
+    <AlertTag>network_alert</AlertTag>
+    <AlertTag>test_files</AlertTag>
+    <AlertTag>privilege_escalation</AlertTag>
+    <AlertTag>authentication_bypass</AlertTag>
+    <AlertTag>directory_listing</AlertTag>
+    <AlertTag>bruteforce_possible</AlertTag>
+    <AlertTag>http_parameter_pollution</AlertTag>
+    <AlertTag>unauthenticated_file_upload</AlertTag>
+    <AlertTag>xxe</AlertTag>
+    <AlertTag>ssrf</AlertTag>
+    <AlertTag>internal_ip_disclosure</AlertTag>
+    <AlertTag>default_credentials</AlertTag>
+    <AlertTag>dev_files</AlertTag>
+  </AlertTags>
+  <Test_Modules/>
+</Profile>

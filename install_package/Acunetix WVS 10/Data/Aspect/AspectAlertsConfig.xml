@@ -1,0 +1,239 @@
+<?xml version="1.0" standalone="no"?>
+<AspectAlerts>
+  <Category name="PHP">
+    <Alert id="magic_gpc_off" enabled="1" ReportMode="d">
+      <Name>PHP magic_quotes_gpc is disabled</Name>
+      <Severity>high</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant.</Impact>
+      <Description>The magic quotes option is designed developers from SQL injection attacks. It executes addslashes() on all information received over GET, POST or COOKIE. This protection is not perfect and it's better to validate input from your own scripts. Still, it is recommended to enable magic_quotes_gpc as an extra layer of security. </Description>
+      <Recommendation>You can enable magic_quotes_gpc from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+magic_quotes_gpc = 'on'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  magic_quotes_gpc on[break]
+
+</Recommendation>
+      <Details>Current setting  is : [bold]magic_quotes_gpc = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="register_globals_on" enabled="1" ReportMode="d">
+      <Name>PHP register_globals enabled</Name>
+      <Severity>high</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant.</Impact>
+      <Description>When register_globals is enabled, PHP will automatically create variables in the global scope for any value passed in GET, POST or COOKIE. This, combined with the use of variables without initialization, has lead to numerous security vulnerabilities. Since application developers should be aware when accessing tainted user input, it is better practice to access the variables through their respective super globals.</Description>
+      <Recommendation>You can disable register_globals from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+register_globals = 'off'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  register_globals off[break]
+</Recommendation>
+      <Details>Current setting  is : [bold]register_globals = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="display_errors" enabled="1" ReportMode="d">
+      <Name>PHP errors enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>The display_errors directive determines whether error messages should be sent to the browser. These messages frequently contain sensitive information about your web application environment, and should never be presented to untrusted sources. [break][break]display_errors is on by default.</Description>
+      <Recommendation>You can disable display_errors from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+display_errors = 'off'[break]
+log_errors = 'on'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  display_errors  off[break]
+php_flag  log_errors  on</Recommendation>
+      <Details>Current setting  is : [bold]display_errors = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="allow_url_fopen_on" enabled="1" ReportMode="d">
+      <Name>PHP allow_url_fopen enabled</Name>
+      <Severity>high</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant - possible remote file inclusion.</Impact>
+      <Description>The PHP configuration directive allow_url_fopen is enabled. When enabled, this directive allows data retrieval from remote locations (web site or FTP server). A large number of code injection vulnerabilities reported in PHP-based web applications are caused by the combination of enabling allow_url_fopen and bad input filtering. [break][break]allow_url_fopen is enabled by default.</Description>
+      <Recommendation>You can disable allow_url_fopen from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+allow_url_fopen = 'off'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  allow_url_fopen off[break]
+</Recommendation>
+      <Details>Current setting  is : [bold]allow_url_fopen = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="allow_url_include_on" enabled="1" ReportMode="d">
+      <Name>PHP allow_url_include enabled</Name>
+      <Severity>high</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant - possible remote file inclusion.</Impact>
+      <Description>The PHP configuration directive allow_url_include is enabled. When enabled, this directive allows data retrieval from remote locations (web site or FTP server) for functions like fopen and file_get_contents. If user input is not properly validated, this can conduct to remote file inclusion vulnerabilities.  [break][break]allow_url_include is disabled by default. If allow_url_fopen is disabled, allow_url_include is also disabled. This setting is only available since PHP 5.2.</Description>
+      <Recommendation>You can disable allow_url_include from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+allow_url_include = 'off'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  allow_url_include off[break]
+</Recommendation>
+      <Details>Current setting  is : [bold]allow_url_include = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="session.use_trans_sid_on" enabled="1" ReportMode="d">
+      <Name>PHP session.use_trans_sid enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant - possible session hijacking.</Impact>
+      <Description>When use_trans_sid is enabled, PHP will pass the session ID via the URL. This makes the application more vulnerable to session hijacking attacks. Session hijacking is basically a form of identity theft wherein a hacker impersonates a legitimate user by stealing his session ID. When the session token is transmitted in a cookie, and the request is made on a secure channel (that is, it uses SSL), the token is secure.</Description>
+      <Recommendation>You can disable session.use_trans_sid from php.ini or .htaccess.[break][break]
+
+[bold]php.ini[/bold][break]
+session.use_trans_sid = 'off'[break][break]
+
+[bold].htaccess[/bold][break]
+php_flag  session.use_trans_sid off[break]
+</Recommendation>
+      <Details>Current setting  is : [bold]session.use_trans_sid = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="open_basedir_not_set" enabled="1" ReportMode="s">
+      <Name>PHP open_basedir is not set</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant - possible remote code inclusion.</Impact>
+      <Description>The open_basedir configuration directive will limit the files that can be opened by PHP to the specified directory-tree. When a script tries to open a file with, for example, fopen() or gzopen(), the location of the file is checked. When the file is outside the specified directory-tree, PHP will refuse to open it. open_basedir is a good protection against remote file inclusion vulnerabilities. For a remote attacker it is not possible to break out of the open_basedir restrictions if he is only able to inject the name of a file to be included. Therefore the number of files he will be able to include with such a local file include vulnerability is limited. </Description>
+      <Recommendation>You can set open_basedir from php.ini [break][break]
+
+[bold]php.ini[/bold][break]
+open_basedir = your_application_directory[break]</Recommendation>
+      <Details>Current setting  is : [bold]open_basedir = [dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="enable_dl_safe_mode_on" enabled="1" ReportMode="s">
+      <Name>PHP enable_dl enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant - possible remote code inclusion.</Impact>
+      <Description>The configuration directive enable_dl instructs PHP whether or not to enable dynamic loading of PHP modules with dl(). If you enable dynamic module loading, it's possible to bypass the safe_mode restrictions. Dynamic loading is enabled by default. </Description>
+      <Recommendation>You can disable enable_dl from php.ini [break][break]
+
+[bold]php.ini[/bold][break]
+enable_dl = off[break]</Recommendation>
+      <Details>Current setting  is : [bold]enable_dl = [dark]on[/dark][/bold] and [bold]safe_mode = [dark]on[/dark][/bold]</Details>
+    </Alert>
+  </Category>
+  <Category name="ASP.NET">
+    <Alert id="ASPNET_CustomErrors" enabled="1" ReportMode="d">
+      <Name>Custom errors disabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>When custom errors are disabled ASP.NET can return detailed information to the caller. This includes full stack traces and other information that is useful to an attacker. </Description>
+      <Recommendation>Check the [bold]&lt;customErrors&gt;[/bold] element from web.config and ensure that the mode attribute is set to [bold]"On"[/bold] or [bold]"RemoteOnly"[/bold].[break][break]
+Example: &lt;customErrors mode="RemoteOnly"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;customErrors mode="[dark]${value}[/dark]"/&gt;[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_Trace" enabled="1" ReportMode="d">
+      <Name>Application-level tracing enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>Application-level tracing enables trace log output for every page within an application. When the &lt;trace&gt; element is enabled for remote users (localOnly="false"), any user can view an detailed list of recent requests to the application simply by browsing to the page trace.axd.</Description>
+      <Recommendation>Check the [bold]&lt;trace&gt;[/bold] element from web.config and ensure that enabled attribute is set to [bold]"False"[/bold] and/or localOnly attribute is set to [bold]"true"[/bold]. [break][break]
+Example: &lt;trace enabled="False" localOnly="True"&gt;</Recommendation>
+      <Details>Currently trace is enabled and localOnly is set to False.</Details>
+    </Alert>
+    <Alert id="ASPNET_Debugging" enabled="1" ReportMode="d">
+      <Name>ASPX debugging enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>ASPX debugging is enabled on this application. Leaving debugging enabled is dangerous because you are providing inside information to end users who shouldn't have access to it, and who may use it to attack your application.</Description>
+      <Recommendation>To disable debugging, set the value of the [bold]debug[/bold] attribute of the &lt;compilation&gt; element to [bold]false[/bold].[break][break]Example: &lt;compilation debug="false"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;compilation debug="[dark]true[/dark]"&gt;[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_Cookies" enabled="1" ReportMode="d">
+      <Name>Cookies accessible from client-side scripts</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>HttpOnly cookies are not enabled on this application. Any cookie marked with this property will be accessible only from server-side code, and
+not to any client-side scripting code like JavaScript or VBScript.This shielding of cookies from the client helps to protect Web-based applications from Cross-Site Scripting attacks.</Description>
+      <Recommendation>To enable HttpOnly cookies, set the value of the [bold]httpOnlyCookies[/bold] attribute of the &lt;httpCookies&gt; element to [bold]true[/bold].[break][break]Example: &lt;httpCookies httpOnlyCookies="true"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;httpCookies httpOnlyCookies="[dark]false[/dark]"&gt;[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_CookielessSessionState" enabled="1" ReportMode="d">
+      <Name>Cookieless session state enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible session hijacking.</Impact>
+      <Description>Web applications configured to use cookieless session state store the session token in the page URLs rather than a cookie. This makes the application more vulnerable to session hijacking attacks. Session hijacking is basically a form of identity theft wherein a hacker impersonates a legitimate user by stealing his session token. When the session token is transmitted in a cookie, and the request is made on a secure channel (that is, it uses SSL), the token is secure.</Description>
+      <Recommendation>To disable cookieless session state, set the value of the [bold]cookieless[/bold] attribute of the &lt;sessionState&gt; element to [bold]UseCookies[/bold].[break][break]Example: &lt;sessionState cookieless="UseCookies"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;sessionState cookieless="[dark]UseUri[/dark]"&gt;[/bold].
+</Details>
+    </Alert>
+    <Alert id="ASPNET_CookielessAuthentication" enabled="1" ReportMode="d">
+      <Name>Cookieless authentication enabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible session hijacking.</Impact>
+      <Description>Web applications configured to use cookieless authentication store the authentication token in the page URLs rather than a cookie. This makes the application more vulnerable to session hijacking attacks. Session hijacking is basically a form of identity theft wherein a hacker impersonates a legitimate user by stealing his session token. When the authentication token is transmitted in a cookie, and the request is made on a secure channel (that is, it uses SSL), the token is secure.</Description>
+      <Recommendation>To disable cookieless authentication, set the value of the [bold]cookieless[/bold] attribute of the &lt;forms&gt; element to [bold]UseCookies[/bold].[break][break]Example: &lt;forms cookieless="UseCookies"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;forms cookieless="[dark]UseUri[/dark]"&gt;[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_FormsAuthUsingSSL" enabled="1" ReportMode="d">
+      <Name>Failure to require SSL for authentication cookies</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible session hijacking.</Impact>
+      <Description>You can require the forms authentication cookie from your Web-based applications to use SSL. By setting the requireSSL attribute of the &lt;forms&gt; element to true, ASP.NET applications will use a secure connection when transmitting the authentication cookies to the Web server.</Description>
+      <Recommendation>To require SSL for authentication cookies, set the value of the [bold]requireSSL[/bold] attribute of the &lt;forms&gt; element to [bold]true[/bold].[break][break]Example: &lt;forms requireSSL="true"&gt;</Recommendation>
+      <Details>The current setting is [bold]&lt;forms requireSSL="[dark]false[/dark]"&gt;[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_HardcodedCredentials" enabled="1" ReportMode="d">
+      <Name>Login credentials stored in plain text</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible information disclosure.</Impact>
+      <Description>The login credentials for this web application are stored in plain text in the configuration file Web.config. Storing login credentials in plaintext in a configuration file is not secure. Anyone with read access to the Web.config file could access the authenticated Web application.</Description>
+      <Recommendation>The most secure way to store login credentials is to not store them in the configuration file. Remove the &lt;credentials&gt; element from your Web.config files in production applications.</Recommendation>
+      <Details>The list of login credentials:[break]
+[bold][dark]${value}[/bold][/dark]</Details>
+    </Alert>
+    <Alert id="ASPNET_ValidateRequest" enabled="1" ReportMode="d">
+      <Name>ValidateRequest globally disabled</Name>
+      <Severity>medium</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant.</Impact>
+      <Description>ValidateRequest is disabled on this web application. When turned on, the ValidateRequest attribute on the @Page directive checks that users are not sending potentially dangerous HTML markup in query strings, cookies, or form fields. If that is detected, an exception is thrown and the request aborts. ValidateRequest represents a good defense against XSS (cross-site scripting) and should only be disabled on individual pages. In this case ValidateRequest was globally disabled from web.config.</Description>
+      <Recommendation>You should only disable ValidateRequest on pages where users are able to post HTML code to the site for gaining better formatting options. In this case, you should limit the number of allowed HTML tags (&lt;pre&gt;, &lt;b&gt;, &lt;i&gt;, &lt;p&gt;, &lt;br&gt;, &lt;hr&gt;) and write a regular expression that ensures that nothing else is allowed or accepted.</Recommendation>
+      <Details>The current setting is [bold]ValidateRequest="[dark]off[/dark]"[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_ViewStateMac" enabled="1" ReportMode="f">
+      <Name>EnableViewStateMac turned off</Name>
+      <Severity>low</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Possible view state tampering.</Impact>
+      <Description>EnableViewStateMac is turned off for this web application. View state MAC checking is controlled through a @Page directive attribute named EnableViewStateMac. EnableViewStateMac it is set to true by default. Never ever disable it; it would make view state tampering one-click attacks possible and with great chances of success. By default, the view state is Base64-encoded and signed with a hash value to prevent tampering. Unless you change default page settings, the view state is not at risk of tampering. If an attacker modifies the view state, or even if he/she rebuilds the view state using the right algorithm, ASP.NET catches the attempt and throws an exception. A tampered view state is not necessarily harmful it modifies the state of server controls, though but can become the vehicle of serious infections. For this reason, it is of extreme importance that you do not remove the machine authentication code (MAC) cross-checking that takes place by default. </Description>
+      <Recommendation>EnableViewStateMac should be set to true for protection against view state tampering.</Recommendation>
+      <Details>The current setting is [bold]EnableViewStateMac="[dark]false[/dark]"[/bold].</Details>
+    </Alert>
+    <Alert id="ASPNET_ViewStateUserKey" enabled="1" ReportMode="f">
+      <Name>ViewStateUserKey not set</Name>
+      <Severity>low</Severity>
+      <AlertType>Configuration</AlertType>
+      <Impact>Application dependant.</Impact>
+      <Description>ValidateRequest was not set on this page. ViewStateUserKey helps you prevent one-click attacks (CSRF) by providing additional input to create the hash value that defends the view state against tampering. In other words, ViewStateUserKey makes it much harder for hackers to use the content of the client-side view state to prepare malicious posts against the site. The property can be assigned any non-empty string, preferably the session ID or the user's ID. When the request is processed, ASP.NET extracts the key from the view state and compares it against the ViewStateUserKey of the running page. If the two match, the request is considered legitimate; otherwise an exception is thrown. </Description>
+      <Recommendation>Here's the code you need to have in all of your pages:[break]
+
+[code][pre]
+void Page_Init (object sender, EventArgs e) {
+   ViewStateUserKey = Session.SessionID;
+}
+[/pre][/code]</Recommendation>
+      <Details>Currently [bold]ViewStateUserKey[/bold] is not set.</Details>
+    </Alert>
+  </Category>
+</AspectAlerts>

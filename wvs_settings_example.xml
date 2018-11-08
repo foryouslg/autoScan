@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<config>
+    <scanUrl>http://testhtml5.vulnweb5xxxx.com</scanUrl>
+    <receiveMailList>
+        <mail>oneradish@qq.com</mail>
+        <mail>no_name_ll@qq.com</mail>
+    </receiveMailList>
+    <!-- wvs configuration -->
+    <CustomCookies>
+        <!--
+            Cookie_url: cookie's url
+            Cookie_string:cookie's value
+            Cookie_enable: The 1 is enable,and the 0 is disable
+        -->
+        <Cookie_url>http://www.oneradish.com/wordpress/wp-admin</Cookie_url>
+        <Cookie_string>wordpress_f1b3258697091a64ca4de6636c5ac7ef=root%7C1533538173%7CcbzTqlFCFH9v5g1bWh3GmkgITrcwUHH1RrE0HlxlLBz%7C44db766fa4715c8ac06a3d98a37bff8e28e4b162c964604c624229a65ac478fc; wordpress_test_cookie=WP+Cookie+check; wordpress_logged_in_f1b3258697091a64ca4de6636c5ac7ef=root%7C1533538173%7CcbzTqlFCFH9v5g1bWh3GmkgITrcwUHH1RrE0HlxlLBz%7Ccf511db1b1eb41c05e450d2260fe2e312b4dbe6e0200d94f55952e5333cbc44e; wp-settings-1=mfold%3Do; wp-settings-time-1=1532328574</Cookie_string>
+        <Cookie_enable>1</Cookie_enable>
+    </CustomCookies>
+    <!--<WvsConfigFile>C:\ProgramData\Acunetix WVS 10\Data\General\settings.xml</WvsConfigFile>-->
+</config>

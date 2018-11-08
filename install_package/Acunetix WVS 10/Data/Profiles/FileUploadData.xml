@@ -1,0 +1,59 @@
+<FileUploadData>
+  <!-- simple php file with fake mime type -->
+  <FileUpload>
+    <FileName>AcuTest${random}.php</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>PD9waHAgZWNobyhtZDUoJ2FjdW5ldGl4LWZpbGUtdXBsb2FkLXRlc3QnKSk7ID8+</Data>
+  </FileUpload>
+  <FileUpload>
+    <FileName>AcuTest${random}.php</FileName>
+    <ContentType>text/plain</ContentType>
+    <Data>PD9waHAgZWNobyhtZDUoJ2FjdW5ldGl4LWZpbGUtdXBsb2FkLXRlc3QnKSk7ID8+</Data>
+  </FileUpload>
+  <!-- double extension, known extension -->
+  <FileUpload>
+    <FileName>AcuTest${random}.php.jpg</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>PD9waHAgZWNobyhtZDUoJ2FjdW5ldGl4LWZpbGUtdXBsb2FkLXRlc3QnKSk7ID8+</Data>
+  </FileUpload>  
+  <!-- double extension, unknown extension -->  
+  <FileUpload>
+    <FileName>AcuTest${random}.php.123</FileName>
+    <ContentType>image/png</ContentType>
+    <Data>PD9waHAgZWNobyhtZDUoJ2FjdW5ldGl4LWZpbGUtdXBsb2FkLXRlc3QnKSk7ID8+</Data>
+  </FileUpload>
+  <!-- overwrite .htaccess -->    
+  <FileUpload>
+    <FileName>AcuTest${random}.htaccess</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>I0FjdW5ldGl4IC5odGFjY2VzcyBGaWxlIFVwbG9hZCB0ZXN0DQpBZGRUeXBlIGFwcGxpY2F0aW9uL3gtaHR0cGQtcGhwIC5qcGcgLnBuZyAuZ2lmIC5odG0gLmh0bWwg</Data>
+  </FileUpload>
+  <!-- fake images (with PHP code as comment) -->    
+  <FileUpload>
+    <FileName>AcuTest${random}.php.jpg</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>/9j/4AAQSkZJRgABAQEARwBHAAD//gAyPD9waHAgZWNobyhtZDUoJ2FjdW5ldGl4LWZpbGUtdXBsb2FkLXRlc3QnKSk7ID8+/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAEAAQAwEiAAIRAQMRAf/EABYAAQEBAAAAAAAAAAAAAAAAAAQAAf/EACIQAAEEAgEEAwAAAAAAAAAAAAIBAwQFBhEHABITMSFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAQH/8QAIhEBAAECBAcAAAAAAAAAAAAAERIAEwMEFUEiJTJCYqGx/9oADAMBAAIRAxEAPwB1CxxdV8a01pk9Lb3OQ2kmajcaHZymyMQlutivaDqCKIIiKaT5169r1t9H4utONLm1xelt6bIauTCRyNMs5ThNi5LabJe03VEkUSIV2nxv16XovHzvH7IVFhkmT2tfMhx7CG/EYqZZkPklSDbcbeBshRex7e039fvVyA7x+63cWGN5Ra2EybHr4jEN+plgReKVHNxxx420FV7Gd7XX3+dI5vqvfC55BL5VPhlmLiXVeIZ9IAb+9q//2Q==</Data>
+  </FileUpload>
+  <!-- ASP.NET (simple asp script with fake mime type) -->    
+  <FileUpload>
+    <FileName>AcuTest${random}.asp</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>PCUgUmVzcG9uc2UuV3JpdGUoIjRkMDIwNzBlZmZkZDdlMzE5IiArICJjYTU2MWJjNjY2MTdhOGEiKSAlPg==</Data>
+  </FileUpload>    
+  <FileUpload>
+    <FileName>AcuTest${random}.aspx</FileName>
+    <ContentType>image/png</ContentType>
+    <Data>PHNjcmlwdCBydW5hdD0ic2VydmVyIiBsYW5ndWFnZT0iQyMiPg0Kdm9pZCBQYWdlX0xvYWQob2JqZWN0IHNlbmRlciwgRXZlbnRBcmdzIGUpew0KICBSZXNwb25zZS5Xcml0ZSgiNGQwMjA3MGVmZmRkN2UzMTkiICsgImNhNTYxYmM2NjYxN2E4YSIpOw0KfQ0KPC9zY3JpcHQ+DQo=</Data>
+  </FileUpload>
+  <FileUpload>
+    <FileName>AcuTest${random}.asp</FileName>
+    <ContentType>text/plain</ContentType>
+    <Data>PCUgUmVzcG9uc2UuV3JpdGUoIjRkMDIwNzBlZmZkZDdlMzE5IiArICJjYTU2MWJjNjY2MTdhOGEiKSAlPg==</Data>
+  </FileUpload>    
+  <!-- JSP (simple jsp script with fake mime type) -->     
+  <FileUpload>
+    <FileName>AcuTest${random}.jsp</FileName>
+    <ContentType>image/jpeg</ContentType>
+    <Data>PCUgb3V0LnByaW50KCI0ZDAyMDcwZWZmZGQ3ZTMxOSIgKyAiY2E1NjFiYzY2NjE3YThhIik7ICU+</Data>
+  </FileUpload>
+</FileUploadData>

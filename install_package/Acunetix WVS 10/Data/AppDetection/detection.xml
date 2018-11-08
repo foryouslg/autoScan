@@ -1,0 +1,191 @@
+<detection>
+	<application name="WordPress" longName="WordPress" link="">
+		<options ignoreDuplicateSchemes="1">
+			<disablePathFragments>
+				<path>/</path>
+			</disablePathFragments>
+			<ignoredInputSchemes>
+				<hash>55f6424e350d32757f14d8747b127657</hash>
+				<hash>5519e31e383b91b2025bfa3eefbeba7f</hash>
+				<hash>ba336f7b04876817b909f3db4e797b36</hash>
+			</ignoredInputSchemes>
+		</options>
+		<tests>
+			<test file="/" kind="regex" where="body" search="&lt;meta name=&quot;generator&quot; content=&quot;WordPress \d+\.\d+(\.\d+)?&quot; /&gt;"/>
+			<test file="/" kind="regex" where="body" search="(link|href|src)\s?=\s?[&apos;&quot;][^&apos;&quot;]*?/wp-content/(plugins|themes)/[^&apos;&quot;]*[&apos;&quot;]"/>
+            <test file="/xmlrpc.php" kind="text" where="body" search="XML-RPC server accepts POST requests only."/>
+		</tests>
+	</application>
+	<application name="phpMyAdmin" longName="phpMyAdmin" link="">
+		<tests>
+			<test file="/" kind="regex" where="body" search="&lt;title&gt;phpMyAdmin\s.*?&lt;/title&gt;">
+				<test file="/" kind="text" where="body" search="&lt;img src=&quot;./themes/original/img/logo_right.png&quot; id=&quot;imLogo&quot; name=&quot;imLogo&quot; alt=&quot;phpMyAdmin&quot; border=&quot;0&quot; /&gt;"/>		
+			</test>
+			<test file="/" kind="regex" where="body" search="&lt;title&gt;phpMyAdmin\s.*?&lt;/title&gt;">
+				<test file="/" kind="text" where="body" search="&lt;p&gt;phpMyAdmin is more friendly with a &lt;b&gt;frames-capable&lt;/b&gt; browser.&lt;/p&gt;"/>		
+			</test>		        
+			<test file="/" kind="text" where="body" search="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;phpmyadmin.css.php"/>		
+			<test file="/" kind="text" where="body" search="var pma_text_left_default_tab = "/>		
+			<test file="/" kind="text" where="headers" search="Set-Cookie: pma_fontsize">
+			</test>
+		</tests>
+	</application>
+	<application name="Drupal" longName="Drupal" link="">
+		<options ignoreDuplicateSchemes="1">
+		</options>    
+		<tests>
+            <test file="/" kind="text" where="headers" search="X-Drupal-Cache"/>
+			<test file="/" kind="text" where="body" search="alt=&quot;Powered by Drupal, an open source content management system&quot; title=&quot;Powered by Drupal, an open source content management system&quot;"/>
+			<test file="/" kind="text" where="body" search="jQuery.extend(Drupal.settings,"/>
+			<test file="/" kind="regex" where="body" search="&lt;script type=&quot;text\/javascript&quot; src=&quot;[^\&quot;]*\/misc\/drupal.js[^\&quot;]*&quot;&gt;&lt;\/script&gt;"/>
+		</tests>
+	</application>
+	<application name="Joomla" longName="Joomla" link="">
+		<options ignoreDuplicateSchemes="1">
+		</options>    
+		<tests>
+			<test file="/" kind="text" where="body" search="&lt;meta name=&quot;generator&quot; content=&quot;Joomla! "/>
+		</tests>
+	</application>
+	<application name="vBulletin" longName="vBulletin" link="">
+		<options ignoreDuplicateSchemes="1">
+		</options>    
+		<tests>
+			<test file="/" kind="regex" where="body" search="&lt;meta\sname=&quot;generator&quot;\scontent=&quot;vBulletin\s[^&quot;]*?&quot;\s?/&gt;"/>
+            <test file="/" kind="regex" where="body" search="&lt;meta name=&quot;description&quot; content=&quot;vBulletin Forums&quot; /&gt;"/>
+			<test file="/" kind="regex" where="body" search="Powered\sby\svBulletin\&amp;reg\;\sVersion\s[^&lt;]*?&lt;br\s/&gt;Copyright\s\&amp;copy\;2000\s[^,]*?,\sJelsoft\sEnterprises\sLtd\."/>
+			<test file="/" kind="regex" where="body" search="&lt;!--\s*?// Main vBulletin Javascript Initialization\s*?vBulletin_init\(\)\;\s*?//--\&gt;"/>
+            <test file="/" kind="text" where="body" search="/images/misc/vbulletin5_logo.png&quot; data-orig-src="/>            
+			<test file="/content/" kind="regex" where="body" search="&lt;!--\s*?// Main vBulletin Javascript Initialization\s*?vBulletin_init\(\)\;\s*?//--\&gt;"/>
+			<test file="/content/" kind="regex" where="body" search="Powered\sby\svBulletin\&amp;trade\;\sVersion\s[^&lt;]*?&lt;br\s/&gt;Copyright\s\&amp;copy\;\s\d\d\d\d\svBulletin\sSolutions,\sInc\.\sAll\srights\sreserved\."/>
+			<test file="/usercp.php" kind="text" where="body" search="&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; dir=&quot;ltr&quot; lang=&quot;en&quot; id=&quot;vbulletin_html&quot;&gt;"/>
+		</tests>
+	</application>
+	<application name="OpenX" longName="OpenX" link="">
+		<tests>
+			<test file="/www/admin/index.php" kind="regex" where="body" search="&lt;meta name=&quot;generator&quot; content=&quot;OpenX v[\d\.]*? - http://www.openx.org&quot;&gt;"/>
+		</tests>
+	</application>    
+	<application name="PmWiki" longName="PmWiki" link="">
+		<tests>
+			<test file="/pmwiki.php" kind="regex" where="body" search="&lt;link rel=&apos;stylesheet&apos; href=&apos;[^&apos;]*/pub/skins/pmwiki/pmwiki.css&apos; type=&apos;text/css&apos; /&gt;"/>
+		</tests>
+	</application>    
+	<application name="DotNetNuke" longName="DotNetNuke" link="">
+		<tests>
+			<test file="/" kind="text" where="body" search="&lt;!-- DotNetNuke - http://www.dotnetnuke.com                                          --&gt;"/>
+		</tests>
+	</application>	    
+	<application name="Liferay" longName="Liferay" link="">
+		<tests>
+			<test file="/" kind="text" where="headers" search="Liferay-Portal"/>
+		</tests>
+	</application>	    
+	<application name="MediaWiki" longName="MediaWiki" link="">
+		<tests>
+			<test file="/index.php/Main_Page" kind="text" where="body" search="&lt;meta name=&quot;generator&quot; content=&quot;MediaWiki"/>
+		</tests>
+	</application>
+	<application name="EktronCMS" longName="EktronCMS" link="">
+		<tests>
+            <test file="/" kind="text" where="body" search="&lt;script id=&quot;EktronJS&quot; type=&quot;text/javascript&quot;"/>       
+			<test file="/" kind="text" where="body" search="/WorkArea/FrameworkUI/css/ektron.stylesheet.ashx?id="/>       
+			<test file="/CMSLogin.aspx" kind="text" where="body" search="EktronClientManager"/>
+			<test file="/WorkArea/login.aspx" kind="text" where="body" search="$ektron("/>
+			<test file="/WorkArea/java/jfunct.js" kind="text" where="body" search="$ektron("/>
+			<test file="/WorkArea/java/ektron.js" kind="text" where="body" search="$ektron("/>      
+			<test file="/WorkArea/PrivateData/js/Ektron.PrivateData.aspx" kind="text" where="body" search="$ektron.post("/>
+			<test file="/workarea/login.aspx" kind="text" where="body" search="$ektron("/>
+			<test file="/workarea/java/jfunct.js" kind="text" where="body" search="$ektron("/>
+			<test file="/workarea/java/ektron.js" kind="text" where="body" search="$ektron("/>      
+			<test file="/workarea/PrivateData/js/Ektron.PrivateData.aspx" kind="text" where="body" search="$ektron.post("/>    
+		</tests>
+	</application>
+	<application name="IPB" longName="IPB" link="">
+		<tests>
+			<test file="/" kind="text" where="body" search="ipb.vars[&apos;base_url&apos;]"/>
+			<test file="/" kind="text" where="body" search=".ipb_table { table-layout: fixed; }"/>
+		</tests>
+	</application>
+	<application name="MoinMoin" longName="MoinMoin" link="">
+		<tests>
+			<test file="/" kind="text" where="body" search="&lt;a href=&quot;http://moinmo.in/&quot; title=&quot;This site uses the MoinMoin Wiki software.&quot;&gt;MoinMoin Powered&lt;/a&gt;"/>
+		</tests>
+	</application>
+	<application name="KayakoFusion" longName="KayakoFusion" link="">
+		<tests>
+			<test file="/" kind="text" where="body" search="Powered by Kayako Fusion Help Desk Software&lt;/title&gt;"/>
+			<test file="/" kind="text" where="body" search="&lt;!-- BEGIN FUSION TAG CODE - DO NOT EDIT! --&gt;"/>
+		</tests>
+	</application>
+	<application name="Nagios" longName="Nagios" link="http://www.nagios.com/">
+		<tests>
+			<test file="/" kind="text" where="body" search="Copyright (c) 2009-2013 Nagios Enterprises, LLC&lt;br&gt;"/>
+		</tests>
+	</application>        
+	<application name="Horde" longName="Horde" link="http://www.horde.org/">
+		<tests>
+			<test file="/imp/login.php" kind="regex" where="body" search="&lt;img src=&quot;[^&quot;].*?alt=&quot;Powered by Horde&quot;"/>
+            <test file="/login.php" kind="regex" where="body" search="&lt;img src=&quot;[^&quot;].*?alt=&quot;Powered by Horde&quot;"/>
+		</tests>
+	</application>
+	<application name="Zabbix" longName="Zabbix" link="http://www.zabbix.com/">
+		<tests>
+            <test file="/" kind="text" where="body" search="&lt;meta name=&quot;Author&quot; content=&quot;Zabbix SIA&quot; /&gt;"/>
+			<test file="/" kind="text" where="headers" search="Set-Cookie: zbx_sessionid="/>
+		</tests>
+	</application>
+	<application name="CodeIgniter" longName="CodeIgniter" link="http://ellislab.com/codeigniter">
+		<tests>
+			<test file="/user_guide/" kind="text" where="body" search="&lt;title&gt;Welcome to CodeIgniter : CodeIgniter User Guide&lt;/title&gt;"/>
+            <test file="/license.txt" kind="text" where="body" search="CodeIgniter Software"/>
+            <test file="/index.php/[]/1" kind="text" where="body" search="The URI you submitted has disallowed characters."/>
+            
+		</tests>
+	</application>
+	<application name="Symfony" longName="Symfony" link="http://symfony.com/">
+		<tests>
+			<test file="/bundles/framework/css/body.css" kind="text" where="body" search=".sf-reset html"/>
+		</tests>
+	</application>    
+	<application name="Typo3" longName="Typo3" link="http://typo3.org/">
+		<tests>
+			<test file="/" kind="text" where="body" search="This website is powered by TYPO3 - inspiring people to share!"/>
+            <test file="/" kind="text" where="body" search="&lt;meta name=&quot;generator&quot; content=&quot;TYPO3"/>            
+		</tests>
+	</application>    
+	<application name="JIRA" longName="Atlassian JIRA" link="http://www.atlassian.com/software/jira">
+		<tests>
+            <test file="/osd.jsp" kind="text" where="body" search="&lt;Description&gt;Atlassian JIRA Search Provider&lt;/Description&gt;"/>
+		</tests>
+	</application>    
+	<application name="Umbraco" longName="Umbraco CMS" link="http://umbraco.com/">
+		<tests>
+            <test file="/umbraco/" kind="text" where="body" search="&lt;umb-notifications&gt;"/>
+            <test file="/css/style.css" kind="text" where="body" search="/* EDITOR PROPERTIES - PLEASE DON&apos;T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */"/>
+            <test file="/css/custom.css" kind="text" where="body" search="/* EDITOR PROPERTIES - PLEASE DON&apos;T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */"/>            
+		</tests>
+	</application>    
+	<application name="MovableType" longName="Movable Type" link="https://movabletype.org/">
+		<tests>
+            <test file="/mt-check.cgi" kind="text" where="body" search="&lt;title&gt;Movable Type System Check [mt-check.cgi]&lt;/title&gt;"/>
+		</tests>
+	</application>
+	<application name="XCart" longName="X-Cart" link="http://www.x-cart.com/">
+		<tests>
+			<test file="/" kind="text" where="body" search="&lt;meta name=&quot;Generator&quot; content=&quot;X-Cart (http://www.x-cart.com)&quot; /&gt;"/>
+		</tests>
+	</application>
+	<application name="MantisBT" longName="Mantis Bug Tracker" link="http://www.mantisbt.org/">
+		<tests>
+			<test file="/login_page.php" kind="text" where="body" search="&lt;link rel=&quot;search&quot; type=&quot;application/opensearchdescription+xml&quot; title=&quot;MantisBT: Text Search&quot;"/>
+		</tests>
+	</application>
+	<application name="Magento" longName="Magento" link="https://www.magentocommerce.com/">
+		<tests>
+			<test file="/" kind="text" where="body" search="Mage.Cookies.domain"/>
+            <test file="/" kind="text" where="body" search="Mage.Cookies.path"/>
+            <test file="/" kind="text" where="body" search="/js/mage/translate.js&quot;&gt;&lt;/script&gt;"/>
+		</tests>
+	</application>    
+</detection>

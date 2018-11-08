@@ -1,0 +1,27 @@
+<ThreatLevels>
+
+	<Level>
+		<Class>boldgreen</Class>
+		<Title>Acunetix Threat Level 0</Title>
+		<Text>No vulnerabilities have been discovered by the scanner.</Text>
+	</Level>
+	
+	<Level>
+		<Class>boldblue</Class>
+		<Title>Acunetix Threat Level 1</Title>
+		<Text>One or more low-severity type vulnerabilities have been discovered by the scanner.</Text>
+	</Level>
+
+	<Level>
+		<Class>boldorange</Class>
+		<Title>Acunetix Threat Level 2</Title>
+		<Text>One or more medium-severity type vulnerabilities have been discovered by the scanner. You should investigate each of these vulnerabilities to ensure they will not escalate to more severe problems.</Text>
+	</Level>
+	
+	<Level>
+		<Class>boldred</Class>
+		<Title>Acunetix Threat Level 3</Title>
+		<Text>One or more high-severity type vulnerabilities have been discovered by the scanner. A malicious user can exploit these vulnerabilities and compromise the backend database and/or deface your website.</Text>
+	</Level>	
+
+</ThreatLevels>

@@ -1,0 +1,148 @@
+<Compliance>
+  <Info>
+    <!-- Information about the regulation/standard -->
+    <Title>OWASP TOP 10 2013</Title>
+    <Description>
+    	The primary aim of the OWASP Top 10 is to educate developers, designers, architects, managers, and organizations about the consequences of the most important web application security weaknesses. The Top 10 provides basic techniques to protect against these high risk problem areas - and also provides guidance on where to go from here.
+    </Description>
+    <Disclaimer>
+    [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]
+    [p]A portion of this report is taken from OWASP's Top Ten 2013 Project document, that can be found at http://www.owasp.org.[/p]
+    </Disclaimer>
+  </Info>
+  <Categories>
+    <!-- Categories are sections of the regulation document -->
+    <!-- Category index is a reference number in the original document -->
+    <Category Index="A1">
+      <Title>Injection</Title>
+      <Description>
+        [p]
+        Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="code_execution"/>
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="ldap_injection"/>
+      </Associations>
+    </Category>
+    
+    <Category Index="A2">
+      <Title>Broken Authentication and Session Management</Title>
+      <Description>
+        [p]
+        Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>    
+    
+    <Category Index="A3">
+      <Title>Cross Site Scripting (XSS)</Title>
+      <!-- Description can contain BBCode -->
+      <Description>
+        [p]
+        XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victim's browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+    
+	<Category Index="A4">
+      <Title>Insecure Direct Object Reference</Title>
+      <Description>
+        [p]
+        A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="directory_traversal"/>
+      </Associations>
+    </Category>
+    
+    <Category Index="A5">
+      <Title>Security Misconfiguration</Title>
+      <Description>
+        [p]
+        Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. Secure settings should be defined, implemented, and maintained, as defaults are often insecure. Additionally, software should be kept up to date.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="weak_credentials"/>        
+      </Associations>
+    </Category>    
+    
+    <Category Index="A6">
+      <Title>Sensitive Data Exposure</Title>
+      <Description>
+        [p]
+        Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="abuse_of_functionality"/>        
+        <Association AlertTag="weak_credentials"/> 
+        <Association AlertTag="information_disclosure"/>
+      </Associations>
+    </Category>      
+    
+    <Category Index="A7">
+      <Title>Missing Function Level Access Control</Title>
+      <Description>
+        [p]
+        Most web applications verify function level access rights before making that functionality visible in the UI. However, applications need to perform the same access control checks on the server when each function is accessed. If requests are not verified, attackers will be able to forge requests in order to access functionality without proper authorization.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="abuse_of_functionality"/>
+      </Associations>
+    </Category>          
+    
+	<Category Index="A8">
+      <Title>Cross Site Request Forgery (CSRF)</Title>
+      <Description>
+        [p]
+        A CSRF attack forces a logged-on victim's browser to send a forged HTTP request, including the victim's session cookie and any other automatically included authentication information, to a vulnerable web application. This allows the attacker to force the victim's browser to generate requests the vulnerable application thinks are legitimate requests from the victim.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="csrf"/>
+      </Associations>
+    </Category>
+    
+	<Category Index="A9">
+      <Title>Using Components with Known Vulnerabilities</Title>
+      <Description>
+        [p]
+        Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="configuration"/>
+        <Association AlertTag="missing_update"/>
+        <Association AlertTag="known_vulnerabilities"/>
+      </Associations>
+    </Category>
+
+    <Category Index="A10">
+      <Title>UnvalidatedRedirects and Forwards</Title>
+      <Description>
+        [p]
+        Web applications frequently redirect and forward users to other pages and websites, and use untrusted data to determine the destination pages. Without proper validation, attackers can redirect victims to phishing or malware sites, or use forwards to access unauthorized pages.
+        [/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="url_redirection"/>
+        
+      </Associations>
+    </Category>
+    
+  </Categories>
+</Compliance>

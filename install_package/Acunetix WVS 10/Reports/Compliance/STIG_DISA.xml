@@ -1,0 +1,215 @@
+<Compliance>
+  <Info>
+    <Title>DISA STIG Web Security</Title>
+    <Description>
+      [p]This Application Security and Development Security Technical Implementation Guide (STIG) 
+provides security guidance for use throughout the application development lifecycle.  This STIG 
+provides the guidance needed to promote the development, integration, and updating of secure 
+applications. Subjects covered in this document are: development, design, testing, conversions 
+and upgrades for existing applications, maintenance, software configuration management, 
+education, and training.[/p]
+    </Description>
+    <Disclaimer>
+     [p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]
+      [p]A portion of the information in this report is taken from Security Technical Implementation Guide, developed by Defense Information Systems Agency and can be found at http://iase.disa.mil/stigs/stig/application_security_and_development_stig_v2r1_final_20080724.pdf.[/p]
+    </Disclaimer>
+  </Info>
+  <Categories>
+    <Category Index="3.5.1">
+      <Title>Secure Defaults</Title>
+      <Description>
+        [p]The practice of secure defaults helps to ensure the application is deployed in a secure state. This 
+practice implies unneeded or potentially unsafe functionality is disabled by default, and the user 
+must explicitly enable the functionality when required.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="needless_service"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="known_vulnerabilities"/>
+      </Associations>
+    </Category>
+		<Category Index="3.6.2">
+      <Title>NSA Approved Cryptography</Title>
+      <Description>
+        [p]Cryptographic equipment, assembly or component classified or certified by NSA for encrypting 
+and decrypting classified and sensitive national security information when appropriately keyed. 
+Developed using established NSA business processes and containing NSA approved algorithms 
+are used to protect systems requiring the most stringent protection mechanisms.[/p]
+      </Description>
+			<Associations>
+                <Association AlertTag="weak_crypto"/>
+            </Associations>
+    </Category>
+		<Category Index="3.7.4">
+      <Title>Data Transmission</Title>
+      <Description>
+        [p]Classified data transmitted through a network, which is cleared to a lower level than the data 
+being transmitted, is separately encrypted using NSA-approved cryptography.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+		<Category Index="3.8.4.2">
+      <Title>Password Transmission</Title>
+      <Description>
+        [p]In general, password use is highly discouraged in favor of PKI authentication. However, if applications transmit account passwords, they must be transmitted in an encrypted format.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="weak_crypto"/>
+      </Associations>
+    </Category>
+		<Category Index="3.9.3">
+      <Title>Excessive Privileges</Title>
+      <Description>
+        [p]An application executing with more privileges than are required for it to function is considered to 
+have excessive privileges and is violating the "Principle of Least Privilege." Applications.  An application with excessive privileges greatly increases the risk to the system in the event the 
+application suffers a security breach.  The type of attack performed will vary based on the 
+privileges granted to the application account.[/p]
+      </Description>
+      <Associations>
+			<Association AlertTag="configuration"/>
+      </Associations>
+    </Category>
+		<Category Index="3.10">
+      <Title>Input Validation</Title>
+      <Description>
+[p]A major cause of software vulnerabilities is failure to validate un-trusted input. Any data 
+crossing a trust boundary, as identified in the threat modeling process, will be checked to ensure 
+validity before being used.  Input may come from a user, data store, network socket, or other 
+source.[/p]
+      </Description>
+      <Associations>
+                <Association AlertTag="abuse_of_functionality"/>
+				<Association AlertTag="arbitrary_file_creation"/>
+				<Association AlertTag="authentication_bypass"/>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="csrf"/>
+				<Association AlertTag="denial_of_service"/>
+				<Association AlertTag="directory_traversal"/>
+				<Association AlertTag="error_handling"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="http_response_splitting"/>
+				<Association AlertTag="information_disclosure"/>
+				<Association AlertTag="insecure_admin_access"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="malware"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="needless_service"/>
+				<Association AlertTag="network_alert"/>
+				<Association AlertTag="privilege_escalation"/>
+				<Association AlertTag="sensitive_data_not_over_ssl"/>
+				<Association AlertTag="session_fixation"/>
+				<Association AlertTag="source_code_disclosure"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="test_files"/>
+				<Association AlertTag="url_redirection"/>
+				<Association AlertTag="weak_credentials"/>
+				<Association AlertTag="weak_crypto"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+		<Category Index="3.10.1">
+      <Title>SQL Injection Vulnerabilities</Title>
+      <Description>
+        [p]A SQL Injection vulnerability allows an attacker to modify a database query to access or modify 
+data to which they are not permitted.  SQL Injection vulnerabilities are exploited through un-
+validated user input.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="sql_injection"/>
+        <Association AlertTag="xpath_injection"/>
+        <Association AlertTag="ldap_injection"/>
+      </Associations>
+    </Category>
+		<Category Index="3.10.4">
+      <Title>Command Injection Vulnerabilities</Title>
+      <Description>
+        [p]Command injection attacks are attempts to inject unwanted data into an application for the 
+purpose of executing operating system shell commands. This can allow an attacker to execute 
+code, possibly at a higher privilege level, resulting in system compromise.  Command injection 
+vulnerabilities are most often exploited through unvalidated input.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="code_execution"/>
+      </Associations>
+    </Category>
+		<Category Index="3.10.5">
+      <Title>Cross Site Scripting (XSS) Vulnerabilities</Title>
+      <Description>
+        [p]XSS is a vulnerability where input is accepted by a website and then sent back through a web 
+page.  This input can include code, such as JavaScript, to be executed by the user's browser.  
+Since this code is seen as originating from the web server it can access data from the server's 
+domain such as a cookie, or modify the behavior of the webpage by modifying links and other 
+malicious actions.  A cross site scripting vulnerability can lead to an attacker gaining personal 
+information or directing a user to a site of the attacker's choice.[/p]
+      </Description>
+      <Associations>
+        <Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+		<Category Index="3.12">
+      <Title>Hidden Fields in Web Pages</Title>
+      <Description>
+        [p]A "hidden" field vulnerability results when hidden fields on a web page, values in a cookie, or 
+variables included in the URL can be used for malicious purposes.  While these fields are not 
+normally visible or editable by the user of a web browser, they can be viewed and/or modified by 
+looking at the source.[/p]
+      </Description>
+      <Associations>
+<Association AlertTag="abuse_of_functionality"/>
+				<Association AlertTag="arbitrary_file_creation"/>
+				<Association AlertTag="authentication_bypass"/>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="csrf"/>
+				<Association AlertTag="denial_of_service"/>
+				<Association AlertTag="directory_traversal"/>
+				<Association AlertTag="error_handling"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="http_response_splitting"/>
+				<Association AlertTag="information_disclosure"/>
+				<Association AlertTag="insecure_admin_access"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="malware"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="needless_service"/>
+				<Association AlertTag="network_alert"/>
+				<Association AlertTag="privilege_escalation"/>
+				<Association AlertTag="sensitive_data_not_over_ssl"/>
+				<Association AlertTag="session_fixation"/>
+				<Association AlertTag="source_code_disclosure"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="test_files"/>
+				<Association AlertTag="url_redirection"/>
+				<Association AlertTag="weak_credentials"/>
+				<Association AlertTag="weak_crypto"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+      </Associations>
+    </Category>
+		<Category Index="3.13">
+      <Title>Application Information Disclosure</Title>
+      <Description>
+        [p]Information disclosure vulnerabilities are leaks of information from an application which are 
+used by the attacker to perform a malicious attack against the application.  This information itself 
+may be the target of an attacker, or the information could provide an attacker with data needed to 
+compromise the application or system in a subsequent attack.  Information disclosure 
+vulnerabilities are most often the result of programming errors, insufficient authentication, poor 
+error handling, or inadequate data protection.[/p]
+      </Description>
+      <Associations>
+				<Association AlertTag="information_disclosure"/>
+      </Associations>
+    </Category>
+  </Categories>
+</Compliance>

@@ -1,0 +1,186 @@
+<Compliance>
+	<Info>
+		<Title>International Standard - ISO 27001:2005</Title>
+		<Description>[p]ISO/IEC 27001 is an information security management system (ISMS) standard published in October 2005 by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). Its full name is ISO/IEC 27001:2005 – Information technology – Security techniques – Information security management systems – Requirements.[/p][p]The objective of this standard is to provide a model for establishing, implementing, operating, monitoring, reviewing, maintaining, and improving an Information Security Management System.[/p]</Description>
+		<Disclaimer>[p]This document or any of its content cannot account for, or be included in any form of legal advice. The outcome of a vulnerability scan (or security evaluation) should be utilized to ensure that diligent measures are taken to lower the risk of potential exploits carried out to compromise data.[/p][p]Legal advice must be supplied according to its legal context. All laws and the environments in which they are applied, are constantly changed and revised. Therefore no information provided in this document may ever be used as an alternative to a qualified legal body or representative.[/p]</Disclaimer>
+	</Info>
+	<Categories>
+		<Category Index="10.7.3">
+			<Title>Information handling procedures</Title>
+			<Description>Procedures for the handling and storage of information should be established to protect this information from unauthorized disclosure or misuse.</Description>
+			<Associations>
+                <Association AlertTag="information_disclosure"/>
+                <Association AlertTag="source_code_disclosure"/>
+                <Association AlertTag="directory_traversal"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.8.1">
+			<Title>Information exchange policies and procedures</Title>
+			<Description>Formal exchange policies, procedures, and controls should be in place to protect the exchange of information through the use of all types of communication facilities.</Description>
+			<Associations>
+                <Association AlertTag="weak_crypto"/>
+		        <Association AlertTag="sensitive_data_not_over_ssl"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.8.4">
+			<Title>Electronic messaging</Title>
+			<Description>Information involved in electronic messaging should be appropriately protected.</Description>
+			<Associations>
+                <Association AlertTag="weak_crypto"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.9.1">
+			<Title>Electronic commerce</Title>
+			<Description>Information involved in electronic commerce passing over public networks should be protected from fraudulent activity, contract dispute, and unauthorized disclosure and modification.</Description>
+			<Associations>
+                <Association AlertTag="sql_injection"/>
+                <Association AlertTag="code_execution"/>
+                <Association AlertTag="authentication_bypass"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.9.2">
+			<Title>On-Line Transactions</Title>
+			<Description>Information involved in on-line transactions should be protected to prevent incomplete transmission, mis-routing, unauthorized message alteration, unauthorized disclosure, unauthorized message duplication or replay.</Description>
+			<Associations>
+                <Association AlertTag="weak_crypto"/>
+		        <Association AlertTag="sensitive_data_not_over_ssl"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.9.3">
+			<Title>Publicly available information</Title>
+			<Description>The integrity of information being made available on a publicly available system should be protected to prevent unauthorized modification.</Description>
+			<Associations>
+                <Association AlertTag="xss"/>
+                <Association AlertTag="sql_injection"/>
+                <Association AlertTag="xpath_injection"/>
+                <Association AlertTag="ldap_injection"/>
+                <Association AlertTag="arbitrary_file_creation"/>
+                <Association AlertTag="insecure_admin_access"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="10.10.3">
+			<Title>Protection of log information</Title>
+			<Description>The integrity of information being made available on a publicly available system should be protected to prevent unauthorized modification.</Description>
+			<Associations>
+                <Association AlertTag="information_disclosure"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="11.2.2">
+			<Title>Privilege management</Title>
+			<Description>The allocation and use of privileges should be restricted and controlled.</Description>
+			<Associations>
+                <Association AlertGroup=".htaccess File Readable"/>
+                <Association AlertTag="session_fixation"/>
+                <Association AlertTag="csrf"/>
+                <Association AlertTag="bruteforce_possible"/>
+                <Association AlertTag="CWE-307"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="11.3.1">
+			<Title>Password use</Title>
+			<Description>Users should be required to follow good security practices in the selection and use of passwords.</Description>
+			<Associations>
+                <Association AlertGroup="Weak Password"/>
+                <Association AlertTag="weak_credentials"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="11.4.2">
+			<Title>User authentication for external connections</Title>
+			<Description>Appropriate authentication methods should be used to control access by remote users.</Description>
+			<Associations>
+                <Association AlertTag="insecure_admin_access"/>
+                <Association AlertTag="privilege_escalation"/>
+                <Association AlertTag="authentication_bypass"/>
+                <Association AlertGroup="Apache Tomcat Directory Host Appbase Authentication Bypass Vulnerability"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="11.6.1">
+			<Title>Information access restriction</Title>
+			<Description>Access to information and application system functions by users and support personnel should be restricted in accordance with the defined access control policy.</Description>
+			<Associations>
+                <Association AlertTag="privilege_escalation"/>
+                <Association AlertTag="authentication_bypass"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.2.1">
+			<Title>Input data validation</Title>
+			<Description>Data input to applications should be validated to ensure that this data is correct and appropriate.</Description>
+			<Associations>
+				<Association AlertTag="buffer_overflow"/>
+				<Association AlertTag="code_execution"/>
+				<Association AlertTag="crlf_injection"/>
+				<Association AlertTag="directory_traversal"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="ldap_injection"/>
+				<Association AlertTag="network_alert"/>
+				<Association AlertTag="sql_injection"/>
+				<Association AlertTag="url_redirection"/>
+				<Association AlertTag="xfs"/>
+				<Association AlertTag="xpath_injection"/>
+				<Association AlertTag="xss"/>
+				<Association AlertTag="http_parameter_pollution"/>
+				<Association AlertTag="PerScheme"/>
+				<Association AlertTag="CWE-88"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.2.2">
+			<Title>Control of internal processing</Title>
+			<Description>Validation checks should be incorporated into applications to detect any corruption of information through processing errors or deliberate acts.</Description>
+			<Associations>
+				<Association AlertTag="PerScheme"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.2.4">
+			<Title>Output data validation</Title>
+			<Description>Data output from an application should be validated to ensure that the processing of stored information is correct and appropriate to the circumstances.</Description>
+			<Associations>
+				<Association AlertTag="xss"/>
+				<Association AlertTag="xfs"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.4.1">
+			<Title>Control of operational software</Title>
+			<Description>There should be procedures in place to control the installation of software on operational systems.</Description>
+			<Associations>
+				<Association AlertTag="needless_service"/>
+				<Association AlertTag="configuration"/>
+				<Association AlertTag="CWE-16"/>
+				<Association AlertTag="missing_update"/>
+				<Association AlertTag="known_vulnerabilities"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.4.3">
+			<Title>Access control to program source code</Title>
+			<Description>Access to program source code should be restricted.</Description>
+			<Associations>
+				<Association AlertTag="source_code_disclosure"/>
+				<Association AlertTag="file_inclusion"/>
+				<Association AlertTag="directory_traversal"/>
+            </Associations>
+		</Category>
+        
+        <Category Index="12.5.4">
+			<Title>Information leakage</Title>
+			<Description>Opportunities for information leakage should be prevented.</Description>
+			<Associations>
+				<Association AlertTag="information_disclosure"/>
+				<Association AlertTag="test_files"/>
+            </Associations>
+		</Category>
+	</Categories>
+</Compliance>
