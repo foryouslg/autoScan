@@ -9,7 +9,7 @@ Desktop.ini
 ./.idea/
 ./temp/
 ./test/
-./config.xml
-./send_mail/settings.py
+autoScan/config.xml
+autoScan/send_mail/settings.py
 
 
