@@ -10,5 +10,6 @@ Desktop.ini
 ./temp/
 ./test/
 ./settings.py
+./send_mail/settings.py
 
 
