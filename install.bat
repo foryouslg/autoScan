@@ -30,7 +30,7 @@ if exist temp\path.txt (
 	del temp\path.txt
 	echo "%path%" > temp\path.txt
 ) else (
-	::echo ÎÄ¼þ²»´æÔÚ
+	::echo æ–‡ä»¶ä¸å­˜åœ¨
 	mkdir temp
 	cd temp
 	echo "%path%" > path.txt

@@ -2,14 +2,14 @@
 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::¸Ã½Å±¾ÓÃÓÚ°²×°python3 and pip3 and ipython3,²»Ó°ÏìÔ­À´µÄpython»·¾³
+::è¯¥è„šæœ¬ç”¨äºå®‰è£…python3 and pip3 and ipython3,ä¸å½±å“åŸæ¥çš„pythonç¯å¢ƒ
 ::python3 install dirctory c:\python37
 ::pip runing command is pip3 and ipython is same
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-title python°²×°½Å±¾
+title pythonå®‰è£…è„šæœ¬
 set curr_dir=%~dp0
-::echo [+] µ±Ç°Ä¿Â¼£º %curr_dir%
+::echo [+] å½“å‰ç›®å½•ï¼š %curr_dir%
 echo [+] Is copy...
 
 ::python3  install
