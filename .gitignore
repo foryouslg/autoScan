@@ -1,13 +1,15 @@
-venv/
-*.py[cod]
-.idea/
 
+*.py[cod]
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-temp/
-test/
-settings.py
+
+
+./venv/
+./.idea/
+./temp/
+./test/
+./settings.py
 
 
 #__pychache__/
