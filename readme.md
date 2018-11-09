@@ -7,13 +7,6 @@ If you need the password ,please send an email to oneradish@qq.com
 Operating system supporting win7 or more
 </font>
 
-
-1. The first,run the `install.bat` script
-    
-    It automatically installs python,awvs and environment variable settings 
-2. The second,run the `startup.py` script
-
-    Run `python3 startup.py` to start the scan after the program is installed.
    
 ## REQUIREMENT
 Need to install c++ 2015
@@ -40,3 +33,11 @@ Need to install c++ 2015
     
     The target url of scan,in the `config.xml`file.The parameter is <scanUrl>...</scanUrl>
     
+## startup
+
+1. The first,run the `install.bat` script
+    
+    It automatically installs python,awvs and environment variable settings 
+2. The second,run the `startup.py` script
+
+    Run `python3 startup.py` to start the scan after the program is installed.

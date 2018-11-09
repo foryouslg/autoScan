@@ -7,7 +7,7 @@ Desktop.ini
 
 /venv/
 /.idea/
-/temp/
+/temp/*
 /test/
 /config.xml
 /send_mail/settings.py
