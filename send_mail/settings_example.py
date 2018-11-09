@@ -17,7 +17,7 @@ MAIL_PORT = '587'
 SENDER_MAIL = 'xxxxxxxx@163.com'
 SENDER_PASS = 'xxxxxxxxx'
 
-RECEIVER_MAIL_LIST = ['xxxxxxxx@163.com']
+#RECEIVER_MAIL_LIST = ['xxxxxxxx@163.com']
 
 MAIL_CONTENT = """HI ALL:
 
