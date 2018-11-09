@@ -18,7 +18,19 @@ Operating system supporting win7 or more
 ## REQUIREMENT
 Need to install c++ 2015
 
+## add config 
+
+1. Add the scan config.xml file 
+
+	Refer to the `config_example.xml` file to configure `config.xml` file.
+	
+2. Add the send mail settings.py file
+
+    Refer to the `autoScan/send_mail/settings_example.py` file to configure `autoScan/send_mail/settings.py`,
+	set up the mail notification after the scan.
+	
 ## config 
+
 1. E-mail notification
     
     A list of messages receiving mail notifications,in the `config.xml` file.
@@ -28,7 +40,3 @@ Need to install c++ 2015
     
     The target url of scan,in the `config.xml`file.The parameter is <scanUrl>...</scanUrl>
     
-3. add settings.py
-
-    Refer to the `autoScan/send_mail/settings_example.py` file to configure `autoScan/send_mail/settings.py`,set up the mail notification after the scan.
-

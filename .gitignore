@@ -9,7 +9,7 @@ Desktop.ini
 ./.idea/
 ./temp/
 ./test/
-./settings.py
+./config.xml
 ./send_mail/settings.py
 
 

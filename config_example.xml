@@ -3,8 +3,8 @@
 <config>
     <scanUrl>http://testhtml5.vulnweb5xxxx.com</scanUrl>
     <receiveMailList>
-        <mail>oneradish@qq.com</mail>
-        <mail>no_name_ll@qq.com</mail>
+        <mail>xxxxxxx@qq.com</mail>
+        <mail>xxxxxxx@qq.com</mail>
     </receiveMailList>
     <!-- wvs configuration -->
     <CustomCookies>
