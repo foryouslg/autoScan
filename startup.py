@@ -59,14 +59,16 @@ def add_program_dir():
     os.path.abspath(os.path.join(os.path.dirname(__file__), "calc_time"))
 
 def save_scan_result():
-    url = xmlParse.XmlParse().get_url()
-    program_name = url.split("://")[1].split("/")[0]
+    #url = xmlParse.XmlParse().get_url()
+	url = geturl()
+	print(url)
+	program_name = url.split("://")[1].split("/")[0]
     # print(program_name)
-    scan_result_file = SCAN_RESULT + "\\scan-results.wvs"
-    try:
-        shutil.copyfile(scan_result_file, get_curr_temp() + "\\" + program_name + ".wvs")
-    except:
-        print(scan_result_file + " is error")
+	scan_result_file = SCAN_RESULT + "\\scan-results.wvs"
+	try:
+		shutil.copyfile(scan_result_file, get_curr_temp() + "\\" + program_name + ".wvs")
+	except:
+		print(scan_result_file + " is error")
 
 
 def main():

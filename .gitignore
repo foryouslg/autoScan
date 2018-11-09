@@ -11,5 +11,5 @@ Desktop.ini
 /test/
 /config.xml
 /send_mail/settings.py
-
+__pycache__
 
