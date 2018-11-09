@@ -5,11 +5,11 @@ ehthumbs.db
 Desktop.ini
 
 
-./venv/
-./.idea/
-./temp/
-./test/
-config.xml
-./send_mail/settings.py
+/venv/
+/.idea/
+/temp/
+/test/
+/config.xml
+/send_mail/settings.py
 
 
